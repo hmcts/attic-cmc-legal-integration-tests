@@ -1,0 +1,39 @@
+---
+version: '2.1'
+
+services:
+    legal-integration-tests:
+      volumes:
+        - .:/usr/src/app
+    legal-rep-frontend:
+      ports:
+        - 4000:4000
+    idam-database:
+      ports:
+        - 5431:5432
+      volumes:
+        - idam-database-data:/var/lib/postgresql/data
+    authentication-web:
+      ports:
+        - 8000:8000
+    idam-api:
+      ports:
+        - 8080:8080
+    fees-api:
+      ports:
+        - 8182:8080
+    draft-store-api:
+      ports:
+        - 8800:8800
+    draft-store-database:
+      ports:
+        - 5429:5432
+      volumes:
+        - draft-store-database-data:/var/lib/postgresql/data
+    service-auth-provider-api:
+      ports:
+        - 4552:8080
+
+volumes:
+  draft-store-database-data:
+  idam-database-data:

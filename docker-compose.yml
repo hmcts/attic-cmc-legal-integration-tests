@@ -1,0 +1,109 @@
+---
+version: '2.1'
+
+services:
+    legal-integration-tests:
+      command: test -- --steps
+      build:
+        context: .
+        args:
+          - http_proxy
+          - https_proxy
+          - no_proxy
+      image: docker.artifactory.reform.hmcts.net/cmc/legal-integration-tests:${LEGAL_INTEGRATION_TESTS_VERSION:-latest}
+      environment:
+        - WEB_DRIVER_HOST=remote-webdriver
+        - URL=https://legal-rep-frontend:4000
+        - IDAM_URL=http://idam-api:8080
+        - http_proxy=
+        - https_proxy=
+        - no_proxy=
+      depends_on:
+        remote-webdriver:
+          condition: service_started
+        legal-rep-frontend:
+          condition: service_started
+      volumes:
+        - .:/usr/src/app
+    remote-webdriver:
+      image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3
+    legal-rep-frontend:
+      image: docker.artifactory.reform.hmcts.net/cmc/legal-rep-frontend
+      environment:
+        - IDAM_SECRET_KEY=cmc_it_test_secret_key
+        - IDAM_HEALTH_CHECK_URL=http://idam-api:8080/health
+        - IDAM_API_URL=http://idam-api:8080
+        - IDAM_AUTHENTICATION_WEB_URL=https://authentication-web:8000
+        - IDAM_S2S_AUTH=http://service-auth-provider-api:8080
+        - FEES_URL=http://fees-api:8080
+        - DRAFT_STORE_URL=http://draft-store-api:8800
+        - LOG_LEVEL=DEBUG
+        - http_proxy=
+        - https_proxy=
+        - no_proxy=
+      depends_on:
+        idam-api:
+          condition: service_started
+        authentication-web:
+          condition: service_started
+        fees-api:
+          condition: service_healthy
+        draft-store-api:
+          condition: service_healthy
+        service-auth-provider-api:
+          condition: service_started
+    authentication-web:
+      image: docker.artifactory.reform.hmcts.net/auth/authentication-web:5bcb04260476ee77efbabf00ddd9b57197ffc028
+      environment:
+        - IDAM_API_URL=http://idam-api:8080
+      depends_on:
+        - idam-api
+    idam-api:
+      image: docker.artifactory.reform.hmcts.net/auth/idam-api:2932f67267c7400c00ec91fff9a938faa3d26c97
+      command: --wait-for-database 60
+      environment:
+        - IDAM_SUPERUSER_EMAIL=cmc-int-test@cmc.reform.hmcts.net
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://idam-database:5432/idam
+        - IDAM_TESTING_SUPPORT_ENABLED=true
+        - NOTIFY_API_KEY=${GOV_NOTIFY_API_KEY}
+        - NOTIFY_CMC_ACTIVATE_USER_TEMPLATE=76aa8695-64e8-4afd-ae13-bc8385302b1f
+        - IDAM_SECRET=cmc_it_test_secret_key
+        - NOTIFY=true
+        - NOTIFY_CMC_WELCOME_USER_TEMPLATE=fake
+        - NOTIFY_DIVORCE_WELCOME_USER_TEMPLATE=fake
+        - NOTIFY_SSCS_WELCOME_USER_TEMPLATE=fake
+        - NOTIFY_RESET_PASSWORD_TEMPLATE=fake
+        - NOTIFY_PROBATE_ACTIVATE_USER_TEMPLATE=fake
+        - NOTIFY_DIVORCE_ACTIVATE_USER_TEMPLATE=fake
+        - NOTIFY_SSCS_ACTIVATE_USER_TEMPLATE=fake
+        - NOTIFY_CCD_ACTIVATE_USER_TEMPLATE=fake
+      depends_on:
+        - idam-database
+    idam-database:
+      image: docker.artifactory.reform.hmcts.net/auth/idam-database
+    fees-api:
+      image: docker.artifactory.reform.hmcts.net/fees-register/fees-api:d737bc96603d706a84fbc924c1566e22a430059e
+    draft-store-api:
+      image: docker.artifactory.reform.hmcts.net/reform/draft-store-api
+      environment:
+        - DRAFT_STORE_DB_HOST=draft-store-database
+        - DRAFT_STORE_DB_PASSWORD=draftstore
+        - ROOT_APPENDER
+        - JSON_CONSOLE_PRETTY_PRINT
+        - ROOT_LOGGING_LEVEL
+        - REFORM_SERVICE_NAME
+        - REFORM_TEAM
+        - REFORM_ENVIRONMENT
+      depends_on:
+        draft-store-database:
+          condition: service_healthy
+    draft-store-database:
+      image: docker.artifactory.reform.hmcts.net/reform/draft-store-database
+      environment:
+        - DRAFT_STORE_DB_PASSWORD=draftstore
+    service-auth-provider-api:
+      image: docker.artifactory.reform.hmcts.net/auth/service-auth-provider-api
+      environment:
+        - auth.provider.service.server.jwtKey=wThK0f0/lh3FlxFcL4xUWDMI5C1J9KyQBgXV4wseh1e5J1uYJIjvTvArHxQDrYoHJ23xFxjHkOnvNbR5dXRoxA==
+        - auth.provider.service.server.microserviceKeys.cmc=AAAAAAAAAAAAAAAA
+        - auth.provider.service.testing-support.enabled=true
