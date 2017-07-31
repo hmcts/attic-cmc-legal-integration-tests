@@ -27,14 +27,13 @@ services:
         - .:/usr/src/app
     remote-webdriver:
       image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3
-    legal-rep-frontend:
-      image: docker.artifactory.reform.hmcts.net/cmc/legal-rep-frontend
+    legal-frontend:
+      image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend
       environment:
         - IDAM_SECRET_KEY=cmc_it_test_secret_key
         - IDAM_HEALTH_CHECK_URL=http://idam-api:8080/health
         - IDAM_API_URL=http://idam-api:8080
         - IDAM_AUTHENTICATION_WEB_URL=https://authentication-web:8000
-        - IDAM_S2S_AUTH=http://service-auth-provider-api:8080
         - FEES_URL=http://fees-api:8080
         - DRAFT_STORE_URL=http://draft-store-api:8800
         - LOG_LEVEL=DEBUG
