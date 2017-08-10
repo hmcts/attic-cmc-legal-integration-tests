@@ -5,7 +5,7 @@ services:
     legal-integration-tests:
       volumes:
         - .:/usr/src/app
-    legal-rep-frontend:
+    legal-frontend:
       ports:
         - 4000:4000
     idam-database:

@@ -68,7 +68,7 @@ $ ./bin/start-local-environment.sh
 ```
 
 This will:
-- start all the services beside the `legal-rep-frontend`, you'll need to start that one on it's own,
+- start all the services beside the `legal-frontend`, you'll need to start that one on it's own,
 - mount database volumes, thanks to which your data will persist between environment restarts,
 - expose container ports to the host, so all the APIs and databases will be directly accessible. Use `docker ps` or read the [compose file](./docker-compose.yml) to see how the ports are mapped.
 
