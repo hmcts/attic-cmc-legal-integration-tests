@@ -13,7 +13,7 @@ services:
       image: docker.artifactory.reform.hmcts.net/cmc/legal-integration-tests:${LEGAL_INTEGRATION_TESTS_VERSION:-latest}
       environment:
         - WEB_DRIVER_HOST=remote-webdriver
-        - URL=https://legal-rep-frontend:4000
+        - URL=https://legal-frontend:4000
         - IDAM_URL=http://idam-api:8080
         - http_proxy=
         - https_proxy=
@@ -21,14 +21,15 @@ services:
       depends_on:
         remote-webdriver:
           condition: service_started
-        legal-rep-frontend:
+        legal-frontend:
           condition: service_started
       volumes:
         - .:/usr/src/app
     remote-webdriver:
       image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3
     legal-frontend:
-      image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend
+      image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend:${LEGAL_FRONTEND_VERSION:-latest}
+      ##image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend:latest
       environment:
         - IDAM_SECRET_KEY=cmc_it_test_secret_key
         - IDAM_HEALTH_CHECK_URL=http://idam-api:8080/health
