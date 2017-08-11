@@ -9,7 +9,7 @@ module.exports = {
     I = actor()
   },
   fields: {
-    companyName: 'input[id=name]',
+    companyName: 'input[id=name]'
   },
   buttons: {
     startNow: 'input.button'
@@ -22,7 +22,7 @@ module.exports = {
   enterYourDetails () {
     I.see('Enter your details')
     I.see('Your company name')
-    I.fillField(this.fields.companyName, "Abc Company")
+    I.fillField(this.fields.companyName, 'Abc Company')
     I.click(this.buttons.startNow)
   }
 }
