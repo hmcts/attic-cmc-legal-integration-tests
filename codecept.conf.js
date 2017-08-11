@@ -22,11 +22,15 @@ exports.config = {
     homePage: './tests/home/pages/home.js',
     loginPage: './tests/home/pages/login.js',
 
+    startClaimPage: './tests/claim/pages/claimant-start-claim',
+
     userSteps: './tests/home/steps/user.js'
   },
   mocha: {
     reporterOptions: {
-      mochaFile: './output/integration-result.xml'
+     // mochaFile: './output/integration-result.xml'
+      reportDir: './output',
+      inlineAssets: true
     }
   }
 }
