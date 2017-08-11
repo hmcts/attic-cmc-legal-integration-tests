@@ -22,6 +22,9 @@ services:
     fees-api:
       ports:
         - 8182:8080
+    fees-database:
+      ports:
+        - 5427:5432
     draft-store-api:
       ports:
         - 8800:8800

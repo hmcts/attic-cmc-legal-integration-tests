@@ -82,7 +82,24 @@ services:
     idam-database:
       image: docker.artifactory.reform.hmcts.net/auth/idam-database
     fees-api:
-      image: docker.artifactory.reform.hmcts.net/fees-register/fees-api:d737bc96603d706a84fbc924c1566e22a430059e
+      image: docker.artifactory.reform.hmcts.net/fees-register/fees-api
+      healthcheck:
+        retries: 20
+      environment:
+        - AUTH_IDAM_CLIENT_BASEURL=http://idam-api:8080/
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://fees-database:5432/fees_register
+        - SPRING_DATASOURCE_USERNAME=fees_register
+        - SPRING_DATASOURCE_PASSWORD=fees_register
+      depends_on:
+        fees-database:
+          condition: service_healthy
+    fees-database:
+      image: docker.artifactory.reform.hmcts.net/fees-register/fees-database
+      healthcheck:
+        retries: 20
+      environment:
+        - FEES_REGISTER_DB_USERNAME=fees_register
+        - FEES_REGISTER_DB_PASSWORD=fees_register
     draft-store-api:
       image: docker.artifactory.reform.hmcts.net/reform/draft-store-api
       environment:
