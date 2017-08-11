@@ -18,7 +18,7 @@ module.exports = {
   },
 
   startClaim () {
-    I.see('Before you start')
-    I.click(this.buttons.startNow)
+    I.see('Before you start');
+    I.click(this.buttons.startNow);
   }
 }

@@ -19,7 +19,6 @@ module.exports = {
 
   open () {
     I.amOnPage('/')
-    //I.seeInCurrentUrl('/abc')
   },
 
   login (email, password) {
