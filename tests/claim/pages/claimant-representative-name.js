@@ -1,7 +1,7 @@
 'use strict'
 /* global actor */
 
-let I;
+let I
 
 module.exports = {
 
@@ -20,9 +20,9 @@ module.exports = {
   },
 
   enterYourDetails () {
-    I.see('Enter your details');
-    I.see('Your company name');
-    I.fillField(this.fields.companyName, "Abc Company");
-    I.click(this.buttons.startNow);
+    I.see('Enter your details')
+    I.see('Your company name')
+    I.fillField(this.fields.companyName, "Abc Company")
+    I.click(this.buttons.startNow)
   }
 }
