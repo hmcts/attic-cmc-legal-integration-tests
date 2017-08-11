@@ -1,8 +1,8 @@
 'use strict'
 
-const user = require('../../../test-data').user;
+const user = require('../../../test-data').user
+let loginPage, startClaimPage,enterYourDetailsPage
 
-let loginPage, startClaimPage,enterYourDetailsPage;
 module.exports = {
 
   _init () {
