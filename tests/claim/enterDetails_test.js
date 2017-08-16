@@ -7,6 +7,10 @@ Scenario('I can fill in my and their details', (I, userSteps) => {
   userSteps.startClaim()
   userSteps.enterYourDetails()
   userSteps.enterYourCompanyAddress()
+  userSteps.enterYourCompanyContactDetails()
+  userSteps.enterYourReferenceNumber()
+  userSteps.enterYourPreferredCountyCourt()
+
 })
 
 Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enterYourDetailsPage) => {
@@ -25,4 +29,15 @@ Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enter
   enterYourCompanyAddressPage.checkForIndividualMessage()
   enterYourCompanyAddressPage.checkForAddressLineLength()
   enterYourCompanyAddressPage.checkForPostCodeLengthMessage()
+})
+
+Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enterYourCompanyContactDetails) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourDetails()
+  userSteps.enterYourCompanyAddress()
+  enterYourCompanyContactDetails.open
+  enterYourCompanyContactDetails.checkPhoneNumberLengthValidation()
+  enterYourCompanyContactDetails.checkEmptyOrInvalidPhoneNumberValidation()
+  enterYourCompanyContactDetails.checkForEmailFormatErrorMessage()
 })

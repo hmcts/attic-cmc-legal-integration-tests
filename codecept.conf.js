@@ -25,6 +25,9 @@ exports.config = {
     startClaimPage: './tests/claim/pages/claimant-start-claim',
     enterYourDetailsPage: './tests/claim/pages/claimant-representative-name',
     enterYourCompanyAddressPage: './tests/claim/pages/claimant-representative-address',
+    enterYourCompanyContactDetails: './tests/claim/pages/claimant-representative-contacts',
+    referencePage : './tests/claim/pages/claimant-reference',
+    preferredCountyCourtPage : './tests/claim/pages/claimant-preferred-court',
 
     userSteps: './tests/home/steps/user.js'
   },
