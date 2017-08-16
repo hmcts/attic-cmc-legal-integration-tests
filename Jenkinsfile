@@ -8,7 +8,7 @@ properties(
    ])]
 )
 
-@Library(['Reform', 'CMC@feature/Add-parameter-for-git-repo'])
+@Library(['Reform', 'CMC@feature/Add-Legal-integration-tests-in-jenkins-library'])
 import uk.gov.hmcts.cmc.integrationtests.IntegrationTests
 
 def integrationTests = new IntegrationTests(env, this)
