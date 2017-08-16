@@ -8,7 +8,7 @@ properties(
    ])]
 )
 
-@Library(['Reform', 'CMC'])
+@Library(['Reform', 'CMC@feature/Add-parameter-for-git-repo'])
 import uk.gov.hmcts.cmc.integrationtests.IntegrationTests
 
 def integrationTests = new IntegrationTests(env, this)
