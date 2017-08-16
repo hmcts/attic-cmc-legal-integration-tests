@@ -21,7 +21,7 @@ module.exports = {
     I.amOnPage('/claim/preferred-court')
   },
 
-  enterYourPreferredCountyCourt() {
+  enterYourPreferredCountyCourt () {
     I.see('Choose a county court')
     I.fillField(this.fields.courtName, 'Dartford County Court')
     I.click(this.buttons.saveandContinue)

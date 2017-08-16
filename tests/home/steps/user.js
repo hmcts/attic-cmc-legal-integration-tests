@@ -2,7 +2,7 @@
 
 const user = require('../../../test-data').user
 
-let loginPage, startClaimPage, yourDetailsPage, yourCompanyAddressPage, yourContactDetailsPage, yourReferencePage,yourCountyCourtPage
+let loginPage, startClaimPage, yourDetailsPage, yourCompanyAddressPage, yourContactDetailsPage, yourReferencePage, yourCountyCourtPage
 
 module.exports = {
 

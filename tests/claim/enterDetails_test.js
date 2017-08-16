@@ -10,7 +10,6 @@ Scenario('I can fill in my and their details', (I, userSteps) => {
   userSteps.enterYourCompanyContactDetails()
   userSteps.enterYourReferenceNumber()
   userSteps.enterYourPreferredCountyCourt()
-
 })
 
 Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enterYourDetailsPage) => {

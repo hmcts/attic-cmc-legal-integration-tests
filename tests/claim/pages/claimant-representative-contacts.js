@@ -55,7 +55,6 @@ module.exports = {
     I.see('Enter a valid phone number')
   },
 
-
   checkForEmailFormatErrorMessage () {
     I.fillField(this.fields.email, ' ')
     I.click(this.buttons.saveandContinue)
