@@ -24,6 +24,7 @@ exports.config = {
 
     startClaimPage: './tests/claim/pages/claimant-start-claim',
     enterYourDetailsPage: './tests/claim/pages/claimant-representative-name',
+    enterYourCompanyAddressPage: './tests/claim/pages/claimant-representative-address',
 
     userSteps: './tests/home/steps/user.js'
   },
