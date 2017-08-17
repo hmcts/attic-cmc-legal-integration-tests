@@ -8,7 +8,7 @@ properties(
    ])]
 )
 
-@Library(['Reform', 'CMC@feature/Add-Legal-integration-tests-in-jenkins-library'])
+@Library(['Reform', 'CMC'])
 import uk.gov.hmcts.cmc.integrationtests.IntegrationTests
 import uk.gov.hmcts.cmc.Team
 def integrationTests = new IntegrationTests(env, this)
