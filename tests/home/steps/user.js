@@ -2,7 +2,7 @@
 
 const user = require('../../../test-data').user
 
-let loginPage, startClaimPage, yourDetailsPage, yourCompanyAddressPage, yourContactDetailsPage, yourReferencePage, yourCountyCourtPage, claimantTypePage
+let loginPage, startClaimPage, yourDetailsPage, yourCompanyAddressPage, yourContactDetailsPage, yourReferencePage, yourCountyCourtPage, claimantTypePage, claimantAddressPage
 
 module.exports = {
 
@@ -15,6 +15,7 @@ module.exports = {
     yourReferencePage = require('../../claim/pages/claimant-reference')
     yourCountyCourtPage = require('../../claim/pages/claimant-preferred-court')
     claimantTypePage = require('../../claim/pages/claimant-type')
+    claimantAddressPage = require('../../claim/pages/claimant-address')
   },
   loginDefaultUser () {
     loginPage.open()
@@ -25,30 +26,27 @@ module.exports = {
     startClaimPage.startClaim()
   },
   enterYourDetails () {
-    yourDetailsPage.open()
     yourDetailsPage.enterYourDetails()
   },
   enterYourCompanyAddress () {
-    yourCompanyAddressPage.open()
     yourCompanyAddressPage.enterYourCompanyAddress()
   },
   enterYourCompanyContactDetails () {
-    yourContactDetailsPage.open()
     yourContactDetailsPage.enterYourCompanyContactDetails()
   },
   enterYourReferenceNumber () {
-    yourReferencePage.open()
     yourReferencePage.enterYourReferenceForClaim()
   },
   enterYourPreferredCountyCourt () {
-    yourCountyCourtPage.open()
     yourCountyCourtPage.enterYourPreferredCountyCourt()
   },
   enterClaimantTypeIndividual () {
-    claimantTypePage.open()
     claimantTypePage.enterClaimantTypeIndividual()
   },
   enterClaimantTypeOrganisation () {
     claimantTypePage.enterClaimantTypeOrganisation()
+  },
+  enterClaimantAddress () {
+    claimantAddressPage.enterYourCompanyAddress()
   }
 }

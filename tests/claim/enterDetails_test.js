@@ -2,7 +2,7 @@
 
 Feature('Claimant Enter details of claim')
 
-Scenario('I can fill in my and their details', (I, userSteps) => {
+Scenario('I can fill in Claimant organization and their details', (I, userSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
@@ -11,6 +11,21 @@ Scenario('I can fill in my and their details', (I, userSteps) => {
   userSteps.enterYourReferenceNumber()
   userSteps.enterYourPreferredCountyCourt()
   userSteps.enterClaimantTypeOrganisation()
+  I.see('Claimant: Abc corporation')
+  userSteps.enterClaimantAddress()
+})
+
+Scenario('I can fill in Claimant individual and their details', (I, userSteps) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourDetails()
+  userSteps.enterYourCompanyAddress()
+  userSteps.enterYourCompanyContactDetails()
+  userSteps.enterYourReferenceNumber()
+  userSteps.enterYourPreferredCountyCourt()
+  userSteps.enterClaimantTypeIndividual()
+  I.see('Claimant: Mr Benugo')
+  userSteps.enterClaimantAddress()
 })
 
 Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enterYourDetailsPage) => {

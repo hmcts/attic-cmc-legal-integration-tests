@@ -33,7 +33,7 @@ module.exports = {
     I.see('Title (optional)')
     I.fillField(this.fields.individualTitle, 'Mr')
     I.see('Full name')
-    I.fillField(this.fields.individualFullName, 'Codecept')
+    I.fillField(this.fields.individualFullName, 'Benugo')
     I.click(this.buttons.saveandContinue)
   },
 

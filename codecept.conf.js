@@ -29,6 +29,7 @@ exports.config = {
     referencePage: './tests/claim/pages/claimant-reference',
     preferredCountyCourtPage: './tests/claim/pages/claimant-preferred-court',
     claimantType: './tests/claim/pages/claimant-type',
+    claimantAddress: './tests/claim/pages/claimant-address',
 
     userSteps: './tests/home/steps/user.js'
   },
