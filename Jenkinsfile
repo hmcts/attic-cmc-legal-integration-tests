@@ -10,7 +10,7 @@ properties(
 
 @Library(['Reform', 'CMC@feature/Add-Legal-integration-tests-in-jenkins-library'])
 import uk.gov.hmcts.cmc.integrationtests.IntegrationTests
-import uk.gov.hmcts.cmc.integrationtests.Team
+import uk.gov.hmcts.cmc.Team
 def integrationTests = new IntegrationTests(env, this)
 
 timestamps {
