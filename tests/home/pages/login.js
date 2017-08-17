@@ -18,7 +18,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/')
+    I.amOnPage('/legal/')
   },
 
   login (email, password) {

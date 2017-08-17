@@ -16,7 +16,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/representative-name')
+    I.amOnPage('/legal/claim/representative-name')
   },
 
   enterYourDetails () {
