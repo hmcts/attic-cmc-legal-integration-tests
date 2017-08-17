@@ -36,10 +36,7 @@ timestamps {
       }
 
       stage('Run integration tests') {
-        integrationTests.execute([
-          'INTEGRATION_TESTS_VERSION': integrationTestsVersion
-        ],
-        'LEGAL')
+        integrationTests.execute(['INTEGRATION_TESTS_VERSION': integrationTestsVersion], 'LEGAL')
       }
     } finally {
       sh "docker-compose down --remove-orphans"
