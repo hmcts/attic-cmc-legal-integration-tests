@@ -36,7 +36,9 @@ timestamps {
       }
 
       stage('Run integration tests') {
-        integrationTests.execute(['INTEGRATION_TESTS_VERSION': integrationTestsVersion],
+        integrationTests.execute(['INTEGRATION_TESTS_VERSION': integrationTestsVersion,
+                                  'INTEGRATION_TESTS_BRANCH': 'feature/Add-parameter-for-git-repo'
+        ],
           Team.LEGAL
         )
       }
