@@ -10,6 +10,7 @@ properties(
 
 @Library(['Reform', 'CMC@feature/Add-Legal-integration-tests-in-jenkins-library'])
 import uk.gov.hmcts.cmc.integrationtests.IntegrationTests
+uk.gov.hmcts.cmc.integrationtests.IntegrationTests.TYPE
 
 def integrationTests = new IntegrationTests(env, this)
 
@@ -36,7 +37,7 @@ timestamps {
       }
 
       stage('Run integration tests') {
-        integrationTests.execute(['INTEGRATION_TESTS_VERSION': integrationTestsVersion], 'LEGAL')
+        integrationTests.execute(['INTEGRATION_TESTS_VERSION': integrationTestsVersion], TYPE.LEGAL)
       }
     } finally {
       sh "docker-compose down --remove-orphans"
