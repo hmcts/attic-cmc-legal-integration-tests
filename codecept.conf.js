@@ -11,7 +11,7 @@ exports.config = {
       host: process.env.WEB_DRIVER_HOST || 'localhost',
       port: process.env.WEB_DRIVER_PORT || '4444',
       browser: process.env.BROWSER || 'chrome',
-      url: process.env.URL || 'https://localhost:4000',
+      url: process.env.URL || 'https://localhost:4000/legal',
       waitForTimeout: 15000,
       desiredCapabilities: {
         proxy: new ProxySettings()

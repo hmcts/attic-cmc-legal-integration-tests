@@ -14,7 +14,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/legal/claim/start')
+    I.amOnPage('/claim/start')
   },
 
   startClaim () {
