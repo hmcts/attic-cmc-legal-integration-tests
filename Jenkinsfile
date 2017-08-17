@@ -1,7 +1,7 @@
 #!groovy
 
 properties(
-  [[$class: 'GithubProjectProperty', displayName: 'Integration tests', projectUrlStr: 'https://github.com/hmcts/legal-integration-tests.git'],
+  [[$class: 'GithubProjectProperty', displayName: 'Integration tests', projectUrlStr: 'https://github.com/hmcts/legal-integration-tests/'],
    pipelineTriggers([
      [$class: 'GitHubPushTrigger'],
      [$class: 'hudson.triggers.TimerTrigger', spec  : 'H 1 * * *']
@@ -10,7 +10,7 @@ properties(
 
 @Library(['Reform', 'CMC@feature/Add-Legal-integration-tests-in-jenkins-library'])
 import uk.gov.hmcts.cmc.integrationtests.IntegrationTests
-import uk.gov.hmcts.cmc.integrationtests.Team
+import uk.gov.hmcts.cmc.Team
 
 def integrationTests = new IntegrationTests(env, this)
 
