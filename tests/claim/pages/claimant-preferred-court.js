@@ -24,6 +24,7 @@ module.exports = {
   enterYourPreferredCountyCourt () {
     I.see('Choose a county court')
     I.fillField(this.fields.courtName, 'Dartford County Court')
+    I.see('Find a county court')
     I.click(this.buttons.saveandContinue)
   }
 

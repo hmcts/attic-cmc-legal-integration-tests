@@ -2,7 +2,7 @@
 
 const user = require('../../../test-data').user
 
-let loginPage, startClaimPage, yourDetailsPage, yourCompanyAddressPage, yourContactDetailsPage, yourReferencePage, yourCountyCourtPage
+let loginPage, startClaimPage, yourDetailsPage, yourCompanyAddressPage, yourContactDetailsPage, yourReferencePage, yourCountyCourtPage, claimantTypePage
 
 module.exports = {
 
@@ -14,6 +14,7 @@ module.exports = {
     yourContactDetailsPage = require('../../claim/pages/claimant-representative-contacts')
     yourReferencePage = require('../../claim/pages/claimant-reference')
     yourCountyCourtPage = require('../../claim/pages/claimant-preferred-court')
+    claimantTypePage = require('../../claim/pages/claimant-type')
   },
   loginDefaultUser () {
     loginPage.open()
@@ -42,5 +43,12 @@ module.exports = {
   enterYourPreferredCountyCourt () {
     yourCountyCourtPage.open()
     yourCountyCourtPage.enterYourPreferredCountyCourt()
+  },
+  enterClaimantTypeIndividual () {
+    claimantTypePage.open()
+    claimantTypePage.enterClaimantTypeIndividual()
+  },
+  enterClaimantTypeOrganisation () {
+    claimantTypePage.enterClaimantTypeOrganisation()
   }
 }

@@ -28,6 +28,7 @@ exports.config = {
     enterYourCompanyContactDetails: './tests/claim/pages/claimant-representative-contacts',
     referencePage: './tests/claim/pages/claimant-reference',
     preferredCountyCourtPage: './tests/claim/pages/claimant-preferred-court',
+    claimantType: './tests/claim/pages/claimant-type',
 
     userSteps: './tests/home/steps/user.js'
   },

@@ -10,6 +10,7 @@ Scenario('I can fill in my and their details', (I, userSteps) => {
   userSteps.enterYourCompanyContactDetails()
   userSteps.enterYourReferenceNumber()
   userSteps.enterYourPreferredCountyCourt()
+  userSteps.enterClaimantTypeOrganisation()
 })
 
 Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enterYourDetailsPage) => {
@@ -35,8 +36,22 @@ Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enter
   userSteps.startClaim()
   userSteps.enterYourDetails()
   userSteps.enterYourCompanyAddress()
-  enterYourCompanyContactDetails.open
   enterYourCompanyContactDetails.checkPhoneNumberLengthValidation()
   enterYourCompanyContactDetails.checkEmptyOrInvalidPhoneNumberValidation()
   enterYourCompanyContactDetails.checkForEmailFormatErrorMessage()
+})
+
+Scenario('Check Error Messages in claimant type Page', (I, userSteps, claimantType) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourDetails()
+  userSteps.enterYourCompanyAddress()
+  userSteps.enterYourCompanyContactDetails()
+  userSteps.enterYourReferenceNumber()
+  userSteps.enterYourPreferredCountyCourt()
+  claimantType.checkMandatoryErrorMessageForChooseClaimant()
+  claimantType.checkMandatoryErrorMessageForOrganisationName()
+  claimantType.checkForBlankErrorMessageForOrganisationName()
+  claimantType.checkMandatoryErrorMessageForIndividualName()
+  claimantType.checkForBlankErrorMessageForIndividualName()
 })
