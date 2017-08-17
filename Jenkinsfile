@@ -1,7 +1,7 @@
 #!groovy
 
 properties(
-  [[$class: 'GithubProjectProperty', displayName: 'Integration tests', projectUrlStr: 'https://github.com/hmcts/legal-integration-tests/'],
+  [[$class: 'GithubProjectProperty', displayName: 'Integration tests', projectUrlStr: 'https://github.com/hmcts/legal-integration-tests.git'],
    pipelineTriggers([
      [$class: 'GitHubPushTrigger'],
      [$class: 'hudson.triggers.TimerTrigger', spec  : 'H 1 * * *']
