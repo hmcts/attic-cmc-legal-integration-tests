@@ -15,7 +15,7 @@
     "request-promise-native": "^1.0.3"
   },
   "devDependencies": {
-    "codeceptjs": "^0.4.9",
+    "codeceptjs": "^1.0.1",
     "mocha-junit-reporter": "^1.13.0",
     "mochawesome": "^2.3.0",
     "standard": "^8.6.0",
