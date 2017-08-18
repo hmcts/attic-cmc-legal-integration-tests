@@ -18,7 +18,7 @@ class Client {
         surname: 'smith',
         levelOfAccess: 1,
         userGroup: {
-          code: 'cmc-private-beta'
+          code: 'cmc-solicitor'
         },
         activationDate: '',
         lastAccess: '',
