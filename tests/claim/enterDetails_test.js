@@ -35,7 +35,7 @@ Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enter
   enterYourDetailsPage.checkForBlankErrorMessage()
 })
 
-Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enterYourCompanyAddressPage) => {
+Scenario('Check Error Messages in Enter your company address Page', (I, userSteps, enterYourCompanyAddressPage) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
@@ -46,7 +46,7 @@ Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enter
   enterYourCompanyAddressPage.checkForPostCodeLengthMessage()
 })
 
-Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enterYourCompanyContactDetails) => {
+Scenario('Check Error Messages in Enter your company contact details Page', (I, userSteps, enterYourCompanyContactDetails) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
@@ -69,4 +69,20 @@ Scenario('Check Error Messages in claimant type Page', (I, userSteps, claimantTy
   claimantType.checkForBlankErrorMessageForOrganisationName()
   claimantType.checkMandatoryErrorMessageForIndividualName()
   claimantType.checkForBlankErrorMessageForIndividualName()
+})
+
+Scenario('Check Error Messages in Enter your claimant address Page', (I, userSteps, claimantAddress) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourDetails()
+  userSteps.enterYourCompanyAddress()
+  userSteps.enterYourCompanyContactDetails()
+  userSteps.enterYourReferenceNumber()
+  userSteps.enterYourPreferredCountyCourt()
+  userSteps.enterClaimantTypeOrganisation()
+  claimantAddress.checkMandatoryErrorMessage()
+  claimantAddress.checkForBlankErrorMessage()
+  claimantAddress.checkForIndividualMessage()
+  claimantAddress.checkForAddressLineLength()
+  claimantAddress.checkForPostCodeLengthMessage()
 })
