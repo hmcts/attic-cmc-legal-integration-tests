@@ -24,7 +24,7 @@ services:
         legal-frontend:
           condition: service_started
       volumes:
-        - .:/usr/src/app
+        - ./output:/usr/src/app/output
     remote-webdriver:
       image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3
     legal-frontend:
