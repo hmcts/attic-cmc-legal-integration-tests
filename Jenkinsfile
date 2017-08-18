@@ -8,7 +8,7 @@ properties(
    ])]
 )
 
-@Library(['Reform', 'CMC@feature/set-config-for-branch'])
+@Library(['Reform', 'CMC'])
 import uk.gov.hmcts.cmc.integrationtests.IntegrationTests
 import uk.gov.hmcts.cmc.Team
 def integrationTests = new IntegrationTests(env, this)
@@ -37,7 +37,7 @@ timestamps {
 
       stage('Run integration tests') {
         integrationTests.execute(['INTEGRATION_TESTS_VERSION': integrationTestsVersion,
-                                  'INTEGRATION_TESTS_BRANCH': 'feature/Add-parameter-for-git-repo'
+                                  'INTEGRATION_TESTS_BRANCH': 'master'
         ],
           Team.LEGAL
         )
