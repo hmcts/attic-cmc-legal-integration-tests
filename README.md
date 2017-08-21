@@ -53,7 +53,7 @@ curl -XPOST -H 'Content-Type: application/json' localhost:8080/testing-support/a
     "surname": "smith",
     "levelOfAccess": 0,
     "userGroup": {
-      "code": "cmc-private-beta"
+      "code": "cmc-solicitor"
     },
     "activationDate": "",
     "lastAccess": "",
