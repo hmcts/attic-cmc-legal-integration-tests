@@ -16,9 +16,9 @@ class Client {
         email: email,
         forename: 'john',
         surname: 'smith',
-        levelOfAccess: 1,
+        levelOfAccess: 0,
         userGroup: {
-          code: 'cmc-private-beta'
+          code: 'cmc-solicitor'
         },
         activationDate: '',
         lastAccess: '',
