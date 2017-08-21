@@ -25,6 +25,7 @@ services:
           condition: service_started
       volumes:
         - ./output:/usr/src/app/output
+        - ./integration-tests-report:/usr/src/app/mochawesome-report
     remote-webdriver:
       image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3
     legal-frontend:
