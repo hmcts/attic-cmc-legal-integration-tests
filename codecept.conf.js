@@ -38,7 +38,6 @@ exports.config = {
   },
   mocha: {
     reporterOptions: {
-     // mochaFile: './output/integration-result.xml',
       reportDir: './output',
       inlineAssets: true
     }
