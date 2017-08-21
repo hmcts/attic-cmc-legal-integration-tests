@@ -64,7 +64,7 @@ services:
       depends_on:
         - idam-api
     idam-api:
-      image: docker.artifactory.reform.hmcts.net/auth/idam-api:2932f67267c7400c00ec91fff9a938faa3d26c97
+      image: docker.artifactory.reform.hmcts.net/auth/idam-api
       command: --wait-for-database 60
       environment:
         - IDAM_SUPERUSER_EMAIL=cmc-int-test@cmc.reform.hmcts.net
@@ -72,6 +72,7 @@ services:
         - IDAM_TESTING_SUPPORT_ENABLED=true
         - NOTIFY_API_KEY=${GOV_NOTIFY_API_KEY}
         - NOTIFY_CMC_ACTIVATE_USER_TEMPLATE=76aa8695-64e8-4afd-ae13-bc8385302b1f
+        - NOTIFY_CMC_SOLICITOR_ACTIVATE_USER_TEMPLATE=76aa8695-64e8-4afd-ae13-bc8385302b1f
         - IDAM_SECRET=cmc_it_test_secret_key
         - NOTIFY=true
         - NOTIFY_CMC_WELCOME_USER_TEMPLATE=fake
@@ -82,6 +83,7 @@ services:
         - NOTIFY_DIVORCE_ACTIVATE_USER_TEMPLATE=fake
         - NOTIFY_SSCS_ACTIVATE_USER_TEMPLATE=fake
         - NOTIFY_CCD_ACTIVATE_USER_TEMPLATE=fake
+        - NOTIFY_CMC_ACTIVATE_USER_TEMPLATE=fake
       depends_on:
         - idam-database
     idam-database:
