@@ -31,11 +31,14 @@ exports.config = {
     claimantType: './tests/claim/pages/claimant-type',
     claimantAddress: './tests/claim/pages/claimant-address',
 
-    userSteps: './tests/home/steps/user.js'
+    defendantType: './tests/defence/pages/defendant-type',
+
+    userSteps: './tests/home/steps/user.js',
+    defendantSteps: './tests/home/steps/defendant.js'
   },
   mocha: {
     reporterOptions: {
-     // mochaFile: './output/integration-result.xml'
+     // mochaFile: './output/integration-result.xml',
       reportDir: './output',
       inlineAssets: true
     }
