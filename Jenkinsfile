@@ -14,7 +14,7 @@ import uk.gov.hmcts.cmc.Team
 def integrationTests = new IntegrationTests(env, this)
 
 timestamps {
-  node {
+  node('slave') {
     try {
       def integrationTestsVersion
 
