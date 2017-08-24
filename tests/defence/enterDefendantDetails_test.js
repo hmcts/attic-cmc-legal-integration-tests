@@ -15,6 +15,7 @@ Scenario('I can fill in Claimant organization and Defendant organization details
   userSteps.enterClaimantAddress()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
+  defendantSteps.enterDefendantAddress()
 })
 
 Scenario('I can fill in Claimant individual and Defendant individual details', (I, userSteps, defendantSteps) => {
@@ -30,6 +31,7 @@ Scenario('I can fill in Claimant individual and Defendant individual details', (
   userSteps.enterClaimantAddress()
   defendantSteps.enterDefendantTypeIndividual()
   I.see('Defendant: Mr Pret')
+  defendantSteps.enterDefendantAddress()
 })
 
 Scenario('Check Error Messages in Enter your defendant type Page', (I, userSteps, defendantType) => {
@@ -47,4 +49,24 @@ Scenario('Check Error Messages in Enter your defendant type Page', (I, userSteps
   defendantType.checkForBlankErrorMessageForOrganisationName()
   defendantType.checkMandatoryErrorMessageForIndividualName()
   defendantType.checkForBlankErrorMessageForIndividualName()
+})
+
+Scenario('Check Error Messages in Enter your defendant address Page', (I, userSteps, defendantSteps, defendantAddress) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourDetails()
+  userSteps.enterYourCompanyAddress()
+  userSteps.enterYourCompanyContactDetails()
+  userSteps.enterYourReferenceNumber()
+  userSteps.enterYourPreferredCountyCourt()
+  userSteps.enterClaimantTypeOrganisation()
+  I.see('Claimant: Abc corporation')
+  userSteps.enterClaimantAddress()
+  defendantSteps.enterDefendantTypeOrganisation()
+  I.see('Defendant: Def corporation')
+  defendantAddress.checkMandatoryErrorMessage()
+  defendantAddress.checkForBlankErrorMessage()
+  defendantAddress.checkForIndividualMessage()
+  defendantAddress.checkForAddressLineLength()
+  defendantAddress.checkForPostCodeLengthMessage()
 })
