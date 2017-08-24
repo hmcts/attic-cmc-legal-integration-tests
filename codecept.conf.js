@@ -32,6 +32,7 @@ exports.config = {
     claimantAddress: './tests/claim/pages/claimant-address',
 
     defendantType: './tests/defence/pages/defendant-type',
+    defendantAddress: './tests/defence/pages/defendant-address',
 
     userSteps: './tests/home/steps/user.js',
     defendantSteps: './tests/home/steps/defendant.js'

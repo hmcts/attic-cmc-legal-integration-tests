@@ -19,19 +19,19 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/claimant-address')
+    I.amOnPage('/claim/defendant-address')
   },
 
   enterYourCompanyAddress () {
     I.see('Address')
     I.see('Address line 1')
-    I.fillField(this.fields.addressLine1, 'CMC T2')
+    I.fillField(this.fields.addressLine1, 'CMC T2 Defendant')
     I.see('Address line 2 (optional)')
     I.fillField(this.fields.addressLine2, 'Westminster')
     I.see('Town or city (optional)')
     I.fillField(this.fields.cityName, 'London')
     I.see('Postcode')
-    I.fillField(this.fields.postcode, 'SW1H 9AJ')
+    I.fillField(this.fields.postcode, 'SW1H 9BJ')
     I.click(this.buttons.saveandContinue)
   },
 

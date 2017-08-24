@@ -1,10 +1,11 @@
 'use strict'
 
-let defendantTypePage
+let defendantTypePage, defendantAddressPage
 
 module.exports = {
   _init () {
     defendantTypePage = require('../../defence/pages/defendant-type')
+    defendantAddressPage = require('../../defence/pages/defendant-address')
   },
 
   enterDefendantTypeIndividual () {
@@ -12,5 +13,10 @@ module.exports = {
   },
   enterDefendantTypeOrganisation () {
     defendantTypePage.enterDefendantTypeOrganisation()
+  },
+
+  enterDefendantAddress () {
+    defendantAddressPage.enterYourCompanyAddress()
   }
+
 }
