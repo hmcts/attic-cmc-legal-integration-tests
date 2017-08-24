@@ -23,7 +23,7 @@ module.exports = {
   enterYourDetails () {
     I.see('Enter your details')
     I.see('Your organisation name')
-    I.fillField(this.fields.organisationName, 'Abc Company')
+    I.fillField(this.fields.organisationName, 'Abc Organisation')
     I.click(this.buttons.startNow)
   },
 
