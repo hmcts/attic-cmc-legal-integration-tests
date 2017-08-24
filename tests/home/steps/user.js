@@ -28,11 +28,11 @@ module.exports = {
   enterYourDetails () {
     yourDetailsPage.enterYourDetails()
   },
-  enterYourCompanyAddress () {
-    yourCompanyAddressPage.enterYourCompanyAddress()
+  enterYourOrganisationAddress () {
+    yourCompanyAddressPage.enterYourOrganisationAddress()
   },
-  enterYourCompanyContactDetails () {
-    yourContactDetailsPage.enterYourCompanyContactDetails()
+  enterYourOrganisationContactDetails () {
+    yourContactDetailsPage.enterYourOrganisationContactDetails()
   },
   enterYourReferenceNumber () {
     yourReferencePage.enterYourReferenceForClaim()
@@ -47,6 +47,6 @@ module.exports = {
     claimantTypePage.enterClaimantTypeOrganisation()
   },
   enterClaimantAddress () {
-    claimantAddressPage.enterYourCompanyAddress()
+    claimantAddressPage.enterYourOrganisationAddress()
   }
 }
