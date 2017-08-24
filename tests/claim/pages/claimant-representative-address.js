@@ -23,7 +23,7 @@ module.exports = {
   },
 
   enterYourCompanyAddress () {
-    I.see('Your company address')
+    I.see('Your organisation address')
     I.see('Address line 1')
     I.fillField(this.fields.addressLine1, 'MOJ')
     I.see('Address line 2 (optional)')

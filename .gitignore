@@ -11,3 +11,5 @@ output/*
 .project
 .settings/
 .gradle/
+
+integration-tests-report/
