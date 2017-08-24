@@ -35,7 +35,7 @@ Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enter
   enterYourDetailsPage.checkForBlankErrorMessage()
 })
 
-Scenario('Check Error Messages in Enter your company address Page', (I, userSteps, enterYourCompanyAddressPage) => {
+Scenario('Check Error Messages in Enter your organisation address Page', (I, userSteps, enterYourCompanyAddressPage) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
