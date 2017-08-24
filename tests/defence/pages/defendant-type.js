@@ -78,6 +78,7 @@ module.exports = {
     I.see('There was a problem')
     I.see('Enter a full name')
   },
+
   checkForBlankErrorMessageForIndividualName () {
     I.checkOption(this.fields.individualType)
     I.see('Full name')

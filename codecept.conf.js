@@ -33,6 +33,9 @@ exports.config = {
 
     defendantType: './tests/defence/pages/defendant-type',
     defendantAddress: './tests/defence/pages/defendant-address',
+    defendantRepresentative: './tests/defence/pages/defendant-represented',
+    defendantRepresentativeAddress: './tests/defence/pages/defendant-reps-address',
+    defendantAddAnotherDefendant: './tests/defence/pages/defendant-add',
 
     userSteps: './tests/home/steps/user.js',
     defendantSteps: './tests/home/steps/defendant.js'
