@@ -22,7 +22,7 @@ module.exports = {
 
   enterYourDetails () {
     I.see('Enter your details')
-    I.see('Your company name')
+    I.see('Your organisation name')
     I.fillField(this.fields.companyName, 'Abc Company')
     I.click(this.buttons.startNow)
   },
@@ -30,14 +30,14 @@ module.exports = {
   checkMandatoryErrorMessage () {
     I.click(this.buttons.startNow)
     I.see('There was a problem')
-    I.see('Enter your company name')
+    I.see('Enter your organisation name')
   },
 
   checkForBlankErrorMessage () {
     I.fillField(this.fields.companyName, '')
     I.click(this.buttons.startNow)
     I.see('There was a problem')
-    I.see('Enter your company name')
+    I.see('Enter your organisation name')
   }
 
 }
