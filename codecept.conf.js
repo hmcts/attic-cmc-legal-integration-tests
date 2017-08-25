@@ -38,7 +38,7 @@ exports.config = {
     defendantAddAnotherDefendant: './tests/defence/pages/defendant-add',
 
     personalInjuryPage: './tests/amountClaim/pages/personal-injury',
-    housingDisrepairPage: './testsamountClaim/pages/housing-disrepair',
+    housingDisrepairPage: './tests/amountClaim/pages/housing-disrepair',
     summariseTheClaimPage: './tests/amountClaim/pages/summarise-the-claim',
     amountPage: './tests/amountClaim/pages/amount',
     totalPage: './tests/amountClaim/pages/total',
