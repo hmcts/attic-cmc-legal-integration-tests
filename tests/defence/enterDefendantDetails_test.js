@@ -136,5 +136,4 @@ Scenario('Check Error Messages in Enter another defendant add Page', (I, userSte
   I.see("Defendant's representative: Defendant Rep Ltd")
   defendantSteps.enterDefendantRepsAddress()
   defendantAddAnotherDefendant.checkMandatoryErrorMessage()
-
 })
