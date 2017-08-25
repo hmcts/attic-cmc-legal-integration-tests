@@ -21,5 +21,4 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   defendantSteps.enterDefendantRepsAddress()
   defendantSteps.noAnotherDefendant()
   amountClaims.PersonalInjuryLessThan1000()
-  I.see('abc')
 })
