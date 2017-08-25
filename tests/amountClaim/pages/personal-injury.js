@@ -9,10 +9,10 @@ module.exports = {
     I = actor()
   },
   fields: {
-    addressLine1: 'input[id=line1]',
-    addressLine2: 'input[id=line2]',
-    cityName: 'input[id=city]',
-    postcode: 'input[id=postcode]'
+    personalInjuryYes: 'input[id=personal_injury_yes]',
+    personalInjuryNo: 'input[id=personal_injury_no]',
+    generalDamagesLess: 'input[id=generalDamages[value]LESS]',
+    generalDamagesMore: 'input[id=generalDamages[value]MORE]'
   },
   buttons: {
     saveandContinue: 'input.button'
@@ -20,5 +20,24 @@ module.exports = {
 
   open () {
     I.amOnPage('/claim/personal-injury')
+  },
+
+  enterPersonalInjuryLessThan1000 () {
+    I.see('Is it a personal injury claim?')
+    I.checkOption(this.fields.personalInjuryYes)
+    I.see('How much do you expect to recover as general damages for pain,')
+    I.see('suffering and loss of amenity?')
+    I.checkOption(this.fields.generalDamagesLess)
+    I.click(this.buttons.saveandContinue)
+  },
+
+  enterPersonalInjuryMoreThan1000 () {
+    I.see('Is it a personal injury claim?')
+    I.checkOption(this.fields.personalInjuryYes)
+    I.see('How much do you expect to recover as general damages for pain,')
+    I.see('suffering and loss of amenity?')
+    I.checkOption(this.fields.generalDamagesMore)
+    I.click(this.buttons.saveandContinue)
   }
+
 }

@@ -20,8 +20,7 @@ module.exports = {
 
   enterDefendantAddress () {
     defendantAddressPage.enterYourOrganisationAddress()
-  }
-  ,
+  },
 
   enterDefendantRepsCompanyName () {
     defendantRepresentativePage.enterDefendantCompanyName()

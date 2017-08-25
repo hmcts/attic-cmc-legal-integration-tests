@@ -25,6 +25,14 @@ module.exports = {
     statementOfTruthPage.open()
     payByAccountPage.open()
     submittedPage.open()
+  },
+
+  PersonalInjuryLessThan1000 () {
+    personalInjuryPage.enterPersonalInjuryLessThan1000()
+  },
+
+  PersonalInjuryMoreThan1000 () {
+    personalInjuryPage.enterPersonalInjuryMoreThan1000()
   }
 
 }
