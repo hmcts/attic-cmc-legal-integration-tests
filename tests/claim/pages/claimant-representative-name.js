@@ -9,7 +9,7 @@ module.exports = {
     I = actor()
   },
   fields: {
-    companyName: 'input[id=name]'
+    organisationName: 'input[id=name]'
   },
 
   buttons: {
@@ -23,7 +23,7 @@ module.exports = {
   enterYourDetails () {
     I.see('Enter your details')
     I.see('Your organisation name')
-    I.fillField(this.fields.companyName, 'Abc Company')
+    I.fillField(this.fields.organisationName, 'Abc Organisation')
     I.click(this.buttons.startNow)
   },
 
@@ -34,7 +34,7 @@ module.exports = {
   },
 
   checkForBlankErrorMessage () {
-    I.fillField(this.fields.companyName, '')
+    I.fillField(this.fields.organisationName, '')
     I.click(this.buttons.startNow)
     I.see('There was a problem')
     I.see('Enter your organisation name')

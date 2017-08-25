@@ -22,7 +22,7 @@ module.exports = {
     I.amOnPage('/claim/claimant-address')
   },
 
-  enterYourCompanyAddress () {
+  enterYourOrganisationAddress () {
     I.see('Address')
     I.see('Address line 1')
     I.fillField(this.fields.addressLine1, 'CMC T2')
