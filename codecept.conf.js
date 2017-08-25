@@ -37,8 +37,19 @@ exports.config = {
     defendantRepresentativeAddress: './tests/defence/pages/defendant-reps-address',
     defendantAddAnotherDefendant: './tests/defence/pages/defendant-add',
 
+    personalInjuryPage: './tests/amountClaim/pages/personal-injury',
+    housingDisrepairPage: './testsamountClaim/pages/housing-disrepair',
+    summariseTheClaimPage: './tests/amountClaim/pages/summarise-the-claim',
+    amountPage: './tests/amountClaim/pages/amount',
+    totalPage: './tests/amountClaim/pages/total',
+    detailsSummaryPage: './tests/amountClaim/pages/details-summary',
+    statementOfTruthPage: './tests/amountClaim/pages/statement-of-truth',
+    payByAccountPage: './tests/amountClaim/pages/pay-by-account',
+    submittedPage: './tests/amountClaim/pages/submitted',
+
     userSteps: './tests/home/steps/user.js',
-    defendantSteps: './tests/home/steps/defendant.js'
+    defendantSteps: './tests/home/steps/defendant.js',
+    amountClaimSteps: './tests/home/steps/amountClaims.js'
   },
   mocha: {
     reporterOptions: {
