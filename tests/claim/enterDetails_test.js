@@ -46,14 +46,14 @@ Scenario('Check Error Messages in Enter your organisation address Page', (I, use
   enterYourOrganisationAddressPage.checkForPostCodeLengthMessage()
 })
 
-Scenario('Check Error Messages in Enter your organisation contact details Page', (I, userSteps, enterYourOrganisationAddressPage) => {
+Scenario('Check Error Messages in Enter your organisation contact details Page', (I, userSteps, enterYourOrganisationContactDetails) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
   userSteps.enterYourOrganisationAddress()
-  enterYourOrganisationAddressPage.checkPhoneNumberLengthValidation()
-  enterYourOrganisationAddressPage.checkEmptyOrInvalidPhoneNumberValidation()
-  enterYourOrganisationAddressPage.checkForEmailFormatErrorMessage()
+  enterYourOrganisationContactDetails.checkPhoneNumberLengthValidation()
+  enterYourOrganisationContactDetails.checkEmptyOrInvalidPhoneNumberValidation()
+  enterYourOrganisationContactDetails.checkForEmailFormatErrorMessage()
 })
 
 Scenario('Check Error Messages in claimant type Page', (I, userSteps, claimantType) => {
