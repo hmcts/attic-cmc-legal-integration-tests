@@ -36,6 +36,7 @@ module.exports = {
     I.see('Has the defendant got a representative')
     I.see("who's instructed to accept service?")
     I.checkOption(this.fields.defendantRepresentedNo)
+    I.click(this.buttons.saveandContinue)
   },
 
   checkMandatoryErrorMessage () {
