@@ -11,8 +11,8 @@ module.exports = {
   fields: {
     personalInjuryYes: 'input[id=personal_injury_yes]',
     personalInjuryNo: 'input[id=personal_injury_no]',
-    generalDamagesLess: 'input[id=generalDamages[value]LESS]',
-    generalDamagesMore: 'input[id=generalDamages[value]MORE]'
+    generalDamagesLess: 'input[id="generalDamages[value]LESS"]',
+    generalDamagesMore: 'input[id="generalDamages[value]MORE"]'
   },
   buttons: {
     saveandContinue: 'input.button'
