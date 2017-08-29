@@ -56,7 +56,7 @@ module.exports = {
     I.checkOption(this.fields.personalInjuryYes)
     I.click(this.buttons.saveandContinue)
     I.see('There was a problem')
-    I.see('Choose yes if it’s a personal injury claim')
+    I.see('Choose an amount')
   }
 
 }
