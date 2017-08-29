@@ -38,6 +38,25 @@ module.exports = {
     I.see('suffering and loss of amenity?')
     I.checkOption(this.fields.generalDamagesMore)
     I.click(this.buttons.saveandContinue)
+  },
+
+  noPersonalInjury () {
+    I.see('Is it a personal injury claim?')
+    I.checkOption(this.fields.personalInjuryNo)
+    I.click(this.buttons.saveandContinue)
+  },
+
+  checkMandatoryErrorMessage () {
+    I.click(this.buttons.saveandContinue)
+    I.see('There was a problem')
+    I.see('Choose yes if it’s a personal injury claim')
+  },
+
+  checkMandatoryErrorMessageForAmount () {
+    I.checkOption(this.fields.personalInjuryYes)
+    I.click(this.buttons.saveandContinue)
+    I.see('There was a problem')
+    I.see('Choose yes if it’s a personal injury claim')
   }
 
 }

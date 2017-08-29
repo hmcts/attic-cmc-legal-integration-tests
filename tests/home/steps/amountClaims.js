@@ -27,12 +27,16 @@ module.exports = {
     submittedPage.open()
   },
 
-  PersonalInjuryLessThan1000 () {
+  personalInjuryLessThan1000 () {
     personalInjuryPage.enterPersonalInjuryLessThan1000()
   },
 
-  PersonalInjuryMoreThan1000 () {
+  personalInjuryMoreThan1000 () {
+    personalInjuryPage.open()
     personalInjuryPage.enterPersonalInjuryMoreThan1000()
-  }
+  },
 
+  noPersonalInjuryClaim () {
+    personalInjuryPage.noPersonalInjury()
+  }
 }
