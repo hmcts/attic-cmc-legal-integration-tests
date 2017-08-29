@@ -123,6 +123,8 @@ services:
       depends_on:
         claim-store-database:
           condition: service_healthy
+        smtp-server:
+          condition: service_started
         pdf-service-api:
           condition: service_healthy
     claim-store-database:
@@ -186,3 +188,5 @@ services:
         - REFORM_ENVIRONMENT
       healthcheck:
         retries: 20
+    smtp-server:
+      image: mailhog/mailhog
