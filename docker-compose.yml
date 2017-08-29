@@ -30,7 +30,6 @@ services:
       image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3
     legal-frontend:
       image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend:${LEGAL_FRONTEND_VERSION:-latest}
-      ##image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend:latest
       environment:
         - IDAM_SECRET_KEY=cmc_it_test_secret_key
         - IDAM_HEALTH_CHECK_URL=http://idam-api:8080/health
@@ -38,6 +37,8 @@ services:
         - IDAM_AUTHENTICATION_WEB_URL=https://authentication-web:8000
         - FEES_URL=http://fees-api:8080
         - DRAFT_STORE_URL=http://draft-store-api:8800
+        - CLAIM_STORE_URL=http://claim-store-api:4400
+        - PDF_SERVICE_URL=http://pdf-service-api:5500
         - LOG_LEVEL=DEBUG
         - http_proxy=
         - https_proxy=
@@ -47,6 +48,8 @@ services:
           condition: service_started
         authentication-web:
           condition: service_started
+        claim-store-api:
+          condition: service_healthy
         fees-api:
           condition: service_healthy
         draft-store-api:
@@ -90,6 +93,45 @@ services:
         - idam-database
     idam-database:
       image: docker.artifactory.reform.hmcts.net/auth/idam-database
+    claim-store-api:
+      image: docker.artifactory.reform.hmcts.net/cmc/claim-store-api:${CLAIM_STORE_API_VERSION:-latest}
+      healthcheck:
+        retries: 40
+      environment:
+        - CLAIM_STORE_DB_HOST=claim-store-database
+        - CLAIM_STORE_DB_PORT=5432
+        - CLAIM_STORE_DB_USERNAME=claimstore
+        - CLAIM_STORE_DB_PASSWORD=claimstore
+        - IDAM_API_URL=http://idam-api:8080
+        - GOV_NOTIFY_API_KEY
+        - FRONTEND_BASE_URL=https://www-local.moneyclaim.reform.hmcts.net:3000
+        - CLAIM_STORE_TEST_SUPPORT_ENABLED=true
+        - STAFF_NOTIFICATIONS_SENDER=no-reply@example.com
+        - STAFF_NOTIFICATIONS_RECIPIENT=staff@example.com
+        - SPRING_MAIL_HOST=smtp-server
+        - SPRING_MAIL_PORT=1025
+        - PDF_SERVICE_URL=http://pdf-service-api:5500
+        - ROOT_APPENDER
+        - JSON_CONSOLE_PRETTY_PRINT
+        - ROOT_LOGGING_LEVEL
+        - REFORM_SERVICE_NAME
+        - REFORM_TEAM
+        - REFORM_ENVIRONMENT
+        - http_proxy
+        - https_proxy
+        - no_proxy=idam-api,pdf-service-api
+      depends_on:
+        claim-store-database:
+          condition: service_healthy
+        pdf-service-api:
+          condition: service_healthy
+    claim-store-database:
+      image: docker.artifactory.reform.hmcts.net/cmc/claim-store-database:${CLAIM_STORE_DATABASE_VERSION:-latest}
+      healthcheck:
+        retries: 40
+      environment:
+        - CLAIM_STORE_DB_USERNAME=claimstore
+        - CLAIM_STORE_DB_PASSWORD=claimstore
     fees-api:
       image: docker.artifactory.reform.hmcts.net/fees-register/fees-api
       healthcheck:
