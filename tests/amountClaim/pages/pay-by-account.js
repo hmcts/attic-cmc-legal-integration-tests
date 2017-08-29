@@ -9,10 +9,10 @@ module.exports = {
     I = actor()
   },
   fields: {
-
+    feeAccountReference: 'input[id=reference]'
   },
   buttons: {
-
+    saveandContinue: 'input.button'
   },
 
   open () {

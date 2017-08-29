@@ -9,10 +9,11 @@ module.exports = {
     I = actor()
   },
   fields: {
-
+    signerName: 'input[id=signerName]',
+    signerRole: 'input[id=signerRole]'
   },
   buttons: {
-
+    saveandContinue: 'input.button'
   },
 
   open () {

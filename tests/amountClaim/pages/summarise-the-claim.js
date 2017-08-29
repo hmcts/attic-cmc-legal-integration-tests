@@ -9,7 +9,7 @@ module.exports = {
     I = actor()
   },
   fields: {
-
+    summariseClaimTextArea: 'textarea[id=text]'
   },
   buttons: {
 

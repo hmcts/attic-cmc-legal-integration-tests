@@ -12,7 +12,7 @@ module.exports = {
 
   },
   buttons: {
-
+    saveandContinue: 'input.button'
   },
 
   open () {
