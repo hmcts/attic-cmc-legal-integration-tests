@@ -36,6 +36,9 @@ services:
     service-auth-provider-api:
       ports:
         - 4552:8080
+    pdf-service-api:
+      ports:
+        - 5500:5500
 
 volumes:
   draft-store-database-data:
