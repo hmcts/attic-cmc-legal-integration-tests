@@ -12,7 +12,7 @@ module.exports = {
   fields: {
     defendantRepresentedYes: 'input[id=defendant_represented_yes]',
     defendantRepresentedNo: 'input[id=defendant_represented_no]',
-    companyName: 'input[id=companyName]'
+    companyName: 'input[id=organisationName]'
   },
 
   buttons: {
@@ -24,16 +24,16 @@ module.exports = {
   },
 
   enterDefendantCompanyName () {
-    I.see('Has the defendant got a representative')
+    I.see('Has the defendant got a legal representative')
     I.see("who's instructed to accept service?")
     I.checkOption(this.fields.defendantRepresentedYes)
-    I.see('Defendant representative company name')
+    I.see('Defendant representative organisation name')
     I.fillField(this.fields.companyName, 'Defendant Rep Ltd')
     I.click(this.buttons.saveandContinue)
   },
 
   noDefendantCompanyName () {
-    I.see('Has the defendant got a representative')
+    I.see('Has the defendant got a legal representative')
     I.see("who's instructed to accept service?")
     I.checkOption(this.fields.defendantRepresentedNo)
     I.click(this.buttons.saveandContinue)
@@ -49,7 +49,7 @@ module.exports = {
     I.checkOption(this.fields.defendantRepresentedYes)
     I.click(this.buttons.saveandContinue)
     I.see('There was a problem')
-    I.see('Enter defendant representative company name')
+    I.see('Enter defendant representative organisation name')
   },
 
   checkForBlankErrorMessageForDefendantCompanyName () {
@@ -57,6 +57,6 @@ module.exports = {
     I.fillField(this.fields.companyName, ' ')
     I.click(this.buttons.saveandContinue)
     I.see('There was a problem')
-    I.see('Enter defendant representative company name')
+    I.see('Enter defendant representative organisation name')
   }
 }
