@@ -2,7 +2,7 @@
 
 Feature('Enter claim amount and submit claim')
 
-Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaims) => {
+Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
@@ -20,10 +20,10 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   I.see("Defendant's representative: Defendant Rep Ltd")
   defendantSteps.enterDefendantRepsAddress()
   defendantSteps.noAnotherDefendant()
-  amountClaims.personalInjuryLessThan1000()
+  amountClaimSteps.personalInjuryLessThan1000()
 })
 
-Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaims) => {
+Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
@@ -41,13 +41,13 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   I.see("Defendant's representative: Defendant Rep Ltd")
   defendantSteps.enterDefendantRepsAddress()
   defendantSteps.noAnotherDefendant()
-  amountClaims.noPersonalInjuryClaim()
+  amountClaimSteps.noPersonalInjuryClaim()
 })
 
-Scenario('Check personal injury more than 1000', (I, userSteps, amountClaims) => {
+Scenario('Check personal injury more than 1000', (I, userSteps, amountClaimSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  amountClaims.personalInjuryMoreThan1000()
+  amountClaimSteps.personalInjuryMoreThan1000()
   I.seeInCurrentUrl('housing-disrepair')
 })
 
