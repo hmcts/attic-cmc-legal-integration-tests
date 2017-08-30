@@ -21,6 +21,10 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   defendantSteps.enterDefendantRepsAddress()
   defendantSteps.noAnotherDefendant()
   amountClaimSteps.personalInjuryLessThan1000()
+  amountClaimSteps.housingDisrepairLessThan1000()
+  amountClaimSteps.summariseTheClaim()
+  amountClaimSteps.enterRangeOfTheClaim()
+  amountClaimSteps.feeCheckForRangeTotal()
 })
 
 Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
@@ -42,6 +46,9 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   defendantSteps.enterDefendantRepsAddress()
   defendantSteps.noAnotherDefendant()
   amountClaimSteps.noPersonalInjuryClaim()
+  amountClaimSteps.summariseTheClaim()
+  amountClaimSteps.canNotStateTheClaimValue()
+  amountClaimSteps.feeCheckForCanNotStateTheClaimValue()
 })
 
 Scenario('Check personal injury more than 1000', (I, userSteps, amountClaimSteps) => {
@@ -51,10 +58,57 @@ Scenario('Check personal injury more than 1000', (I, userSteps, amountClaimSteps
   I.seeInCurrentUrl('housing-disrepair')
 })
 
+Scenario('Check housing disrepair more than 1000', (I, userSteps, amountClaimSteps) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  amountClaimSteps.housingDisrepairMoreThan1000()
+  I.seeInCurrentUrl('summarise-the-claim')
+})
+
+Scenario('Check housing disrepair less than 1000 and no other damages', (I, userSteps, amountClaimSteps) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  amountClaimSteps.housingDisrepairLessThan1000AndNoOtherDamages()
+  I.seeInCurrentUrl('/total')
+})
+
+Scenario('Check higher value in amount claim Page', (I, userSteps, amountClaimSteps) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  amountClaimSteps.enterOnlyHigherValueAmount()
+  I.seeInCurrentUrl('summarise-the-claim')
+})
+
 Scenario('Check Error Messages in personal claim page', (I, userSteps, personalInjuryPage) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   personalInjuryPage.open()
   personalInjuryPage.checkMandatoryErrorMessage()
   personalInjuryPage.checkMandatoryErrorMessageForAmount()
+})
+
+Scenario('Check Error Messages in housing disrepair page', (I, userSteps, housingDisrepairPage) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  housingDisrepairPage.open()
+  housingDisrepairPage.checkMandatoryErrorMessage()
+  housingDisrepairPage.checkMandatoryErrorMessageForAmounts()
+})
+
+Scenario('Check Error Messages in summarise the claim page', (I, userSteps, summariseTheClaimPage) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  summariseTheClaimPage.open()
+  summariseTheClaimPage.checkMandatoryErrorMessage()
+  summariseTheClaimPage.checkForBlankErrorMessage()
+})
+
+Scenario('Check Error Messages in amount claim page', (I, userSteps, amountPage) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  amountPage.open()
+  amountPage.checkMandatoryErrorMessage()
+  amountPage.checkForBlankErrorMessage()
+  amountPage.checkErrorMessageForLowerValueOnly()
+  amountPage.checkErrorMessageForSelectingBothHigherAndCanNotCheckbox()
 })
