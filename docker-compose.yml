@@ -3,7 +3,7 @@ version: '2.1'
 
 services:
     legal-integration-tests:
-      command: test -- --reporter mochawesome --reporter-options reportFilename=CMCT2-End2End-Test-Report,inlineAssets=true,reportTitle=legal-rep-frontend-E2E-report
+      command: test -- --reporter mochawesome --reporter-options reportFilename=CMCT2-End2End-Test-Report,inlineAssets=true,reportTitle=legal-rep-frontend-E2E-report,reportDir=output
       build:
         context: .
         args:
@@ -25,12 +25,10 @@ services:
           condition: service_started
       volumes:
         - ./output:/usr/src/app/output
-        - ./integration-tests-report:/usr/src/app/mochawesome-report
     remote-webdriver:
       image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3
     legal-frontend:
       image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend:${LEGAL_FRONTEND_VERSION:-latest}
-      ##image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend:latest
       environment:
         - IDAM_SECRET_KEY=cmc_it_test_secret_key
         - IDAM_HEALTH_CHECK_URL=http://idam-api:8080/health
