@@ -53,6 +53,10 @@ services:
     pdf-service-api:
       ports:
         - 5500:5500
+    smtp-server:
+      ports:
+        - 1025:1025
+        - 8025:8025
 
 volumes:
   draft-store-database-data:
