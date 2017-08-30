@@ -19,6 +19,20 @@ services:
     idam-api:
       ports:
         - 8080:8080
+    claim-store-api:
+      environment:
+        - http_proxy=
+        - https_proxy=
+        - no_proxy=
+      ports:
+        - 4400:4400
+      environment:
+        - FRONTEND_BASE_URL=https://localhost:4000/legal
+    claim-store-database:
+      ports:
+        - 5430:5432
+      volumes:
+        - claim-store-database-data:/var/lib/postgresql/data
     fees-api:
       ports:
         - 4182:8080
@@ -43,3 +57,4 @@ services:
 volumes:
   draft-store-database-data:
   idam-database-data:
+  claim-store-database-data:
