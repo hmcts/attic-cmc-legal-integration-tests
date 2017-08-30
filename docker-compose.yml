@@ -3,7 +3,7 @@ version: '2.1'
 
 services:
     legal-integration-tests:
-      command: test -- --reporter mochawesome --reporter-options reportFilename=CMCT2-End2End-Test-Report,inlineAssets=true,reportTitle=legal-rep-frontend-E2E-report
+      command: test -- --reporter mochawesome --reporter-options reportFilename=CMCT2-End2End-Test-Report,inlineAssets=true,reportTitle=legal-rep-frontend-E2E-report,reportDir=output
       build:
         context: .
         args:
@@ -25,7 +25,6 @@ services:
           condition: service_started
       volumes:
         - ./output:/usr/src/app/output
-        - ./integration-tests-report:/usr/src/app/mochawesome-report
     remote-webdriver:
       image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3
     legal-frontend:

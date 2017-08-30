@@ -50,11 +50,5 @@ exports.config = {
     userSteps: './tests/home/steps/user.js',
     defendantSteps: './tests/home/steps/defendant.js',
     amountClaimSteps: './tests/home/steps/amountClaims.js'
-  },
-  mocha: {
-    reporterOptions: {
-      reportDir: './output',
-      inlineAssets: true
-    }
   }
 }
