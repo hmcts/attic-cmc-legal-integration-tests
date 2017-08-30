@@ -46,6 +46,7 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   defendantSteps.enterDefendantRepsAddress()
   defendantSteps.noAnotherDefendant()
   amountClaimSteps.noPersonalInjuryClaim()
+  amountClaimSteps.noHousingDisrepairClaim()
   amountClaimSteps.summariseTheClaim()
   amountClaimSteps.canNotStateTheClaimValue()
   amountClaimSteps.feeCheckForCanNotStateTheClaimValue()
