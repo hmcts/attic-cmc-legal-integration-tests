@@ -134,7 +134,7 @@ services:
         - CLAIM_STORE_DB_USERNAME=claimstore
         - CLAIM_STORE_DB_PASSWORD=claimstore
     fees-api:
-      image: docker.artifactory.reform.hmcts.net/fees-register/fees-api
+      image: docker.artifactory.reform.hmcts.net/fees-register/fees-api:84d45b46bb20431f28d65e6dc51c4ee123cb7eae
       healthcheck:
         retries: 20
       environment:

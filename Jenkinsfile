@@ -36,7 +36,7 @@ timestamps {
       }
 
       stage('Run integration tests') {
-        integrationTests.execute(['INTEGRATION_TESTS_VERSION': integrationTestsVersion,
+        integrationTests.execute(['LEGAL_INTEGRATION_TESTS_VERSION': integrationTestsVersion,
                                   'INTEGRATION_TESTS_BRANCH': 'master'
         ],
           Team.LEGAL
