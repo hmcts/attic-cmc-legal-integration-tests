@@ -38,5 +38,51 @@ module.exports = {
 
   noPersonalInjuryClaim () {
     personalInjuryPage.noPersonalInjury()
+  },
+
+  housingDisrepairLessThan1000 () {
+    housingDisrepairPage.enterHousingDisrepairGeneralDamagesLessThan1000()
+    housingDisrepairPage.enterHousingDisrepairOtherDamagesLessThan1000()
+  },
+
+  housingDisrepairMoreThan1000 () {
+    housingDisrepairPage.open()
+    housingDisrepairPage.enterHousingDisrepairGeneralDamagesMoreThan1000()
+    housingDisrepairPage.enterHousingDisrepairOtherDamagesMoreThan1000()
+  },
+
+  housingDisrepairLessThan1000AndNoOtherDamages () {
+    housingDisrepairPage.open()
+    housingDisrepairPage.enterHousingDisrepairGeneralDamagesLessThan1000()
+    housingDisrepairPage.enterHousingDisrepairNoOtherDamages()
+  },
+
+  noHousingDisrepairClaim () {
+    housingDisrepairPage.noHousingDisrepair()
+  },
+
+  summariseTheClaim () {
+    summariseTheClaimPage.enterBriefDescriptionOfTheClaim()
+  },
+
+  enterRangeOfTheClaim () {
+    amountPage.enterRangeOfTheClaim()
+  },
+
+  enterOnlyHigherValueAmount () {
+    amountPage.open()
+    amountPage.enterHigherValueOfTheClaim()
+  },
+
+  canNotStateTheClaimValue () {
+    amountPage.canNotStateTheClaim()
+  },
+
+  feeCheckForRangeTotal () {
+    totalPage.checkFeeTotalForRange()
+  },
+  feeCheckForCanNotStateTheClaimValue () {
+    totalPage.checkFeeTotalForCanNotStateValue()
   }
+
 }
