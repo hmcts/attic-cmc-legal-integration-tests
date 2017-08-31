@@ -23,5 +23,4 @@ module.exports = {
     I.see('Your organisation details')
   }
 
-
 }
