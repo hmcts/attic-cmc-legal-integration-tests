@@ -34,7 +34,9 @@ module.exports = {
   },
 
   enterHousingDisrepairGeneralDamagesMoreThan1000 () {
-    I.checkOption(this.fields.personalInjuryYes)
+    I.see('Is it a claim for housing disrepair seeking an order for a landlord to carry out work?')
+    I.checkOption(this.fields.housingDisrepairYes)
+    I.see('How much do you expect to recover as general damages for the cost of repairs or other work?')
     I.checkOption(this.fields.generalDamagesMore)
     I.click(this.buttons.saveandContinue)
   },
@@ -47,7 +49,7 @@ module.exports = {
   },
 
   enterHousingDisrepairOtherDamagesMoreThan1000 () {
-    I.checkOption(this.fields.personalInjuryYes)
+    I.checkOption(this.fields.housingDisrepairYes)
     I.checkOption(this.fields.otherDamagesMore)
     I.click(this.buttons.saveandContinue)
   },

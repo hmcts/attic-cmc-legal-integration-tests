@@ -70,14 +70,14 @@ Scenario('Check housing disrepair less than 1000 and no other damages', (I, user
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   amountClaimSteps.housingDisrepairLessThan1000AndNoOtherDamages()
-  I.seeInCurrentUrl('/total')
+  I.seeInCurrentUrl('summarise-the-claim')
 })
 
 Scenario('Check higher value in amount claim Page', (I, userSteps, amountClaimSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   amountClaimSteps.enterOnlyHigherValueAmount()
-  I.seeInCurrentUrl('summarise-the-claim')
+  I.seeInCurrentUrl('total')
 })
 
 Scenario('Check Error Messages in personal claim page', (I, userSteps, personalInjuryPage) => {
