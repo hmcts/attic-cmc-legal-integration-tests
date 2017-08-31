@@ -15,7 +15,6 @@ def integrationTests = new IntegrationTests(env, this)
 
 timestamps {
   node {
-    try {
       def integrationTestsVersion
 
       stage('Checkout') {
@@ -42,9 +41,7 @@ timestamps {
           Team.LEGAL
         )
       }
-    } finally {
-      sh "docker-compose down --remove-orphans"
-    }
+    
 
   }
 }
