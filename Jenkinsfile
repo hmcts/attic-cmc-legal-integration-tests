@@ -8,13 +8,13 @@ properties(
    ])]
 )
 
-@Library(['Reform', 'CMC'])
+@Library(['Reform', 'CMC@timj-patch-2'])
 import uk.gov.hmcts.cmc.integrationtests.IntegrationTests
 import uk.gov.hmcts.cmc.Team
 def integrationTests = new IntegrationTests(env, this)
 
 timestamps {
-  node {
+  node('slave') {
     try {
       def integrationTestsVersion
 
