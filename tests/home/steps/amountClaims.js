@@ -95,6 +95,8 @@ module.exports = {
   },
   addStatementOfTruthSignerNameAndRole () {
     statementOfTruthPage.enterStatementOfTruthSignerNameAndRole()
+  },
+  addPayByAccountFeeNumber () {
+    payByAccountPage.enterFeeAccountNumber()
   }
-
 }

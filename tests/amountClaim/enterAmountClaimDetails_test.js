@@ -27,6 +27,7 @@ Scenario.only('I can fill in Claimant, Defendant and Claim amount details', (I, 
   amountClaimSteps.feeCheckForRangeTotal()
   amountClaimSteps.verifySummaryDetails()
   amountClaimSteps.addStatementOfTruthSignerNameAndRole()
+  amountClaimSteps.addPayByAccountFeeNumber()
 })
 
 Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
@@ -124,4 +125,15 @@ Scenario('Check Error Messages in statement of truth page', (I, userSteps, state
   statementOfTruthPage.checkMandatoryErrorMessage()
   statementOfTruthPage.checkForBlankErrorMessage()
   statementOfTruthPage.checkForIndividualMessage()
+})
+
+Scenario('Check Error Messages in pay by account page', (I, userSteps, amountClaimSteps, payByAccountPage) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourDetails()
+  amountClaimSteps.enterRangeOfTheClaim()
+  payByAccountPage.open()
+  payByAccountPage.checkMandatoryErrorMessage()
+  payByAccountPage.checkForBlankErrorMessage()
+  payByAccountPage.checkForInvalidReference()
 })
