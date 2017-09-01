@@ -25,6 +25,9 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   amountClaimSteps.summariseTheClaim()
   amountClaimSteps.enterRangeOfTheClaim()
   amountClaimSteps.feeCheckForRangeTotal()
+  amountClaimSteps.verifySummaryDetails()
+  amountClaimSteps.addStatementOfTruthSignerNameAndRole()
+  amountClaimSteps.addPayByAccountFeeNumber()
 })
 
 Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
@@ -112,4 +115,26 @@ Scenario('Check Error Messages in amount claim page', (I, userSteps, amountPage)
   amountPage.checkForBlankErrorMessage()
   amountPage.checkErrorMessageForLowerValueOnly()
   amountPage.checkErrorMessageForSelectingBothHigherAndCanNotCheckbox()
+})
+
+Scenario('Check Error Messages in statement of truth page', (I, userSteps, statementOfTruthPage) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourDetails()
+  statementOfTruthPage.open()
+  statementOfTruthPage.checkMandatoryErrorMessage()
+  statementOfTruthPage.checkForBlankErrorMessage()
+  statementOfTruthPage.checkForIndividualMessage()
+})
+
+Scenario('Check Error Messages in pay by account page', (I, userSteps, amountClaimSteps, amountPage, payByAccountPage) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourDetails()
+  amountPage.open()
+  amountClaimSteps.enterRangeOfTheClaim()
+  payByAccountPage.open()
+  payByAccountPage.checkMandatoryErrorMessage()
+  payByAccountPage.checkForBlankErrorMessage()
+  payByAccountPage.checkForInvalidReference()
 })

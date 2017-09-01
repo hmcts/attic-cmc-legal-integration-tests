@@ -28,7 +28,6 @@ module.exports = {
 
   enterClaimantTypeIndividual () {
     I.see('Choose claimant type')
-    I.see("You'll have a chance to add more claimants later.")
     I.checkOption(this.fields.individualType)
     I.see('Title (optional)')
     I.fillField(this.fields.individualTitle, 'Mr')
@@ -39,7 +38,6 @@ module.exports = {
 
   enterClaimantTypeOrganisation () {
     I.see('Choose claimant type')
-    I.see("You'll have a chance to add more claimants later.")
     I.checkOption(this.fields.organisationType)
     I.see('Organisation name')
     I.fillField(this.fields.organisationName, 'Abc corporation')

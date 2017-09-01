@@ -81,8 +81,22 @@ module.exports = {
   feeCheckForRangeTotal () {
     totalPage.checkFeeTotalForRange()
   },
+
   feeCheckForCanNotStateTheClaimValue () {
     totalPage.checkFeeTotalForCanNotStateValue()
-  }
+  },
 
+  verifySummaryDetails () {
+    detailsSummaryPage.verifyOrganizationDetails()
+    detailsSummaryPage.claimantDetails()
+    detailsSummaryPage.defendantDetails()
+    detailsSummaryPage.aboutThisClaim()
+    detailsSummaryPage.selectSubmitButton()
+  },
+  addStatementOfTruthSignerNameAndRole () {
+    statementOfTruthPage.enterStatementOfTruthSignerNameAndRole()
+  },
+  addPayByAccountFeeNumber () {
+    payByAccountPage.enterFeeAccountNumber()
+  }
 }
