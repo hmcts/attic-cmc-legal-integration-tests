@@ -91,6 +91,10 @@ module.exports = {
     detailsSummaryPage.claimantDetails()
     detailsSummaryPage.defendantDetails()
     detailsSummaryPage.aboutThisClaim()
+    detailsSummaryPage.selectSubmitButton()
+  },
+  addStatementOfTruthSignerNameAndRole () {
+    statementOfTruthPage.enterStatementOfTruthSignerNameAndRole()
   }
 
 }

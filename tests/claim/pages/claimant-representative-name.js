@@ -13,7 +13,7 @@ module.exports = {
   },
 
   buttons: {
-    startNow: 'input.button'
+    saveandContinue: 'input.button'
   },
 
   open () {
@@ -24,18 +24,18 @@ module.exports = {
     I.see('Enter your details')
     I.see('Your organisation name')
     I.fillField(this.fields.organisationName, 'Abc Organisation')
-    I.click(this.buttons.startNow)
+    I.click(this.buttons.saveandContinue)
   },
 
   checkMandatoryErrorMessage () {
-    I.click(this.buttons.startNow)
+    I.click(this.buttons.saveandContinue)
     I.see('There was a problem')
     I.see('Enter your organisation name')
   },
 
   checkForBlankErrorMessage () {
     I.fillField(this.fields.organisationName, '')
-    I.click(this.buttons.startNow)
+    I.click(this.buttons.saveandContinue)
     I.see('There was a problem')
     I.see('Enter your organisation name')
   }

@@ -73,5 +73,9 @@ module.exports = {
     I.see('The claimant expects to recover up to £6,000. The claimant estimates the claim to be worth more than £3,000')
     I.see('Issue fee')
     I.see('£455')
+  },
+  selectSubmitButton () {
+    I.click(this.buttons.saveandContinue)
   }
+
 }
