@@ -98,5 +98,10 @@ module.exports = {
   },
   addPayByAccountFeeNumber () {
     payByAccountPage.enterFeeAccountNumber()
+  },
+
+  verifySubmittedPage () {
+    submittedPage.verifyTextInSubmittedPage()
   }
+
 }

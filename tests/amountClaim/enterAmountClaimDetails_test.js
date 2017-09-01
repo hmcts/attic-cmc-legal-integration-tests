@@ -28,6 +28,7 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   amountClaimSteps.verifySummaryDetails()
   amountClaimSteps.addStatementOfTruthSignerNameAndRole()
   amountClaimSteps.addPayByAccountFeeNumber()
+  amountClaimSteps.verifySubmittedPage()
 })
 
 Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
