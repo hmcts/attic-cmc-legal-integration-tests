@@ -23,7 +23,6 @@ module.exports = {
 
   verifyTextInSubmittedPage () {
     I.see('Your claim has been issued')
-    I.see('Claim number: 000LR001')
     I.see('Fee paid: £455')
     I.see("We've emailed confirmation to: " + user.email)
     I.see('Follow these steps to serve a claim:')
