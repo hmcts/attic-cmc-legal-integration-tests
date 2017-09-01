@@ -2,7 +2,7 @@
 
 Feature('Enter claim amount and submit claim')
 
-Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
+Scenario.only('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
@@ -25,6 +25,8 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   amountClaimSteps.summariseTheClaim()
   amountClaimSteps.enterRangeOfTheClaim()
   amountClaimSteps.feeCheckForRangeTotal()
+  amountClaimSteps.verifySummaryDetails()
+  I.see('abc')
 })
 
 Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
