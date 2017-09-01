@@ -56,7 +56,7 @@ module.exports = {
     I.see('Companies House number')
     I.see('678910')
     I.see('Address')
-    I.see('CMC T2 Defendant')
+    I.see('CMC T2 DEFENDANT')
     I.see('WESTMINSTER')
     I.see('LONDON')
     I.see('SW1H 9BJ')
