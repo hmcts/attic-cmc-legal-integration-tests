@@ -2,7 +2,7 @@
 
 Feature('Enter claim amount and submit claim')
 
-Scenario.only('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
+Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
@@ -127,10 +127,11 @@ Scenario('Check Error Messages in statement of truth page', (I, userSteps, state
   statementOfTruthPage.checkForIndividualMessage()
 })
 
-Scenario('Check Error Messages in pay by account page', (I, userSteps, amountClaimSteps, payByAccountPage) => {
+Scenario('Check Error Messages in pay by account page', (I, userSteps, amountClaimSteps, amountPage, payByAccountPage) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourDetails()
+  amountPage.open()
   amountClaimSteps.enterRangeOfTheClaim()
   payByAccountPage.open()
   payByAccountPage.checkMandatoryErrorMessage()
