@@ -25,8 +25,8 @@ module.exports = {
     startClaimPage.open()
     startClaimPage.startClaim()
   },
-  enterYourDetails () {
-    yourDetailsPage.enterYourDetails()
+  enterYourOrganisationNamePage () {
+    yourDetailsPage.enterYourOrganisationNamePage()
   },
   enterYourOrganisationAddress () {
     yourOrganisationAddressPage.enterYourOrganisationAddress()
