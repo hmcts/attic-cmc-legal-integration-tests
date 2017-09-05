@@ -31,7 +31,7 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   amountClaimSteps.verifySubmittedPage()
 })
 
-Scenario.only('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
+Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
