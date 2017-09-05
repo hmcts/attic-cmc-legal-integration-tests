@@ -28,7 +28,7 @@ module.exports = {
     I.fillField(this.fields.addressLine1, 'CMC T2 Defendant')
     I.see('Address line 2 (optional)')
     I.fillField(this.fields.addressLine2, 'Westminster')
-    I.see('Town or city (optional)')
+    I.see('Town or city')
     I.fillField(this.fields.cityName, 'London')
     I.see('Postcode')
     I.fillField(this.fields.postcode, 'SW1H 9BJ')
