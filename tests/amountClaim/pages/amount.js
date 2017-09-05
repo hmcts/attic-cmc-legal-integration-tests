@@ -66,7 +66,8 @@ module.exports = {
     I.checkOption(this.fields.cannotState)
     I.click(this.buttons.saveandContinue)
     I.see('There was a problem')
-    I.see('Enter a value or choose ‘I can’t state the value’')
+    I.see('Choose ‘I can’t state the value’ or enter a higher value')
+    I.see('Enter a value or choose ‘I can’t state the value')
   }
 
 }
