@@ -5,7 +5,7 @@ Feature('Defendants Enter details of claim')
 Scenario('I can fill in Claimant organization and Defendant organization details', (I, userSteps, defendantSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourDetails()
+  userSteps.enterYourOrganisationNamePage()
   userSteps.enterYourOrganisationAddress()
   userSteps.enterYourOrganisationContactDetails()
   userSteps.enterYourReferenceNumber()
@@ -25,7 +25,7 @@ Scenario('I can fill in Claimant organization and Defendant organization details
 Scenario('I can fill in Claimant individual and Defendant individual details', (I, userSteps, defendantSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourDetails()
+  userSteps.enterYourOrganisationNamePage()
   userSteps.enterYourOrganisationAddress()
   userSteps.enterYourOrganisationContactDetails()
   userSteps.enterYourReferenceNumber()
@@ -43,7 +43,7 @@ Scenario('I can fill in Claimant individual and Defendant individual details', (
 Scenario('Check Error Messages in Enter your defendant type Page', (I, userSteps, defendantType) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourDetails()
+  userSteps.enterYourOrganisationNamePage()
   userSteps.enterYourOrganisationAddress()
   userSteps.enterYourOrganisationContactDetails()
   userSteps.enterYourReferenceNumber()
@@ -60,7 +60,7 @@ Scenario('Check Error Messages in Enter your defendant type Page', (I, userSteps
 Scenario('Check Error Messages in Enter your defendant address Page', (I, userSteps, defendantSteps, defendantAddress) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourDetails()
+  userSteps.enterYourOrganisationNamePage()
   userSteps.enterYourOrganisationAddress()
   userSteps.enterYourOrganisationContactDetails()
   userSteps.enterYourReferenceNumber()
@@ -80,7 +80,7 @@ Scenario('Check Error Messages in Enter your defendant address Page', (I, userSt
 Scenario('Check Error Messages in Enter your defendant representative Page', (I, userSteps, defendantSteps, defendantRepresentative) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourDetails()
+  userSteps.enterYourOrganisationNamePage()
   userSteps.enterYourOrganisationAddress()
   userSteps.enterYourOrganisationContactDetails()
   userSteps.enterYourReferenceNumber()
@@ -99,7 +99,7 @@ Scenario('Check Error Messages in Enter your defendant representative Page', (I,
 Scenario('Check Error Messages in Enter your defendant representative address Page', (I, userSteps, defendantSteps, defendantRepresentativeAddress) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourDetails()
+  userSteps.enterYourOrganisationNamePage()
   userSteps.enterYourOrganisationAddress()
   userSteps.enterYourOrganisationContactDetails()
   userSteps.enterYourReferenceNumber()
@@ -121,7 +121,7 @@ Scenario('Check Error Messages in Enter your defendant representative address Pa
 Scenario('Check Error Messages in Enter another defendant add Page', (I, userSteps, defendantSteps, defendantAddAnotherDefendant) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourDetails()
+  userSteps.enterYourOrganisationNamePage()
   userSteps.enterYourOrganisationAddress()
   userSteps.enterYourOrganisationContactDetails()
   userSteps.enterYourReferenceNumber()

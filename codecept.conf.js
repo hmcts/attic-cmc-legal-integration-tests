@@ -23,7 +23,7 @@ exports.config = {
     loginPage: './tests/home/pages/login.js',
 
     startClaimPage: './tests/claim/pages/claimant-start-claim',
-    enterYourDetailsPage: './tests/claim/pages/claimant-representative-name',
+    enterYourOrganisationNamePage: './tests/claim/pages/claimant-representative-name',
     enterYourOrganisationAddressPage: './tests/claim/pages/claimant-representative-address',
     enterYourOrganisationContactDetails: './tests/claim/pages/claimant-representative-contacts',
     referencePage: './tests/claim/pages/claimant-reference',
