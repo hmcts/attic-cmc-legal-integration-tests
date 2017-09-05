@@ -2,14 +2,14 @@
 
 const user = require('../../../test-data').user
 
-let loginPage, startClaimPage, yourDetailsPage, yourOrganisationAddressPage, yourContactDetailsPage, yourReferencePage, yourCountyCourtPage, claimantTypePage, claimantAddressPage
+let loginPage, startClaimPage, enterYourOrganisationNamePage, yourOrganisationAddressPage, yourContactDetailsPage, yourReferencePage, yourCountyCourtPage, claimantTypePage, claimantAddressPage
 
 module.exports = {
 
   _init () {
     loginPage = require('../pages/login')
     startClaimPage = require('../../claim/pages/claimant-start-claim')
-    yourDetailsPage = require('../../claim/pages/claimant-representative-name')
+    enterYourOrganisationNamePage = require('../../claim/pages/claimant-representative-name')
     yourOrganisationAddressPage = require('../../claim/pages/claimant-representative-address')
     yourContactDetailsPage = require('../../claim/pages/claimant-representative-contacts')
     yourReferencePage = require('../../claim/pages/claimant-reference')
@@ -25,8 +25,8 @@ module.exports = {
     startClaimPage.open()
     startClaimPage.startClaim()
   },
-  enterYourDetails () {
-    yourDetailsPage.enterYourDetails()
+  enterYourOrganisationNamePage () {
+    enterYourOrganisationNamePage.enterYourOrganisationNamePage()
   },
   enterYourOrganisationAddress () {
     yourOrganisationAddressPage.enterYourOrganisationAddress()
