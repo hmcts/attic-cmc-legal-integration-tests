@@ -20,7 +20,7 @@ module.exports = {
     I.amOnPage('/claim/representative-name')
   },
 
-  enterYourDetails () {
+  enterYourOrganisationNamePage () {
     I.see('Your organisation name')
     I.fillField(this.fields.organisationName, 'Abc Organisation')
     I.click(this.buttons.saveandContinue)
