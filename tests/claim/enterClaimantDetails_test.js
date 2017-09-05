@@ -28,7 +28,7 @@ Scenario('I can fill in Claimant individual and their details', (I, userSteps) =
   userSteps.enterClaimantAddress()
 })
 
-Scenario('Check Error Messages in Enter your details Page', (I, userSteps, enterYourDetailsPage) => {
+Scenario('Check Error Messages in Your organisation name Page', (I, userSteps, enterYourDetailsPage) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   enterYourDetailsPage.checkMandatoryErrorMessage()
