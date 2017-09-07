@@ -26,7 +26,7 @@ services:
       volumes:
         - ./output:/usr/src/app/output
     remote-webdriver:
-      image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3
+      image: docker.artifactory.reform.hmcts.net/selenium/standalone-chrome:3.5.2
     legal-frontend:
       image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend:${LEGAL_FRONTEND_VERSION:-latest}
       environment:
