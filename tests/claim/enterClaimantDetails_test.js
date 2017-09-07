@@ -71,7 +71,7 @@ Scenario('Check Error Messages in claimant type Page', (I, userSteps, claimantTy
   claimantType.checkForBlankErrorMessageForIndividualName()
 })
 
-Scenario('Check Error Messages in Enter your claimant address Page', (I, userSteps, claimantAddress) => {
+Scenario.only('Check Error Messages in Enter your claimant address Page', (I, userSteps, claimantAddress) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
