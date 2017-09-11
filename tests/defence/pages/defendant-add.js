@@ -24,14 +24,14 @@ module.exports = {
 
   enterAnotherDefendant () {
     I.see('Do you want to add another defendant?')
-    I.see('You can add up to 4 defendants in this service.')
+    I.see('You can add up to 20 defendants in this service.')
     I.checkOption(this.fields.defendantAddYes)
     I.click(this.buttons.saveandContinue)
   },
 
   noAnotherDefendant () {
     I.see('Do you want to add another defendant?')
-    I.see('You can add up to 4 defendants in this service.')
+    I.see('You can add up to 20 defendants in this service.')
     I.checkOption(this.fields.defendantAddNo)
     I.click(this.buttons.saveandContinue)
   },
