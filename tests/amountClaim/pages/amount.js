@@ -44,7 +44,7 @@ module.exports = {
   checkMandatoryErrorMessage () {
     I.click(this.buttons.saveandContinue)
     I.see('There was a problem')
-    I.see('Enter valid higher value')
+    I.see('Enter a higher value or choose ‘I can’t state the value’')
   },
 
   checkForBlankErrorMessage () {
