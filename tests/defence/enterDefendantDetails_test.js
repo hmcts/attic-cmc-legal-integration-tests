@@ -37,6 +37,7 @@ Scenario('I can fill in Claimant individual and Defendant individual details', (
   I.see('Defendant: Mr Pret')
   defendantSteps.enterDefendantAddress()
   defendantSteps.noDefendantCompanyName()
+  defendantSteps.enterServiceAddress()
   defendantSteps.noAnotherDefendant()
 })
 
@@ -138,7 +139,7 @@ Scenario('Check Error Messages in Enter another defendant add Page', (I, userSte
   defendantAddAnotherDefendant.checkMandatoryErrorMessage()
 })
 
-Scenario('Check Error Messages on defendant service address Page', (I, userSteps, defendantSteps, defendantAddAnotherDefendant) => {
+Scenario('Check Error Messages on defendant service address Page', (I, userSteps, defendantSteps, defendantAddServiceAddress) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -152,7 +153,11 @@ Scenario('Check Error Messages on defendant service address Page', (I, userSteps
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
   defendantSteps.enterDefendantAddress()
-  defendantSteps.enterDefendantRepsCompanyName()
-  I.see("Defendant's legal representative: Defendant Rep Ltd")
   defendantSteps.noDefendantCompanyName()
+  I.see('Address for service')
+  defendantAddServiceAddress.checkMandatoryErrorMessageForAddressForService()
+  defendantAddServiceAddress.checkForBlankErrorMessage()
+  defendantAddServiceAddress.checkForIndividualMessage()
+  defendantAddServiceAddress.checkForPostCodeLengthMessage()
+  defendantAddServiceAddress.checkForAddressLineLength()
 })
