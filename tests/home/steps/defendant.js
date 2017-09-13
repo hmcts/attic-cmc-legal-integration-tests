@@ -1,6 +1,6 @@
 'use strict'
 
-let defendantTypePage, defendantAddressPage, defendantRepresentativePage, defendantRepresentativeAddressPage, defendantAddAnotherDefendantPage
+let defendantTypePage, defendantAddressPage, defendantRepresentativePage, defendantRepresentativeAddressPage, defendantAddAnotherDefendantPage, defendantServiceAddressPage
 
 module.exports = {
   _init () {
@@ -9,6 +9,7 @@ module.exports = {
     defendantRepresentativePage = require('../../defence/pages/defendant-represented')
     defendantRepresentativeAddressPage = require('../../defence/pages/defendant-reps-address')
     defendantAddAnotherDefendantPage = require('../../defence/pages/defendant-add')
+    defendantServiceAddressPage = require('../../defence/pages/defendant-service-address')
   },
 
   enterDefendantTypeIndividual () {
@@ -40,6 +41,10 @@ module.exports = {
 
   noAnotherDefendant () {
     defendantAddAnotherDefendantPage.noAnotherDefendant()
+  },
+
+  enterServiceAddress () {
+    defendantServiceAddressPage.enterAnotherServiceAddress()
   }
 
 }

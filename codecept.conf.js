@@ -36,6 +36,7 @@ exports.config = {
     defendantRepresentative: './tests/defence/pages/defendant-represented',
     defendantRepresentativeAddress: './tests/defence/pages/defendant-reps-address',
     defendantAddAnotherDefendant: './tests/defence/pages/defendant-add',
+    defendantAddServiceAddress: './tests/defence/pages/defendant-service-address',
 
     personalInjuryPage: './tests/amountClaim/pages/personal-injury',
     housingDisrepairPage: './tests/amountClaim/pages/housing-disrepair',
