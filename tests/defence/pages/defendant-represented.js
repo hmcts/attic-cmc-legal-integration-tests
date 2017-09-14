@@ -24,8 +24,7 @@ module.exports = {
   },
 
   enterDefendantCompanyName () {
-    I.see('Has the defendant got a legal representative')
-    I.see("who's instructed to accept service?")
+    I.see('Has the defendant got a legal representative who\'s instructed to accept service?')
     I.checkOption(this.fields.defendantRepresentedYes)
     I.see('Defendant representative organisation name')
     I.fillField(this.fields.companyName, 'Defendant Rep Ltd')
@@ -33,8 +32,7 @@ module.exports = {
   },
 
   noDefendantCompanyName () {
-    I.see('Has the defendant got a legal representative')
-    I.see("who's instructed to accept service?")
+    I.see('Has the defendant got a legal representative who\'s instructed to accept service?')
     I.checkOption(this.fields.defendantRepresentedNo)
     I.click(this.buttons.saveandContinue)
   },
