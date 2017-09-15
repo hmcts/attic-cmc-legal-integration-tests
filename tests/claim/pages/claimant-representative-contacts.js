@@ -23,7 +23,7 @@ module.exports = {
 
   enterYourOrganisationContactDetails () {
     I.see('Your organisation contact details')
-    I.see("The defendant can use these details to contact you - they'll also appear on the N1 form.")
+    I.see("The defendant can use these details to contact you - they'll also appear on the sealed claim form.")
     I.see('Phone number (optional)')
     I.fillField(this.fields.phoneNumber, '0700000000')
     I.see('Email (optional)')
