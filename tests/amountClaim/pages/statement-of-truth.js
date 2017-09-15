@@ -22,7 +22,7 @@ module.exports = {
 
   enterStatementOfTruthSignerNameAndRole () {
     I.see('Statement of truth')
-    I.see("The claimant believes that the facts in this claim form is true. I'm duly authorised by the claimant to sign this statement.")
+    I.see("The claimant believes that the facts in this claim form are true. I'm duly authorised by the claimant to sign this statement.")
     I.fillField(this.fields.signerName, 'vivred')
     I.fillField(this.fields.signerRole, 'QA')
     I.see('Abc Organisation')
