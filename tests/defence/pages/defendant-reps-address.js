@@ -39,6 +39,7 @@ module.exports = {
     I.click(this.buttons.saveandContinue)
     I.see('There was a problem')
     I.see('Enter address line 1')
+    I.see('Enter a town or city')
     I.see('Enter a postcode')
   },
 
