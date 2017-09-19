@@ -17,7 +17,7 @@ module.exports = {
     postcode: 'input[id=postcode]'
   },
   buttons: {
-    saveandContinue: 'input.button'
+    saveAndContinue: 'input.button'
   },
 
   open () {
@@ -35,11 +35,11 @@ module.exports = {
     I.fillField(this.fields.cityName, 'London')
     I.see('Postcode')
     I.fillField(this.fields.postcode, 'SW1H 9AJ')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
   },
 
   checkMandatoryErrorMessageForAddressForService () {
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Choose which address to use')
   },
@@ -49,7 +49,7 @@ module.exports = {
     I.checkOption(this.fields.useAnotherAddress)
     I.fillField(this.fields.addressLine1, '')
     I.fillField(this.fields.postcode, '')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Enter address line 1')
     I.see('Enter a postcode')
@@ -60,12 +60,12 @@ module.exports = {
     I.checkOption(this.fields.useAnotherAddress)
     I.fillField(this.fields.addressLine1, '')
     I.fillField(this.fields.postcode, 'SW1H 9AJ')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Enter address line 1')
     I.fillField(this.fields.addressLine1, 'MOJ')
     I.fillField(this.fields.postcode, '')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('Enter a postcode')
   },
 
@@ -74,7 +74,7 @@ module.exports = {
     I.checkOption(this.fields.useAnotherAddress)
     I.fillField(this.fields.addressLine1, 'MOJ')
     I.fillField(this.fields.postcode, 'SW1H 9AJ1')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('You’ve entered too many characters')
   },
 
@@ -83,7 +83,7 @@ module.exports = {
     I.checkOption(this.fields.useAnotherAddress)
     I.fillField(this.fields.addressLine1, 'a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789')
     I.fillField(this.fields.postcode, 'SW1H 9AJ')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('You’ve entered too many characters')
   }
 }

@@ -93,6 +93,15 @@ module.exports = {
     detailsSummaryPage.aboutThisClaim()
     detailsSummaryPage.selectSubmitButton()
   },
+
+  verifySummaryDetailsForMultipleClaimants () {
+    detailsSummaryPage.verifyOrganizationDetails()
+    detailsSummaryPage.multipleClaimantsDetails()
+    detailsSummaryPage.defendantDetails()
+    detailsSummaryPage.aboutThisClaim()
+    detailsSummaryPage.selectSubmitButton()
+  },
+
   addStatementOfTruthSignerNameAndRole () {
     statementOfTruthPage.enterStatementOfTruthSignerNameAndRole()
   },

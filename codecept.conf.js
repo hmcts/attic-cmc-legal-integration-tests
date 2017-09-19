@@ -30,6 +30,7 @@ exports.config = {
     preferredCountyCourtPage: './tests/claim/pages/claimant-preferred-court',
     claimantType: './tests/claim/pages/claimant-type',
     claimantAddress: './tests/claim/pages/claimant-address',
+    claimantAdd: './tests/claim/pages/claimant-add',
 
     defendantType: './tests/defence/pages/defendant-type',
     defendantAddress: './tests/defence/pages/defendant-address',

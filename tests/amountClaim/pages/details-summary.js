@@ -12,7 +12,7 @@ module.exports = {
 
   },
   buttons: {
-    saveandContinue: 'input.button'
+    saveAndContinue: 'input.button'
   },
 
   open () {
@@ -49,6 +49,25 @@ module.exports = {
     I.see('LONDON')
     I.see('SW1H 9AJ')
   },
+
+  multipleClaimantsDetails () {
+    I.see('Claimant 1 details')
+    I.see('Organisation name')
+    I.see('Abc corporation')
+    I.see('Address')
+    I.see('CMC T2')
+    I.see('WESTMINSTER')
+    I.see('LONDON')
+    I.see('SW1H 9AJ')
+    I.see('Claimant 2 details')
+    I.see('Name')
+    I.see('Mr Benugo')
+    I.see('Address')
+    I.see('CMC T2')
+    I.see('WESTMINSTER')
+    I.see('LONDON')
+    I.see('SW1H 9AJ')
+  },
   defendantDetails () {
     I.see('Defendant details')
     I.see('Organisation name')
@@ -75,7 +94,7 @@ module.exports = {
     I.see('£455')
   },
   selectSubmitButton () {
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
   }
 
 }
