@@ -2,32 +2,6 @@
 
 Feature('Claimant Enter details of claim')
 
-Scenario('I can fill in Claimant organization and their details', (I, userSteps) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeOrganisation()
-  I.see('Claimant: Abc corporation')
-  userSteps.enterClaimantAddress()
-})
-
-Scenario('I can fill in Claimant individual and their details', (I, userSteps) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeIndividual()
-  I.see('Claimant: Mr Benugo')
-  userSteps.enterClaimantAddress()
-})
-
 Scenario('Check Error Messages in Your organisation name Page', (I, userSteps, enterYourOrganisationNamePage) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()

@@ -15,8 +15,17 @@ module.exports = {
   enterDefendantTypeIndividual () {
     defendantTypePage.enterDefendantTypeIndividual()
   },
+
   enterDefendantTypeOrganisation () {
     defendantTypePage.enterDefendantTypeOrganisation()
+  },
+
+  enterAnotherDefendantTypeIndividual () {
+    defendantTypePage.enterAnotherDefendantTypeIndividual()
+  },
+
+  enterAnotherDefendantTypeOrganisation () {
+    defendantTypePage.enterAnotherDefendantTypeOrganisation()
   },
 
   enterDefendantAddress () {
@@ -45,6 +54,9 @@ module.exports = {
 
   enterServiceAddress () {
     defendantServiceAddressPage.enterAnotherServiceAddress()
-  }
+  },
 
+  defendantAddressAsServiceAddress () {
+    defendantServiceAddressPage.useDefendantAddressAsServiceAddress()
+  }
 }
