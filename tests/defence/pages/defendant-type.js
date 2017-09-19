@@ -48,6 +48,20 @@ module.exports = {
     I.click(this.buttons.saveandContinue)
   },
 
+  enterAnotherDefendantTypeIndividual () {
+    I.checkOption(this.fields.individualType)
+    I.fillField(this.fields.individualTitle, 'Mrs')
+    I.fillField(this.fields.individualFullName, 'Orange')
+    I.click(this.buttons.saveandContinue)
+  },
+
+  enterAnotherDefendantTypeOrganisation () {
+    I.checkOption(this.fields.organisationType)
+    I.fillField(this.fields.organisationName, 'Ghi corporation')
+    I.fillField(this.fields.companyHouseNumber, '111213')
+    I.click(this.buttons.saveandContinue)
+  },
+
   checkMandatoryErrorMessageForChooseDefendant () {
     I.click(this.buttons.saveandContinue)
     I.see('There was a problem')
