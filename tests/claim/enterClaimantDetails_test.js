@@ -24,7 +24,8 @@ Scenario('I can fill in two Claimants and their details', (I, userSteps) => {
   I.see('Mr Benugo')
   I.see('2')
   I.see('Mr Benugo')
-  I.see('Remove')})
+  I.see('Remove')
+})
 
 Scenario('Check Error Messages in Add additional claimant Page', (I, userSteps, claimantAdd) => {
   userSteps.loginDefaultUser()
