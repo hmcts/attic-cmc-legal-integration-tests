@@ -2,7 +2,7 @@
 
 Feature('Defendants Enter details of claim')
 
-Scenario('I can fill in Claimant organization and Defendant organization details', (I, userSteps, defendantSteps) => {
+Scenario('I can fill in Claimant organization and more Defendant organization details', (I, userSteps, defendantSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -21,6 +21,26 @@ Scenario('I can fill in Claimant organization and Defendant organization details
   I.see("Defendant's legal representative: Defendant Rep Ltd")
   defendantSteps.enterDefendantRepsAddress()
   defendantSteps.enterAnotherDefendant()
+  defendantSteps.enterAnotherDefendantTypeIndividual()
+  I.see('Defendant 2: Mrs Orange')
+  defendantSteps.enterDefendantAddress()
+  defendantSteps.noDefendantCompanyName()
+  defendantSteps.enterServiceAddress()
+  defendantSteps.enterAnotherDefendant()
+  defendantSteps.enterAnotherDefendantTypeOrganisation()
+  I.see('Defendant 3: Ghi corporation')
+  defendantSteps.enterDefendantAddress()
+  defendantSteps.enterDefendantRepsCompanyName()
+  I.see("Defendant 3's legal representative: Defendant Rep Ltd")
+  defendantSteps.enterDefendantRepsAddress()
+  I.see('Number')
+  I.see('Defendant name')
+  I.see('Action')
+  I.see('1')
+  I.see('Def corporation')
+  I.see('Mrs Orange')
+  I.see('Ghi corporation')
+  I.see('Remove')
 })
 
 Scenario('I can fill in Claimant individual and Defendant individual details', (I, userSteps, defendantSteps) => {
@@ -39,7 +59,7 @@ Scenario('I can fill in Claimant individual and Defendant individual details', (
   I.see('Defendant: Mr Pret')
   defendantSteps.enterDefendantAddress()
   defendantSteps.noDefendantCompanyName()
-  defendantSteps.enterServiceAddress()
+  defendantSteps.defendantAddressAsServiceAddress()
   defendantSteps.noAnotherDefendant()
 })
 

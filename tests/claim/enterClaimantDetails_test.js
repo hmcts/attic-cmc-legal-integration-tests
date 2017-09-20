@@ -2,34 +2,6 @@
 
 Feature('Claimant Enter details of claim')
 
-Scenario('I can fill in Claimant organization and their details', (I, userSteps) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeOrganisation()
-  I.see('Claimant: Abc corporation')
-  userSteps.enterClaimantAddress()
-  userSteps.noAdditionalClaimant()
-})
-
-Scenario('I can fill in Claimant individual and their details', (I, userSteps) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeIndividual()
-  I.see('Claimant: Mr Benugo')
-  userSteps.enterClaimantAddress()
-  userSteps.noAdditionalClaimant()
-})
-
 Scenario('I can fill in two Claimants and their details', (I, userSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
@@ -45,8 +17,14 @@ Scenario('I can fill in two Claimants and their details', (I, userSteps) => {
   userSteps.enterClaimantTypeIndividual()
   I.see('Claimant 2: Mr Benugo')
   userSteps.enterClaimantAddress()
-  userSteps.noAdditionalClaimant()
-})
+  I.see('Number')
+  I.see('Claimant name')
+  I.see('Action')
+  I.see('1')
+  I.see('Mr Benugo')
+  I.see('2')
+  I.see('Mr Benugo')
+  I.see('Remove')})
 
 Scenario('Check Error Messages in Add additional claimant Page', (I, userSteps, claimantAdd) => {
   userSteps.loginDefaultUser()

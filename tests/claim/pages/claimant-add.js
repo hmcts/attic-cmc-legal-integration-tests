@@ -29,7 +29,7 @@ module.exports = {
     I.click(this.buttons.saveAndContinue)
   },
 
-  noAdditionalClaimant () {
+  chooseNoAdditionalClaimant () {
     I.see('Do you want to add another claimant?')
     I.see('You can add up to 20 claimants in this service.')
     I.checkOption(this.fields.isAddClaimantNo)

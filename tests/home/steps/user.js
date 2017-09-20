@@ -55,6 +55,6 @@ module.exports = {
     claimantAddPage.enterAdditionalClaimant()
   },
   noAdditionalClaimant () {
-    claimantAddPage.noAdditionalClaimant()
+    claimantAddPage.chooseNoAdditionalClaimant()
   }
 }

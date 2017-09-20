@@ -37,7 +37,12 @@ module.exports = {
     I.fillField(this.fields.postcode, 'SW1H 9AJ')
     I.click(this.buttons.saveAndContinue)
   },
-
+  useDefendantAddressAsServiceAddress () {
+    I.see("Use the defendant's address")
+    I.checkOption(this.fields.useDefendantsAddress)
+    I.see('CMC T2 DEFENDANT WESTMINSTER LONDON SW1H 9BJ')
+    I.click(this.buttons.saveAndContinue)
+  },
   checkMandatoryErrorMessageForAddressForService () {
     I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
