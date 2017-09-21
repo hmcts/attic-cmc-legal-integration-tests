@@ -12,7 +12,7 @@ module.exports = {
     summariseClaimTextArea: 'textarea[id=text]'
   },
   buttons: {
-    saveandContinue: 'input.button'
+    saveAndContinue: 'input.button'
   },
 
   open () {
@@ -22,18 +22,18 @@ module.exports = {
   enterBriefDescriptionOfTheClaim () {
     I.see('Briefly describe the claim')
     I.fillField(this.fields.summariseClaimTextArea, 'I would like to test this with codeceptjs')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
   },
 
   checkMandatoryErrorMessage () {
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Enter a brief description of the claim')
   },
 
   checkForBlankErrorMessage () {
     I.fillField(this.fields.summariseClaimTextArea, ' ')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Enter a brief description of the claim')
   }

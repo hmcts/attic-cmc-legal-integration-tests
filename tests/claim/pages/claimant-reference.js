@@ -14,7 +14,7 @@ module.exports = {
   },
 
   buttons: {
-    saveandContinue: 'input.button'
+    saveAndContinue: 'input.button'
   },
 
   open () {
@@ -24,7 +24,7 @@ module.exports = {
   enterYourReferenceForClaim () {
     I.see('Your reference for this claim')
     I.fillField(this.fields.referenceNumber, 'PBA1234567')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
   }
 
 }

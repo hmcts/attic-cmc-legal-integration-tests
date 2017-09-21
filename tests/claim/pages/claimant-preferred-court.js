@@ -14,7 +14,7 @@ module.exports = {
   },
 
   buttons: {
-    saveandContinue: 'input.button'
+    saveAndContinue: 'input.button'
   },
 
   open () {
@@ -25,7 +25,7 @@ module.exports = {
     I.see('Choose court location')
     I.fillField(this.fields.courtName, 'Dartford County Court')
     I.see('Find a hearing centre')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
   }
 
 }

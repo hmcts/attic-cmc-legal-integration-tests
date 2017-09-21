@@ -14,7 +14,7 @@ module.exports = {
 
   },
   buttons: {
-    saveandContinue: 'input.button.button-start'
+    saveAndContinue: 'input.button.button-start'
   },
 
   open () {

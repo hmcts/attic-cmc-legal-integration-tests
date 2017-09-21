@@ -16,7 +16,7 @@ module.exports = {
   },
 
   buttons: {
-    saveandContinue: 'input.button'
+    saveAndContinue: 'input.button'
   },
 
   open () {
@@ -28,24 +28,24 @@ module.exports = {
     I.checkOption(this.fields.defendantRepresentedYes)
     I.see('Defendant representative organisation name')
     I.fillField(this.fields.companyName, 'Defendant Rep Ltd')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
   },
 
   noDefendantCompanyName () {
     I.see('Has the defendant got a legal representative who\'s instructed to accept service?')
     I.checkOption(this.fields.defendantRepresentedNo)
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
   },
 
   checkMandatoryErrorMessage () {
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Choose yes if defendant is represented')
   },
 
   checkMandatoryErrorMessageForDefendantCompanyName () {
     I.checkOption(this.fields.defendantRepresentedYes)
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Enter defendant representative organisation name')
   },
@@ -53,7 +53,7 @@ module.exports = {
   checkForBlankErrorMessageForDefendantCompanyName () {
     I.checkOption(this.fields.defendantRepresentedYes)
     I.fillField(this.fields.companyName, ' ')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Enter defendant representative organisation name')
   }

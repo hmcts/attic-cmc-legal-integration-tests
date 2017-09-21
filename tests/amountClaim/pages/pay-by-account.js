@@ -12,7 +12,7 @@ module.exports = {
     feeAccountReference: 'input[id=reference]'
   },
   buttons: {
-    saveandContinue: 'input.button'
+    saveAndContinue: 'input.button'
   },
 
   open () {
@@ -25,25 +25,25 @@ module.exports = {
     I.see('£455')
     I.see('Fee Account number')
     I.fillField(this.fields.feeAccountReference, 'PBA1234567')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
   },
 
   checkMandatoryErrorMessage () {
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Enter your Fee Account number')
   },
 
   checkForBlankErrorMessage () {
     I.fillField(this.fields.feeAccountReference, ' ')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('There was a problem')
     I.see('Enter your Fee Account number')
   },
 
   checkForInvalidReference () {
     I.fillField(this.fields.feeAccountReference, 'PBA12345675 ')
-    I.click(this.buttons.saveandContinue)
+    I.click(this.buttons.saveAndContinue)
     I.see('Enter a valid Fee Account number')
   }
 }
