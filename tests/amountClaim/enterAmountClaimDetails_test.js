@@ -43,6 +43,7 @@ Scenario('I can fill in individual details for Claimant, Defendant, Claim amount
   userSteps.enterClaimantTypeIndividual()
   I.see('Claimant: Mr Benugo')
   userSteps.enterClaimantAddress()
+  userSteps.noAdditionalClaimant()
   defendantSteps.enterDefendantTypeIndividual()
   I.see('Defendant: Mr Pret')
   defendantSteps.enterDefendantAddress()
