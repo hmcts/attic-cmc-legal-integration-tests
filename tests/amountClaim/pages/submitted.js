@@ -27,5 +27,7 @@ module.exports = {
     I.see("We've emailed confirmation to: " + user.email)
     I.see('Follow these steps to serve a claim:')
     I.see('1. Download the sealed claim form (this will open in a new window).')
+    I.scrollPageToBottom()
+    I.click('Download the sealed claim form')
   }
 }
