@@ -26,7 +26,7 @@ module.exports = {
   enterDefendantCompanyName () {
     I.see('Has the defendant got a legal representative who\'s instructed to accept service?')
     I.checkOption(this.fields.defendantRepresentedYes)
-    I.see('Defendant representative organisation name')
+    I.see('Representative\'s organisation name')
     I.fillField(this.fields.companyName, 'Defendant Rep Ltd')
     I.click(this.buttons.saveAndContinue)
   },
