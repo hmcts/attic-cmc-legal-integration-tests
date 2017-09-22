@@ -2,7 +2,7 @@
 
 Feature('Enter claim amount and submit claim')
 
-Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
+Scenario('I can fill in Organisation details for Claimant, Defendant, Claim amount and Submit the claim', (I, userSteps, defendantSteps, amountClaimSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -32,7 +32,36 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   amountClaimSteps.verifySubmittedPage()
 })
 
-Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
+Scenario('I can fill in individual details for Claimant, Defendant, Claim amount and Submit the claim ', (I, userSteps, defendantSteps, amountClaimSteps) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourOrganisationNamePage()
+  userSteps.enterYourOrganisationAddress()
+  userSteps.enterYourOrganisationContactDetails()
+  userSteps.enterYourReferenceNumber()
+  userSteps.enterYourPreferredCountyCourt()
+  userSteps.enterClaimantTypeIndividual()
+  I.see('Claimant: Mr Benugo')
+  userSteps.enterClaimantAddress()
+  userSteps.noAdditionalClaimant()
+  defendantSteps.enterDefendantTypeIndividual()
+  I.see('Defendant: Mr Pret')
+  defendantSteps.enterDefendantAddress()
+  defendantSteps.noDefendantCompanyName()
+  defendantSteps.defendantAddressAsServiceAddress()
+  defendantSteps.noAnotherDefendant()
+  amountClaimSteps.personalInjuryLessThan1000()
+  amountClaimSteps.housingDisrepairLessThan1000()
+  amountClaimSteps.summariseTheClaim()
+  amountClaimSteps.enterRangeOfTheClaim()
+  amountClaimSteps.feeCheckForRangeTotal()
+  amountClaimSteps.verifyIndividualSummaryDetails()
+  amountClaimSteps.addStatementOfTruthSignerNameAndRole()
+  amountClaimSteps.addPayByAccountFeeNumber()
+  amountClaimSteps.verifySubmittedPage()
+})
+
+Scenario('I can fill in Organisation details for Claimant, Defendant and no Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -56,6 +85,7 @@ Scenario('I can fill in Claimant, Defendant and Claim amount details', (I, userS
   amountClaimSteps.summariseTheClaim()
   amountClaimSteps.canNotStateTheClaimValue()
   amountClaimSteps.feeCheckForCanNotStateTheClaimValue()
+  amountClaimSteps.verifyNoClaimSummaryDetails()
 })
 
 Scenario('Check personal injury more than 1000', (I, userSteps, amountClaimSteps) => {

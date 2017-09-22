@@ -101,6 +101,20 @@ module.exports = {
     detailsSummaryPage.aboutThisClaim()
     detailsSummaryPage.selectSubmitButton()
   },
+  verifyNoClaimSummaryDetails () {
+    detailsSummaryPage.verifyOrganizationDetails()
+    detailsSummaryPage.claimantDetails()
+    detailsSummaryPage.defendantDetails()
+    detailsSummaryPage.aboutThisClaimWithNoClaimValue()
+    detailsSummaryPage.selectSubmitButton()
+  },
+  verifyIndividualSummaryDetails () {
+    detailsSummaryPage.verifyOrganizationDetails()
+    detailsSummaryPage.individualClaimDetails()
+    detailsSummaryPage.individualDefendantDetails()
+    detailsSummaryPage.aboutThisClaim()
+    detailsSummaryPage.selectSubmitButton()
+  },
 
   addStatementOfTruthSignerNameAndRole () {
     statementOfTruthPage.enterStatementOfTruthSignerNameAndRole()

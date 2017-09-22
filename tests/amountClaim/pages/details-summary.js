@@ -93,6 +93,39 @@ module.exports = {
     I.see('Issue fee')
     I.see('£455')
   },
+  individualClaimDetails () {
+    I.see('Claimant details')
+    I.see('Name')
+    I.see('Mr Benugo')
+    I.see('Address')
+    I.see('CMC T2')
+    I.see('WESTMINSTER')
+    I.see('LONDON')
+    I.see('SW1H 9AJ')
+  },
+
+  individualDefendantDetails () {
+    I.see('Defendant details')
+    I.see('Mr Pret')
+    I.see('Address')
+    I.see('CMC T2 DEFENDANT')
+    I.see('WESTMINSTER')
+    I.see('LONDON')
+    I.see('SW1H 9BJ')
+    I.scrollTo('#defendantDetails')
+  },
+
+  aboutThisClaimWithNoClaimValue () {
+    I.see('About this claim')
+    I.see('Brief details of claim')
+    I.see('I would like to test this with codeceptjs')
+    I.see('Claim amount')
+    I.see('To be assessed')
+    I.see('Statement of value')
+    I.see('The claimant can\'t state the value of the claim.')
+    I.see('Issue fee')
+    I.see('£10,000')
+  },
   selectSubmitButton () {
     I.click(this.buttons.saveAndContinue)
   }
