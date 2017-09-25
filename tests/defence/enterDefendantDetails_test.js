@@ -33,14 +33,12 @@ Scenario('I can fill in Claimant organization and more Defendant organization de
   defendantSteps.enterDefendantRepsCompanyName()
   I.see("Defendant 3's legal representative: Defendant Rep Ltd")
   defendantSteps.enterDefendantRepsAddress()
-  I.see('Number')
-  I.see('Defendant name')
-  I.see('Action')
-  I.see('1')
+  I.see('Defendant')
   I.see('Def corporation')
   I.see('Mrs Orange')
   I.see('Ghi corporation')
   I.see('Remove')
+  I.see('Change')
 })
 
 Scenario('I can fill in Claimant individual and Defendant individual details', (I, userSteps, defendantSteps) => {
