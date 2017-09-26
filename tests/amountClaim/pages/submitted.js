@@ -29,5 +29,6 @@ module.exports = {
     I.see('1. Download the sealed claim form (this will open in a new window).')
     I.scrollPageToBottom()
     I.click('Download the sealed claim form')
+    I.wait(10)
   }
 }
