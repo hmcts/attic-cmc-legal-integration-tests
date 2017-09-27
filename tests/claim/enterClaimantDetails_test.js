@@ -17,14 +17,11 @@ Scenario('I can fill in two Claimants and their details', (I, userSteps) => {
   userSteps.enterClaimantTypeIndividual()
   I.see('Claimant 2: Mr Benugo')
   userSteps.enterClaimantAddress()
-  I.see('Number')
-  I.see('Claimant name')
-  I.see('Action')
-  I.see('1')
+  I.see('Claimant')
   I.see('Mr Benugo')
-  I.see('2')
   I.see('Mr Benugo')
   I.see('Remove')
+  I.see('Change')
 })
 
 Scenario('Check Error Messages in Add additional claimant Page', (I, userSteps, claimantAdd) => {
