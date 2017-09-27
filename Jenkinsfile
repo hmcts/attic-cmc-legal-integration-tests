@@ -36,7 +36,7 @@ timestamps {
 
       stage('Run integration tests') {
         integrationTests.execute(['LEGAL_INTEGRATION_TESTS_VERSION': integrationTestsVersion,
-                                  'INTEGRATION_TESTS_BRANCH': 'master'
+                                  'INTEGRATION_TESTS_BRANCH': 'add-debug-download-location-config'
         ],
           Team.LEGAL
         )
