@@ -105,6 +105,7 @@ services:
         - GOV_NOTIFY_API_KEY
         - FRONTEND_BASE_URL=https://www-local.moneyclaim.reform.hmcts.net:3000
         - CLAIM_STORE_TEST_SUPPORT_ENABLED=true
+        - CLAIM_STORE_WATERMARK_PDF_ENABLED=false
         - STAFF_NOTIFICATIONS_SENDER=no-reply@example.com
         - STAFF_NOTIFICATIONS_RECIPIENT=staff@example.com
         - SPRING_MAIL_HOST=smtp-server
