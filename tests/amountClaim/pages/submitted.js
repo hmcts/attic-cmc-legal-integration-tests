@@ -24,6 +24,7 @@ module.exports = {
 
   verifyTextInSubmittedPage () {
     I.click(submitPageData.downloadPDFLink)
+    I.wait(5)
     I.see(submitPageData.claimIssuedText)
     I.see(submitPageData.feesPaid)
     I.see(submitPageData.emailConfirmation + user.email)
