@@ -2,6 +2,7 @@
 /* global actor */
 
 const user = require('../../../test-data').user
+const submitPageData = require('../../../test-data').submitPageData
 
 let I
 
@@ -22,21 +23,25 @@ module.exports = {
   },
 
   verifyTextInSubmittedPage () {
-    I.see('Your claim has been issued')
-    I.see('Fee paid: £455')
-    I.see("We've emailed confirmation to: " + user.email)
-    I.see('Follow these steps to serve a claim:')
-    I.see('1. Download the sealed claim form (this will open in a new window).')
+    I.click(submitPageData.downloadPDFLink)
+    I.see(submitPageData.claimIssuedText)
+    I.see(submitPageData.feesPaid)
+    I.see(submitPageData.emailConfirmation + user.email)
+    I.see(submitPageData.followSteps)
+    I.see(submitPageData.followStepsPoint1)
     I.scrollPageToBottom()
-    I.click('Download the sealed claim form')
-    I.waitForText('2. Send the form, particulars of claim and a response pack to the defendant within 4 months of the date of issue.')
-    I.waitForText('3. Send the court a certificate of service and a copy of any documents you served on the defendant, within 21 days of service.')
+    I.waitForText(submitPageData.followStepsPoint2)
+    I.waitForText(submitPageData.followStepsPoint3)
     I.see('Court address:')
-    I.see('County Court Money Claims Centre (CCMCC)')
-    I.see('Salford')
-    I.see('Greater Manchester')
-    I.see('M5 0BY')
-    I.see('DX: 702634 Salford 5')
+    I.see(submitPageData.courtAddress.line1)
+    I.see(submitPageData.courtAddress.line2)
+    I.see(submitPageData.courtAddress.city)
+    I.see(submitPageData.courtAddress.postcode)
+    I.see(submitPageData.courtAddress.dxNumber)
+  },
+  selectSubmitButton () {
+    I.scrollPageToBottom()
     I.click(this.buttons.finish)
+    I.see('start')
   }
 }

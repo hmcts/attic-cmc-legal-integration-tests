@@ -125,6 +125,7 @@ module.exports = {
 
   verifySubmittedPage () {
     submittedPage.verifyTextInSubmittedPage()
+    submittedPage.selectSubmitButton()
   }
 
 }
