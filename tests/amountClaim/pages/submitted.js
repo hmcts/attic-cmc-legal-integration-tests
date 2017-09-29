@@ -23,8 +23,7 @@ module.exports = {
   },
 
   verifyTextInSubmittedPage () {
-    I.click(submitPageData.downloadPDFLink)
-    I.wait(5)
+   // I.click(submitPageData.downloadPDFLink)
     I.see(submitPageData.claimIssuedText)
     I.see(submitPageData.feesPaid)
     I.see(submitPageData.emailConfirmation + user.email)
@@ -40,6 +39,10 @@ module.exports = {
     I.see(submitPageData.courtAddress.postcode)
     I.see(submitPageData.courtAddress.dxNumber)
   },
+  downloadPDF(url) {
+    I.amOnPage(url)
+  },
+
   selectSubmitButton () {
     I.scrollPageToBottom()
     I.click(this.buttons.finish)

@@ -125,7 +125,8 @@ module.exports = {
 
   verifySubmittedPage () {
     submittedPage.verifyTextInSubmittedPage()
-    submittedPage.selectSubmitButton()
+    //submittedPage.downloadPDF()
+    //submittedPage.selectSubmitButton()
   }
 
 }
