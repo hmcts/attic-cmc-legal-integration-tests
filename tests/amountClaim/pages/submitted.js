@@ -42,7 +42,7 @@ module.exports = {
 
   downloadPDF (url) {
     I.amOnPage(url)
-    I.seeInCurrentUrl("/receipts")
+    I.seeInCurrentUrl('/receipts')
     I.wait(10)
   },
 
