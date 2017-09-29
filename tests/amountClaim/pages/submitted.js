@@ -39,7 +39,8 @@ module.exports = {
     I.see(submitPageData.courtAddress.postcode)
     I.see(submitPageData.courtAddress.dxNumber)
   },
-  downloadPDF(url) {
+
+  downloadPDF (url) {
     I.amOnPage(url)
   },
 
