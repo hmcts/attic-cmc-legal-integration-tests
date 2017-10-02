@@ -13,7 +13,7 @@ services:
       image: docker.artifactory.reform.hmcts.net/cmc/legal-integration-tests:${LEGAL_INTEGRATION_TESTS_VERSION:-latest}
       environment:
         - WEB_DRIVER_HOST=remote-webdriver
-        - URL=https://www-local-legal-frontend.moneyclaim.reform.hmcts.net:4000/legal
+        - URL=https://www-local.moneyclaim.reform.hmcts.net:4000/legal
         - IDAM_URL=http://idam-api:8080
         - http_proxy=
         - https_proxy=
@@ -60,7 +60,7 @@ services:
       networks:
         default:
           aliases:
-            - www-local-legal-frontend.moneyclaim.reform.hmcts.net
+            - www-local.moneyclaim.reform.hmcts.net
     authentication-web:
       image: docker.artifactory.reform.hmcts.net/auth/authentication-web:c26503d41333bff84be2016eaaa8d9f005ff1d36
       environment:
