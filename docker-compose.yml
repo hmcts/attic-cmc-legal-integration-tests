@@ -62,13 +62,14 @@ services:
           aliases:
             - www-local.moneyclaim.reform.hmcts.net
     authentication-web:
-      image: docker.artifactory.reform.hmcts.net/auth/authentication-web:c26503d41333bff84be2016eaaa8d9f005ff1d36
+      image: docker.artifactory.reform.hmcts.net/auth/authentication-web:80a01911d921bdbd6d6b8d239b663419ab5fd79f
       environment:
         - IDAM_API_URL=http://idam-api:8080
+        - IDAM_API_OAUTH2_CLIENT_CLIENT_SECRETS_CMC_LEGAL=123456
       depends_on:
         - idam-api
     idam-api:
-      image: docker.artifactory.reform.hmcts.net/auth/idam-api:9922a5dd5ed4cce2d797ad1f8c7196446b89b58a
+      image: docker.artifactory.reform.hmcts.net/auth/idam-api:261593189258cf872f6ea4da8dcf0bee3f46cda6
       command: --wait-for-database 60
       environment:
         - IDAM_SUPERUSER_EMAIL=cmc-int-test@cmc.reform.hmcts.net
@@ -88,6 +89,7 @@ services:
         - NOTIFY_SSCS_ACTIVATE_USER_TEMPLATE=fake
         - NOTIFY_CCD_ACTIVATE_USER_TEMPLATE=fake
         - NOTIFY_CMC_ACTIVATE_USER_TEMPLATE=fake
+        - IDAM_API_OAUTH2_CLIENT_CLIENT_SECRETS_CMC_LEGAL=123456
       depends_on:
         - idam-database
     idam-database:
