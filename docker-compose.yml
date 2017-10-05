@@ -30,6 +30,7 @@ services:
     legal-frontend:
       image: docker.artifactory.reform.hmcts.net/cmc/legal-frontend:${LEGAL_FRONTEND_VERSION:-latest}
       environment:
+        - NODE_ENV=dockertests
         - IDAM_SECRET_KEY=cmc_it_test_secret_key
         - IDAM_HEALTH_CHECK_URL=http://idam-api:8080/health
         - IDAM_API_URL=http://idam-api:8080
