@@ -4,9 +4,12 @@
 !yarn.lock
 
 !codecept.conf.js
+!saucelabs.conf.js
+!supported-browsers.js
 !bootstrap.js
 !proxy-settings.js
 !test-data.js
 !tests/**
+!helpers/*
 !localhost.crt
 

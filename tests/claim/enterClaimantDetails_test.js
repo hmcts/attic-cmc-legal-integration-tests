@@ -96,4 +96,3 @@ Scenario('Check Error Messages in Enter your claimant address Page', (I, userSte
   claimantAddress.checkForAddressLineLength()
   claimantAddress.checkForPostCodeLengthMessage()
 })
-
