@@ -5,7 +5,7 @@ set -e
 USER_EMAIL="${1:-me@server.net}"
 FORENAME="${2:-John}"
 SURNAME="${3:-Smith}"
-PASSWORD=Password12
+PASSWORD="${4:-Password12}"
 
 curl -XPOST -H 'Content-Type: application/json' http://localhost:8080/testing-support/accounts -d '{
     "email": "'${USER_EMAIL}'",
