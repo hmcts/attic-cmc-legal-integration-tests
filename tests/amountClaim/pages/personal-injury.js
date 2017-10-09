@@ -19,7 +19,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/personal-injury')
+    I.amOnPage('/legal/claim/personal-injury')
   },
 
   enterPersonalInjuryLessThan1000 () {

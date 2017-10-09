@@ -18,7 +18,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/submitted')
+    I.amOnPage('/legal/claim/submitted')
   },
 
   verifyTextInSubmittedPage () {

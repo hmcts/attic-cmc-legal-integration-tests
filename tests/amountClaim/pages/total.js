@@ -16,7 +16,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/total')
+    I.amOnPage('/legal/claim/total')
   },
 
   checkFeeTotalForRange () {

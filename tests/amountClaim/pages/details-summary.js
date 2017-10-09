@@ -16,7 +16,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/details-summary')
+    I.amOnPage('/legal/claim/details-summary')
   },
 
   verifyOrganizationDetails () {

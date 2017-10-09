@@ -16,7 +16,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/summarise-the-claim')
+    I.amOnPage('/legal/claim/summarise-the-claim')
   },
 
   enterBriefDescriptionOfTheClaim () {

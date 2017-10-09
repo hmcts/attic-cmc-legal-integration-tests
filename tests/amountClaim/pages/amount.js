@@ -18,7 +18,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/amount')
+    I.amOnPage('/legal/claim/amount')
   },
 
   enterHigherValueOfTheClaim () {
