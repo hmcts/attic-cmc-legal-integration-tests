@@ -17,7 +17,7 @@ function requiredValue (envVariableValue, variableName) {
 function setupDesiredCapabilitiesFor (browser, saucelabsTunnelName) {
   let desiredCapability = supportedBrowsers[browser]
   desiredCapability.tunnelIdentifier = saucelabsTunnelName
-  desiredCapability.tags = ['cmc']
+  desiredCapability.tags = ['cmc-legal']
   return desiredCapability
 }
 
