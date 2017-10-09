@@ -6,6 +6,7 @@
 !codecept.conf.js
 !saucelabs.conf.js
 !supported-browsers.js
+!page-definitions.js
 !bootstrap.js
 !proxy-settings.js
 !test-data.js
