@@ -70,7 +70,7 @@ services:
       depends_on:
         - idam-api
     idam-api:
-      image: docker.artifactory.reform.hmcts.net/auth/idam-api:261593189258cf872f6ea4da8dcf0bee3f46cda6
+      image: docker.artifactory.reform.hmcts.net/auth/idam-api:cfdfe653d247f3810ac95fcc025786e100f549fb
       command: --wait-for-database 60
       environment:
         - IDAM_SUPERUSER_EMAIL=cmc-int-test@cmc.reform.hmcts.net
