@@ -16,6 +16,9 @@ exports.config = {
       desiredCapabilities: {
         proxy: new ProxySettings()
       }
+    },
+    submitPageHelper: {
+      require: './helpers/submitPageHelper.js'
     }
   },
   include: {
