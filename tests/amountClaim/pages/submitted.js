@@ -42,7 +42,7 @@ module.exports = {
 
   async downloadPdf () {
     await I.click(submitPageData.downloadPDFLink)
-    const waitTill = new Date(new Date().getTime() + 5000)
+    const waitTill = new Date(new Date().getTime() + 10000)
     while (waitTill > new Date()) {}
   },
 
