@@ -1,18 +1,19 @@
 'use strict'
-/* globals codecept_helper */
-const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
+
+/* const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
+const fs = require('fs')
 const request = require('request-promise-native')
 
-let Helper = codecept_helper
-
+let Helper = codecept_helper */
+/*
 class submitPageHelper extends Helper {
   downloadPDF (url) {
     return request.get({
       uri: url,
       resolveWithFullResponse: true,
-      ca: fs.readFileSync('localhost.crt'),
+      ca: process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
     })
-    /*return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest()
       console.log('URL is: ' + url)
       xhr.open('GET', url, true)
@@ -29,7 +30,8 @@ class submitPageHelper extends Helper {
       }
       xhr.onerror = reject
       xhr.send()
-    })*/
+    })
   }
 }
 module.exports = submitPageHelper
+  */
