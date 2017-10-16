@@ -58,11 +58,8 @@ Scenario.only('I can fill in individual details for Claimant, Defendant, Claim a
   amountClaimSteps.verifyIndividualSummaryDetails()
   amountClaimSteps.addStatementOfTruthSignerNameAndRole()
   amountClaimSteps.addPayByAccountFeeNumber()
-  I.wait(20)
+  yield submittedPage.downloadPdf()
   amountClaimSteps.verifySubmittedPage()
-  let url = yield I.grabAttributeFrom('ol li a', 'href')
-  yield I.downloadPDF(url)
-  I.refreshPage()
 })
 
 Scenario('I can fill in Organisation details for Claimant, Defendant and no Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {

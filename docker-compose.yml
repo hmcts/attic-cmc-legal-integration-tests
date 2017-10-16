@@ -3,7 +3,7 @@ version: '2.1'
 
 services:
     legal-integration-tests:
-      command: test -- --steps
+      command: test -- --reporter mochawesome --reporter-options reportFilename=CMCT2-End2End-Test-Report,inlineAssets=true,reportTitle=legal-rep-frontend-E2E-report,reportDir=output
       build:
         context: .
         args:
