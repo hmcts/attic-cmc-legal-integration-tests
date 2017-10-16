@@ -57,6 +57,15 @@ services:
       ports:
         - 1025:1025
         - 8025:8025
+    em-api-gateway-web:
+      ports:
+        - 8082:8080
+    evidence-management-api:
+      ports:
+        - 8083:8080
+    evidence-database:
+      ports:
+        - 5435:5432
 
 volumes:
   draft-store-database-data:
