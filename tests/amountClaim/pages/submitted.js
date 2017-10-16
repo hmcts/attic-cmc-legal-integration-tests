@@ -40,13 +40,10 @@ module.exports = {
     I.see(submitPageData.courtAddress.dxNumber)
   },
 
-/*
-  downloadPDF (url) {
-    I.amOnPage(url)
-    I.wait(10)
-    I.seeInCurrentUrl('/receipts')
+  async downloadPdf () {
+    await I.click(submitPageData.downloadPDFLink)
+    await 5
   },
-*/
 
   selectSubmitButton () {
     I.scrollPageToBottom()
