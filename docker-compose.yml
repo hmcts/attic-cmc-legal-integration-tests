@@ -65,14 +65,14 @@ services:
           aliases:
             - www-local.moneyclaim.reform.hmcts.net
     authentication-web:
-      image: docker.artifactory.reform.hmcts.net/auth/authentication-web:80a01911d921bdbd6d6b8d239b663419ab5fd79f
+      image: docker.artifactory.reform.hmcts.net/auth/authentication-web:65e9cbfeeee1c6f238e7ef25e7159ae066058c8f
       environment:
         - IDAM_API_URL=http://idam-api:8080
         - IDAM_API_OAUTH2_CLIENT_CLIENT_SECRETS_CMC_LEGAL=123456
       depends_on:
         - idam-api
     idam-api:
-      image: docker.artifactory.reform.hmcts.net/auth/idam-api:cfdfe653d247f3810ac95fcc025786e100f549fb
+      image: docker.artifactory.reform.hmcts.net/auth/idam-api:386ea4e56789cdd0db35f3a532722b5a8de15f18
       command: --wait-for-database 60
       environment:
         - IDAM_SUPERUSER_EMAIL=cmc-int-test@cmc.reform.hmcts.net
@@ -139,7 +139,7 @@ services:
         - CLAIM_STORE_DB_USERNAME=claimstore
         - CLAIM_STORE_DB_PASSWORD=claimstore
     fees-api:
-      image: docker.artifactory.reform.hmcts.net/fees-register/fees-api:84d45b46bb20431f28d65e6dc51c4ee123cb7eae
+      image: docker.artifactory.reform.hmcts.net/fees-register/fees-api:33328e91ec54cbf4dbc9f52fe56f3712fe20a331
       healthcheck:
         retries: 20
       environment:
