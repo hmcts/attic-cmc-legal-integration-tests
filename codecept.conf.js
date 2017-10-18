@@ -16,6 +16,9 @@ exports.config = {
       desiredCapabilities: {
         proxy: new ProxySettings()
       }
+    },
+    DownloadPdfHelper: {
+      require: './helpers/downloadPdfHelper'
     }
   },
   include: {
