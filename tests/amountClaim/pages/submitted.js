@@ -23,7 +23,6 @@ module.exports = {
   },
 
   verifyTextInSubmittedPage () {
-   // I.click(submitPageData.downloadPDFLink)
     I.see(submitPageData.claimIssuedText)
     I.see(submitPageData.feesPaid)
     I.see(submitPageData.emailConfirmation + user.email)
@@ -38,12 +37,6 @@ module.exports = {
     I.see(submitPageData.courtAddress.city)
     I.see(submitPageData.courtAddress.postcode)
     I.see(submitPageData.courtAddress.dxNumber)
-  },
-
-  async downloadPdf () {
-    await I.click(submitPageData.downloadPDFLink)
-    const waitTill = new Date(new Date().getTime() + 10000)
-    while (waitTill > new Date()) {}
   },
 
   selectSubmitButton () {
