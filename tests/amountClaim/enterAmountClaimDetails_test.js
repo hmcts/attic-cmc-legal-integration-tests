@@ -60,8 +60,10 @@ Scenario.only('I can fill in individual details for Claimant, Defendant, Claim a
   amountClaimSteps.addPayByAccountFeeNumber()
 
   const pdfUrl = yield I.grabAttributeFrom('ol li a', 'href')
+  console.log(pdfUrl)
   const sessionCookie = yield I.grabCookie('T2_SESSION_ID')
 
+  console.log(sessionCookie.value)
   yield I.downloadPDF(pdfUrl, sessionCookie.value)
   amountClaimSteps.verifySubmittedPage()
 })
