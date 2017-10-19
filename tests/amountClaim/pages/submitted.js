@@ -23,24 +23,11 @@ module.exports = {
   },
 
   verifyTextInSubmittedPage () {
-    I.see(submitPageData.claimIssuedText)
     I.see(submitPageData.feesPaid)
     I.see(submitPageData.emailConfirmation + user.email)
-    I.see(submitPageData.followSteps)
-    I.see(submitPageData.followStepsPoint1)
-    I.scrollPageToBottom()
-    I.waitForText(submitPageData.followStepsPoint2)
-    I.waitForText(submitPageData.followStepsPoint3)
-    I.see('Court address:')
-    I.see(submitPageData.courtAddress.line1)
-    I.see(submitPageData.courtAddress.line2)
-    I.see(submitPageData.courtAddress.city)
-    I.see(submitPageData.courtAddress.postcode)
-    I.see(submitPageData.courtAddress.dxNumber)
   },
 
   selectSubmitButton () {
-    I.scrollPageToBottom()
     I.click(this.buttons.finish)
     I.see('start')
   }
