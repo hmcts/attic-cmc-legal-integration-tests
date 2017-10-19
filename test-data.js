@@ -10,5 +10,5 @@ exports.verifyPageData = {
   emailConfirmation: 'We\'ve emailed confirmation to: ',
   feeAccountNumber: 'PBA0000000',
   feesPaid: '£455',
-  maxFeePaid: '10000'
+  maxFeePaid: '£10,000'
 }
