@@ -27,14 +27,12 @@ module.exports = {
 
   checkMandatoryErrorMessage () {
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter a brief description of the claim')
   },
 
   checkForBlankErrorMessage () {
     I.fillField(this.fields.summariseClaimTextArea, ' ')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter a brief description of the claim')
   }
 }

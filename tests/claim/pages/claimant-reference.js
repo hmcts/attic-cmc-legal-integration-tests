@@ -1,5 +1,6 @@
 'use strict'
 /* global actor */
+const verifyPageData = require('../../../test-data').verifyPageData
 
 let I
 
@@ -23,7 +24,7 @@ module.exports = {
 
   enterYourReferenceForClaim () {
     I.see('Your reference for this claim')
-    I.fillField(this.fields.referenceNumber, 'PBA1234567')
+    I.fillField(this.fields.referenceNumber, verifyPageData.organizationRefNumber)
     I.click(this.buttons.saveAndContinue)
   }
 

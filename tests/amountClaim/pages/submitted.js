@@ -2,7 +2,7 @@
 /* global actor */
 
 const user = require('../../../test-data').user
-const submitPageData = require('../../../test-data').submitPageData
+const verifyPageData = require('../../../test-data').verifyPageData
 
 let I
 
@@ -23,8 +23,8 @@ module.exports = {
   },
 
   verifyTextInSubmittedPage () {
-    I.see(submitPageData.feesPaid)
-    I.see(submitPageData.emailConfirmation + user.email)
+    I.see(verifyPageData.feesPaid)
+    I.see(verifyPageData.emailConfirmation + user.email)
   },
 
   selectSubmitButton () {

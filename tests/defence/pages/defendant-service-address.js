@@ -25,27 +25,20 @@ module.exports = {
   },
 
   enterAnotherServiceAddress () {
-    I.see('Use another address')
     I.checkOption(this.fields.useAnotherAddress)
-    I.see('Address line 1')
     I.fillField(this.fields.addressLine1, 'CMC T2')
-    I.see('Address line 2 (optional)')
     I.fillField(this.fields.addressLine2, 'Westminster')
-    I.see('Town or city')
     I.fillField(this.fields.cityName, 'London')
-    I.see('Postcode')
     I.fillField(this.fields.postcode, 'SW1H 9AJ')
     I.click(this.buttons.saveAndContinue)
   },
   useDefendantAddressAsServiceAddress () {
-    I.see("Use the defendant's address")
     I.checkOption(this.fields.useDefendantsAddress)
     I.see('CMC T2 DEFENDANT WESTMINSTER LONDON SW1H 9BJ')
     I.click(this.buttons.saveAndContinue)
   },
   checkMandatoryErrorMessageForAddressForService () {
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Choose which address to use')
   },
 
