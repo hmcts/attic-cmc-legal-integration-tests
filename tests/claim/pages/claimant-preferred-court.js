@@ -22,9 +22,7 @@ module.exports = {
   },
 
   enterYourPreferredCountyCourt () {
-    I.see('Choose court location')
     I.fillField(this.fields.courtName, 'Dartford County Court')
-    I.see('Find a hearing centre')
     I.click(this.buttons.saveAndContinue)
   }
 

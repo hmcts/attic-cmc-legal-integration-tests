@@ -1,5 +1,6 @@
 'use strict'
 /* global actor */
+const verifyPageData = require('../../../test-data').verifyPageData
 
 let I
 
@@ -20,24 +21,19 @@ module.exports = {
   },
 
   enterFeeAccountNumber () {
-    I.see('Pay by Fee Account')
-    I.see('Total cost')
-    I.see('£455')
-    I.see('Fee Account number')
-    I.fillField(this.fields.feeAccountReference, 'PBA1234567')
+    I.see(verifyPageData.feesPaid)
+    I.fillField(this.fields.feeAccountReference, verifyPageData.feeAccountNumber)
     I.click(this.buttons.saveAndContinue)
   },
 
   checkMandatoryErrorMessage () {
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter your Fee Account number')
   },
 
   checkForBlankErrorMessage () {
     I.fillField(this.fields.feeAccountReference, ' ')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter your Fee Account number')
   },
 

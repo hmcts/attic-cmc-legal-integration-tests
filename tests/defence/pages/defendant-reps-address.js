@@ -23,21 +23,15 @@ module.exports = {
   },
 
   enterDefendantRepsCompanyAddress () {
-    I.see('Address')
-    I.see('Address line 1')
     I.fillField(this.fields.addressLine1, 'CMC T2 Defendant Reps')
-    I.see('Address line 2 (optional)')
     I.fillField(this.fields.addressLine2, 'Westminster')
-    I.see('Town or city')
     I.fillField(this.fields.cityName, 'London')
-    I.see('Postcode')
     I.fillField(this.fields.postcode, 'SW1H 9CJ')
     I.click(this.buttons.saveAndContinue)
   },
 
   checkMandatoryErrorMessage () {
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter address line 1')
     I.see('Enter a town or city')
     I.see('Enter a postcode')
@@ -47,7 +41,6 @@ module.exports = {
     I.fillField(this.fields.addressLine1, '')
     I.fillField(this.fields.postcode, '')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter address line 1')
     I.see('Enter a postcode')
   },
@@ -56,7 +49,6 @@ module.exports = {
     I.fillField(this.fields.addressLine1, '')
     I.fillField(this.fields.postcode, 'SW1H 9AJ')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter address line 1')
     I.fillField(this.fields.addressLine1, 'MOJ')
     I.fillField(this.fields.postcode, '')

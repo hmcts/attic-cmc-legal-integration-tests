@@ -5,7 +5,10 @@ exports.user = {
   password: 'Password123'
 }
 
-exports.submitPageData = {
+exports.verifyPageData = {
+  organizationRefNumber: 'PBA1234567',
   emailConfirmation: 'We\'ve emailed confirmation to: ',
-  feesPaid: '£455'
+  feeAccountNumber: 'PBA0000000',
+  feesPaid: '£455',
+  maxFeePaid: '10000'
 }
