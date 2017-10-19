@@ -2,6 +2,7 @@
 /* global actor */
 
 const user = require('../../../test-data').user
+const submitPageData = require('../../../test-data').submitPageData
 
 let I
 
@@ -14,7 +15,7 @@ module.exports = {
 
   },
   buttons: {
-    saveAndContinue: 'input.button.button-start'
+    finish: 'input.button.button-start'
   },
 
   open () {
@@ -22,12 +23,12 @@ module.exports = {
   },
 
   verifyTextInSubmittedPage () {
-    I.see('Your claim has been issued')
-    I.see('Fee paid: £455')
-    I.see("We've emailed confirmation to: " + user.email)
-    I.see('Follow these steps to serve a claim:')
-    I.see('1. Download the sealed claim form (this will open in a new window).')
-    I.scrollPageToBottom()
-    I.click('Download the sealed claim form')
+    I.see(submitPageData.feesPaid)
+    I.see(submitPageData.emailConfirmation + user.email)
+  },
+
+  selectSubmitButton () {
+    I.click(this.buttons.finish)
+    I.see('start')
   }
 }

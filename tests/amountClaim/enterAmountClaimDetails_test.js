@@ -32,7 +32,7 @@ Scenario('I can fill in Organisation details for Claimant, Defendant, Claim amou
   amountClaimSteps.verifySubmittedPage()
 })
 
-Scenario('I can fill in individual details for Claimant, Defendant, Claim amount and Submit the claim ', (I, userSteps, defendantSteps, amountClaimSteps) => {
+Scenario('I can fill in individual details for Claimant, Defendant, Claim amount and Submit the claim ', function * (I, userSteps, defendantSteps, amountClaimSteps, submittedPage) {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -59,6 +59,9 @@ Scenario('I can fill in individual details for Claimant, Defendant, Claim amount
   amountClaimSteps.addStatementOfTruthSignerNameAndRole()
   amountClaimSteps.addPayByAccountFeeNumber()
   amountClaimSteps.verifySubmittedPage()
+  const pdfUrl = yield I.grabAttributeFrom('ol li a', 'href')
+  const sessionCookie = yield I.grabCookie('T2_SESSION_ID')
+  yield I.downloadPDF(pdfUrl, sessionCookie.value)
 })
 
 Scenario('I can fill in Organisation details for Claimant, Defendant and no Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {
