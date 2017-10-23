@@ -123,8 +123,8 @@ module.exports = {
     payByAccountPage.enterFeeAccountNumber()
   },
 
-  verifySubmittedPage () {
-    submittedPage.verifyTextInSubmittedPage()
+  verifySubmittedPage (dateCheck) {
+    submittedPage.verifyTextInSubmittedPage(dateCheck)
   }
 
 }
