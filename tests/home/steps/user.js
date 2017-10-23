@@ -24,7 +24,6 @@ module.exports = {
     loginPage.login(user.email, user.password)
   },
   startClaim () {
-    startClaimPage.open()
     startClaimPage.startClaim()
   },
   enterYourOrganisationNamePage () {

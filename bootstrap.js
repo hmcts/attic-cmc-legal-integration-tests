@@ -8,7 +8,6 @@ const idamBaseURL = process.env.IDAM_URL
 const siteBaseURL = process.env.URL
 
 class Client {
-
   static create (email, password) {
     return request.post({
       uri: `${idamBaseURL}/testing-support/accounts`,

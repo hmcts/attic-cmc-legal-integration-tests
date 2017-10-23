@@ -17,7 +17,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/pay-by-account')
+    I.amOnPage('/legal/claim/pay-by-account')
   },
 
   enterFeeAccountNumber () {
