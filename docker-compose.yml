@@ -194,38 +194,38 @@ services:
         retries: 20
     smtp-server:
       image: mailhog/mailhog
-    em-api-gateway-web:
-        image: docker.artifactory.reform.hmcts.net/evidence/em-api-gateway-web:latest
-        environment:
-          - NODE_ENV=development
-          - PORT=8080
-          - EM_API_URL=http://evidence-management-api:8080
-          - IDAM_BASE_URL=http://idam-api:8080
-          - IDAM_S2S_URL=http://service-auth-provider-api:8080
-          - IDAM_SERVICE_KEY=AAAAAAAAAAAAAAAA
-          - IDAM_SERVICE_NAME=em_gw
-          - CORS_ORIGIN_METHODS=GET,POST,PUT,DELETE,OPTIONS
-          - CORS_ORIGIN_WHITELIST=http://evidence-management-api:8080
-          #      logging env vars
-          - ROOT_APPENDER=JSON_CONSOLE
-          - JSON_CONSOLE_PRETTY_PRINT=false
-          - REFORM_SERVICE_TYPE=node
-          - REFORM_SERVICE_NAME=em-api-gateway-web
-          - REFORM_TEAM=cc
-          - REFORM_ENVIRONMENT=docker
-          - XFWD=true
-        ports:
-          - 8081:8080
-        links:
-         - evidence-management-api
-         - idam-api
-         - service-auth-provider-api
-        depends_on:
-         - evidence-management-api
-         - idam-api
-         - service-auth-provider-api
+    document-management-api-gateway-web:
+      image: docker.artifactory.reform.hmcts.net/evidence/em-api-gateway-web:latest
+      environment:
+        - NODE_ENV=development
+        - PORT=8080
+        - EM_API_URL=http://evidence-management-api:8080
+        - IDAM_BASE_URL=http://idam-api:8080
+        - IDAM_S2S_URL=http://service-auth-provider-api:8080
+        - IDAM_SERVICE_KEY=AAAAAAAAAAAAAAAA
+        - IDAM_SERVICE_NAME=em_gw
+        - CORS_ORIGIN_METHODS=GET,POST,PUT,DELETE,OPTIONS
+        - CORS_ORIGIN_WHITELIST=http://evidence-management-api:8080
+        #      logging env vars
+        - ROOT_APPENDER=JSON_CONSOLE
+        - JSON_CONSOLE_PRETTY_PRINT=false
+        - REFORM_SERVICE_TYPE=node
+        - REFORM_SERVICE_NAME=em-api-gateway-web
+        - REFORM_TEAM=cc
+        - REFORM_ENVIRONMENT=docker
+        - XFWD=true
+      ports:
+        - 8080:8080
+      links:
+       - evidence-management-api
+       - idam-api
+       - service-auth-provider-api
+      depends_on:
+       - evidence-management-api
+       - idam-api
+       - service-auth-provider-api
 
-    evidence-management-api:
+    document-management-api:
       image: docker.artifactory.reform.hmcts.net/evidence/evidence-management-store:latest
       command: --wait-for-database 30
       environment:
@@ -250,6 +250,8 @@ services:
         - REFORM_SERVICE_NAME=evidence-management-api
         - REFORM_TEAM=cc
         - REFORM_ENVIRONMENT=docker
+      ports:
+        - 8083:8080
       links:
        - evidence-database
        - idam-api
@@ -259,5 +261,7 @@ services:
        - idam-api
        - service-auth-provider-api
 
-    evidence-database:
+    document-management-database:
       image: docker.artifactory.reform.hmcts.net/evidence/evidence-management-store-database:latest
+      ports:
+        - 5431:5432

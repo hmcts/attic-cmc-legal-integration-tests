@@ -57,13 +57,13 @@ services:
       ports:
         - 1025:1025
         - 8025:8025
-    em-api-gateway-web:
+    document-management-api-gateway-web:
       ports:
         - 8082:8080
-    evidence-management-api:
+    document-management-api:
       ports:
         - 8083:8080
-    evidence-database:
+    document-management-database:
       ports:
         - 5435:5432
 

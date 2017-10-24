@@ -7,4 +7,4 @@ docker-compose ${COMPOSE_FILES} up ${@} -d authentication-web \
                                            draft-store-api \
                                            claim-store-api \
                                            pdf-service-api \
-                                           em-api-gateway-web
+                                           document-management-api-gateway-web
