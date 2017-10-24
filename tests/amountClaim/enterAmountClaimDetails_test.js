@@ -2,7 +2,7 @@
 
 Feature('Enter claim amount and submit claim')
 
-Scenario.only('I can fill in Organisation details for Claimant, Defendant, Claim amount and Submit the claim', function * (I, userSteps, defendantSteps, amountClaimSteps) {
+Scenario('I can fill in Organisation details for Claimant, Defendant, Claim amount and Submit the claim', function * (I, userSteps, defendantSteps, amountClaimSteps) {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -29,7 +29,6 @@ Scenario.only('I can fill in Organisation details for Claimant, Defendant, Claim
   amountClaimSteps.verifySummaryDetails()
   amountClaimSteps.addStatementOfTruthSignerNameAndRole()
   amountClaimSteps.addPayByAccountFeeNumber()
-  I.wait(5)
   let dateCheck = yield I.grabTextFrom('div.confirmation-detail')
   amountClaimSteps.verifySubmittedPage(dateCheck)
 })
