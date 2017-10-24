@@ -3,8 +3,10 @@
 
 const user = require('../../../test-data').user
 const verifyPageData = require('../../../test-data').verifyPageData
-let assert = require('assert')
-
+const chai = require('chai')
+const chaiAsPromised = require('chai-as-promised')
+const expect = chai.expect
+chai.use(chaiAsPromised)
 let I
 
 module.exports = {
@@ -26,11 +28,10 @@ module.exports = {
   verifyTextInSubmittedPage (dateCheck) {
     I.see(verifyPageData.feesPaid)
     I.see(verifyPageData.emailConfirmation + user.email)
-    if (dateCheck[0].length >= 22 && dateCheck[1].length >= 19) {
-      assert.equal('true', 'true')
-    } else {
-      assert.equal('true', 'false')
-    }
+    // verify submit date text present or not
+    expect(dateCheck[0].length).to.be.greaterThan(22)
+    // verify issue date text present or not
+    expect(dateCheck[1].length).to.be.greaterThan(19)
   },
 
   selectSubmitButton () {
