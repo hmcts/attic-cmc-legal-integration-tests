@@ -206,14 +206,6 @@ services:
         - IDAM_SERVICE_NAME=em_gw
         - CORS_ORIGIN_METHODS=GET,POST,PUT,DELETE,OPTIONS
         - CORS_ORIGIN_WHITELIST=http://evidence-management-api:8080
-        #      logging env vars
-        - ROOT_APPENDER=JSON_CONSOLE
-        - JSON_CONSOLE_PRETTY_PRINT=false
-        - REFORM_SERVICE_TYPE=node
-        - REFORM_SERVICE_NAME=em-api-gateway-web
-        - REFORM_TEAM=cc
-        - REFORM_ENVIRONMENT=docker
-        - XFWD=true
       ports:
         - 8085:8080
       links:
@@ -243,13 +235,6 @@ services:
         - http_proxy=
         - https_proxy=
         - no_proxy=
-  #      logging env vars
-        - ROOT_APPENDER=JSON_CONSOLE
-        - JSON_CONSOLE_PRETTY_PRINT=false
-        - REFORM_SERVICE_TYPE=java
-        - REFORM_SERVICE_NAME=evidence-management-api
-        - REFORM_TEAM=cc
-        - REFORM_ENVIRONMENT=docker
       ports:
         - 8084:8080
       links:
