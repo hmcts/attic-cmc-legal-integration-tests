@@ -48,7 +48,7 @@ services:
           condition: service_started
         authentication-web:
           condition: service_started
-        em-api-gateway-web:
+        document-management-api-gateway-web:
           condition: service_started
         claim-store-api:
           condition: service_healthy
