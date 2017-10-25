@@ -4,6 +4,7 @@
 !yarn.lock
 
 !codecept.conf.js
+!page-definitions.js
 !bootstrap.js
 !proxy-settings.js
 !test-data.js

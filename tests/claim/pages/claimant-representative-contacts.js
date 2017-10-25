@@ -18,7 +18,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/representative-contacts')
+    I.amOnPage('/legal/claim/representative-contacts')
   },
 
   enterYourOrganisationContactDetails () {

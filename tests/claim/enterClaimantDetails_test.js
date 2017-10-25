@@ -69,11 +69,7 @@ Scenario('Check Error Messages in Enter your organisation contact details Page',
 Scenario('Check Error Messages in claimant type Page', (I, userSteps, claimantType) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
+  claimantType.open()
   claimantType.checkMandatoryErrorMessageForChooseClaimant()
   claimantType.checkMandatoryErrorMessageForOrganisationName()
   claimantType.checkForBlankErrorMessageForOrganisationName()
@@ -81,14 +77,10 @@ Scenario('Check Error Messages in claimant type Page', (I, userSteps, claimantTy
   claimantType.checkForBlankErrorMessageForIndividualName()
 })
 
-Scenario('Check Error Messages in Enter your claimant address Page', (I, userSteps, claimantAddress) => {
+Scenario('Check Error Messages in Enter your claimant address Page', (I, userSteps, claimantType, claimantAddress) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
+  claimantType.open()
   userSteps.enterClaimantTypeOrganisation()
   claimantAddress.checkMandatoryErrorMessage()
   claimantAddress.checkForBlankErrorMessage()

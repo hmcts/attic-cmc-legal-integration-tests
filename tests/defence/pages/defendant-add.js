@@ -19,7 +19,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/defendant-add')
+    I.amOnPage('/legal/claim/defendant-add')
   },
 
   enterAnotherDefendant () {
