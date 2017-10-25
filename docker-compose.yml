@@ -217,11 +217,11 @@ services:
       ports:
         - 8080:8080
       links:
-       - evidence-management-api
+       - document-management-api
        - idam-api
        - service-auth-provider-api
       depends_on:
-       - evidence-management-api
+       - document-management-api
        - idam-api
        - service-auth-provider-api
 
@@ -251,17 +251,17 @@ services:
         - REFORM_TEAM=cc
         - REFORM_ENVIRONMENT=docker
       ports:
-        - 8083:8080
+        - 8084:8080
       links:
-       - evidence-database
+       - document-management-database
        - idam-api
        - service-auth-provider-api
       depends_on:
-       - evidence-database
+       - document-management-database
        - idam-api
        - service-auth-provider-api
 
     document-management-database:
       image: docker.artifactory.reform.hmcts.net/evidence/evidence-management-store-database:latest
       ports:
-        - 5431:5432
+        - 5436:5432

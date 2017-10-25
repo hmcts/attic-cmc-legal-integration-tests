@@ -62,10 +62,10 @@ services:
         - 8082:8080
     document-management-api:
       ports:
-        - 8083:8080
+        - 8084:8080
     document-management-database:
       ports:
-        - 5435:5432
+        - 5436:5432
 
 volumes:
   draft-store-database-data:
