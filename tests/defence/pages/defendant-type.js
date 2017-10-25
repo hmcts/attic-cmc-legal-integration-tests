@@ -23,7 +23,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/defendant-type')
+    I.amOnPage('/legal/claim/defendant-type')
   },
 
   enterDefendantTypeIndividual () {

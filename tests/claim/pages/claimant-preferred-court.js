@@ -18,7 +18,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/preferred-court')
+    I.amOnPage('/legal/claim/preferred-court')
   },
 
   enterYourPreferredCountyCourt () {

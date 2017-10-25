@@ -22,7 +22,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/housing-disrepair')
+    I.amOnPage('/legal/claim/housing-disrepair')
   },
 
   enterHousingDisrepairGeneralDamagesLessThan1000 () {

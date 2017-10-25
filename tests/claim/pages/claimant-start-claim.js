@@ -14,11 +14,10 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/start')
+    I.amOnPage('/legal/claim/start')
   },
 
   startClaim () {
-    I.see('Before you start')
     I.click(this.buttons.startNow)
   }
 }

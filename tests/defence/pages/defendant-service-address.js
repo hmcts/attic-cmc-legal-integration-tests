@@ -21,7 +21,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/defendant-service-address')
+    I.amOnPage('/legal/claim/defendant-service-address')
   },
 
   enterAnotherServiceAddress () {

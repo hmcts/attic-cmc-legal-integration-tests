@@ -19,7 +19,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/your-reference')
+    I.amOnPage('/legal/claim/your-reference')
   },
 
   enterYourReferenceForClaim () {

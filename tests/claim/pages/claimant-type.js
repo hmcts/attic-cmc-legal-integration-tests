@@ -23,7 +23,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/claimant-type')
+    I.amOnPage('/legal/claim/claimant-type')
   },
 
   enterClaimantTypeIndividual () {

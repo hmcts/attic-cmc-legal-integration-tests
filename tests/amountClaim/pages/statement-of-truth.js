@@ -17,7 +17,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/statement-of-truth')
+    I.amOnPage('/legal/claim/statement-of-truth')
   },
 
   enterStatementOfTruthSignerNameAndRole () {

@@ -19,7 +19,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/defendant-reps-address')
+    I.amOnPage('/legal/claim/defendant-reps-address')
   },
 
   enterDefendantRepsCompanyAddress () {
