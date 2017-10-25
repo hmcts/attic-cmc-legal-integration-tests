@@ -39,7 +39,7 @@ module.exports = {
 
   checkMandatoryErrorMessage () {
     I.click(this.buttons.saveAndContinue)
-    I.see('Enter a higher value or choose ‘I can’t or don\’t want to state the value’')
+    I.see('Enter a higher value or choose ‘I can’t or don’t want to state the value’')
   },
 
   checkForBlankErrorMessage () {
@@ -59,7 +59,7 @@ module.exports = {
     I.checkOption(this.fields.cannotState)
     I.click(this.buttons.saveAndContinue)
     I.see('Choose ‘I can’t state the value’ or enter a higher value')
-    I.see('Enter a higher value or choose ‘I can’t or don\’t want to  state the value’')
+    I.see('Enter a higher value or choose ‘I can’t or don’t want to  state the value’')
   }
 
 }
