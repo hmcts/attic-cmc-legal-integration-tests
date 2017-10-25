@@ -72,7 +72,7 @@ services:
       depends_on:
         - idam-api
     idam-api:
-      image: docker.artifactory.reform.hmcts.net/auth/idam-api:cfdfe653d247f3810ac95fcc025786e100f549fb
+      image: docker.artifactory.reform.hmcts.net/auth/idam-api:386ea4e56789cdd0db35f3a532722b5a8de15f18
       command: --wait-for-database 60
       environment:
         - IDAM_SUPERUSER_EMAIL=cmc-int-test@cmc.reform.hmcts.net
@@ -215,7 +215,7 @@ services:
         - REFORM_ENVIRONMENT=docker
         - XFWD=true
       ports:
-        - 8080:8080
+        - 8085:8080
       links:
        - document-management-api
        - idam-api
