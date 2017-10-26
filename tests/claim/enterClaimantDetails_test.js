@@ -24,7 +24,7 @@ Scenario('I can fill in two Claimants and their details', (I, userSteps) => {
   I.see('Change')
 })
 
-Scenario.only('I can save organisation details and populate them in a subsequent claim via cookie info', (I, userSteps) => {
+Scenario('I can save organisation details and populate them in a subsequent claim via cookie info', (I, userSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
