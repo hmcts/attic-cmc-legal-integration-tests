@@ -24,6 +24,18 @@ Scenario('I can fill in two Claimants and their details', (I, userSteps) => {
   I.see('Change')
 })
 
+Scenario.only('I can save organisation details and populate them in a subsequent claim via cookie info', (I, userSteps) => {
+  userSteps.loginDefaultUser()
+  userSteps.startClaim()
+  userSteps.enterYourOrganisationNamePage()
+  userSteps.enterYourOrganisationAddress()
+  userSteps.enterYourOrganisationContactDetails()
+  userSteps.enterYourReferenceNumber()
+  userSteps.enterYourPreferredCountyCourt()
+  userSteps.startClaim()
+  userSteps.verifyOrganizationDetails()
+})
+
 Scenario('Check Error Messages in Add additional claimant Page', (I, userSteps, claimantAdd) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()

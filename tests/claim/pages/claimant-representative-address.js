@@ -17,16 +17,33 @@ module.exports = {
   buttons: {
     saveAndContinue: 'input.button'
   },
+  data: {
+    addressLine1Text: 'Moj',
+    addressLine2Text: 'Westminster',
+    cityNameText: 'London',
+    postcodeText: 'SW1H 9AJ',
+    verifyAddressLine1Text: 'MOJ',
+    verifyAddressLine2Text: 'WESTMINSTER',
+    verifyCityNameText: 'LONDON'
+  },
 
   open () {
     I.amOnPage('/legal/claim/representative-address')
   },
 
   enterYourOrganisationAddress () {
-    I.fillField(this.fields.addressLine1, 'MOJ')
-    I.fillField(this.fields.addressLine2, 'Westminster')
-    I.fillField(this.fields.cityName, 'London')
-    I.fillField(this.fields.postcode, 'SW1H 9AJ')
+    I.fillField(this.fields.addressLine1, this.data.addressLine1Text)
+    I.fillField(this.fields.addressLine2, this.data.addressLine2Text)
+    I.fillField(this.fields.cityName, this.data.cityNameText)
+    I.fillField(this.fields.postcode, this.data.postcodeText)
+    I.click(this.buttons.saveAndContinue)
+  },
+
+  verifyOrganizationAddress () {
+    I.seeInField(this.fields.addressLine1, this.data.verifyAddressLine1Text)
+    I.seeInField(this.fields.addressLine2, this.data.verifyAddressLine2Text)
+    I.seeInField(this.fields.cityName, this.data.verifyCityNameText)
+    I.seeInField(this.fields.postcode, this.data.postcodeText)
     I.click(this.buttons.saveAndContinue)
   },
 
