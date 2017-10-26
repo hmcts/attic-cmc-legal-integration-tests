@@ -17,15 +17,27 @@ module.exports = {
     saveAndContinue: 'input.button'
   },
 
+  data: {
+    phoneNumberText: '0700000000',
+    emailText: 'vivred@mailinator.com',
+    dxAddressText: 'DX123'
+  },
+
   open () {
     I.amOnPage('/legal/claim/representative-contacts')
   },
 
   enterYourOrganisationContactDetails () {
-    I.fillField(this.fields.phoneNumber, '0700000000')
-    I.fillField(this.fields.email, 'vivred@mailinator.com')
-    I.fillField(this.fields.dxAddress, 'DX123')
+    I.fillField(this.fields.phoneNumber, this.data.phoneNumberText)
+    I.fillField(this.fields.email, this.data.emailText)
+    I.fillField(this.fields.dxAddress, this.data.dxAddressText)
     I.click(this.buttons.saveAndContinue)
+  },
+
+  verifyContactDetails () {
+    I.seeInField(this.fields.phoneNumber, this.data.phoneNumberText)
+    I.seeInField(this.fields.email, this.data.emailText)
+    I.seeInField(this.fields.dxAddress, this.data.dxAddressText)
   },
 
   checkPhoneNumberLengthValidation () {

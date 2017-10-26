@@ -16,12 +16,21 @@ module.exports = {
     saveAndContinue: 'input.button'
   },
 
+  data: {
+    organisationNameText: 'Abc Organisation'
+  },
+
   open () {
     I.amOnPage('/legal/claim/representative-name')
   },
 
-  enterYourOrganisationNamePage () {
-    I.fillField(this.fields.organisationName, 'Abc Organisation')
+  enterYourOrganisationName () {
+    I.fillField(this.fields.organisationName, this.data.organisationNameText)
+    I.click(this.buttons.saveAndContinue)
+  },
+
+  verifyOrganizationName () {
+    I.seeInField(this.fields.organisationName, this.data.organisationNameText)
     I.click(this.buttons.saveAndContinue)
   },
 
