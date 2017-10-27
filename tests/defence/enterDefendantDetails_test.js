@@ -2,7 +2,7 @@
 
 Feature('Defendants Enter details of claim')
 
-Scenario('I can fill in Claimant organization and more Defendant organization details', (I, userSteps, defendantSteps) => {
+Scenario('I can fill in Claimant organization, more Defendant details and update their details', (I, userSteps, defendantSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
