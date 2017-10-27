@@ -57,7 +57,6 @@ module.exports = {
     I.click(this.buttons.saveAndContinue)
     I.click(this.buttons.saveAndContinue)
     I.see(this.data.updatedNameText)
-    I.wait(10)
   },
   enterClaimantTypeOrganisation () {
     I.checkOption(this.fields.organisationType)
