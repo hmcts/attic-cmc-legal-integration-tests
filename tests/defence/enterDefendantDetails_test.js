@@ -2,7 +2,7 @@
 
 Feature('Defendants Enter details of claim')
 
-Scenario('I can fill in Claimant organization and more Defendant organization details', (I, userSteps, defendantSteps) => {
+Scenario('I can fill in Claimant organization, more Defendant details and update their details', (I, userSteps, defendantSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -33,12 +33,7 @@ Scenario('I can fill in Claimant organization and more Defendant organization de
   defendantSteps.enterDefendantRepsCompanyName()
   I.see("Defendant 3's legal representative: Defendant Rep Ltd")
   defendantSteps.enterDefendantRepsAddress()
-  I.see('Defendant')
-  I.see('Def corporation')
-  I.see('Mrs Orange')
-  I.see('Ghi corporation')
-  I.see('Remove')
-  I.see('Change')
+  defendantSteps.verifyAndChangeDefendantDetails()
 })
 
 Scenario('I can fill in Claimant individual and Defendant individual details', (I, userSteps, defendantSteps) => {

@@ -58,5 +58,9 @@ module.exports = {
 
   defendantAddressAsServiceAddress () {
     defendantServiceAddressPage.useDefendantAddressAsServiceAddress()
+  },
+  verifyAndChangeDefendantDetails () {
+    defendantTypePage.verifyDefendantOrganisationDetails()
+    defendantTypePage.changeRemoveIndividualDefendantDetails()
   }
 }
