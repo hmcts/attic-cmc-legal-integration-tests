@@ -2,7 +2,7 @@
 
 Feature('Claimant Enter details of claim')
 
-Scenario('I can fill in two Claimants and their details', (I, userSteps) => {
+Scenario('I can fill in two claimants and update their details', (I, userSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -17,11 +17,7 @@ Scenario('I can fill in two Claimants and their details', (I, userSteps) => {
   userSteps.enterClaimantTypeIndividual()
   I.see('Claimant 2: Mr Benugo')
   userSteps.enterClaimantAddress()
-  I.see('Claimant')
-  I.see('Mr Benugo')
-  I.see('Mr Benugo')
-  I.see('Remove')
-  I.see('Change')
+  userSteps.verifyAndChangeClaimantDetails()
 })
 
 Scenario('I can save organisation details and populate them in a subsequent claim via cookie info', (I, userSteps) => {
