@@ -61,5 +61,9 @@ module.exports = {
     yourOrganisationNamePage.verifyOrganizationName()
     yourOrganisationAddressPage.verifyOrganizationAddress()
     yourContactDetailsPage.verifyContactDetails()
+  },
+  verifyAndChangeClaimantDetails () {
+    claimantTypePage.verifyClaimantIndividualDetails()
+    claimantTypePage.changeRemoveIndividualClaimantDetails()
   }
 }
