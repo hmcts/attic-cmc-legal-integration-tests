@@ -35,13 +35,14 @@ timestamps {
       }
 
       stage('Run integration tests') {
+        def composeFileBranch = env.CHANGE_BRANCH != null ? env.CHANGE_BRANCH : 'master'
+
         integrationTests.execute(['LEGAL_INTEGRATION_TESTS_VERSION': integrationTestsVersion,
-                                  'INTEGRATION_TESTS_BRANCH': 'master'
+                                  'INTEGRATION_TESTS_BRANCH': composeFileBranch
         ],
           Team.LEGAL
         )
       }
-    
 
   }
 }

@@ -2,7 +2,7 @@
 
 Feature('Defendants Enter details of claim')
 
-Scenario('I can fill in Claimant organization and more Defendant organization details', (I, userSteps, defendantSteps) => {
+Scenario('I can fill in Claimant organization, more Defendant details and update their details', (I, userSteps, defendantSteps) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -33,12 +33,7 @@ Scenario('I can fill in Claimant organization and more Defendant organization de
   defendantSteps.enterDefendantRepsCompanyName()
   I.see("Defendant 3's legal representative: Defendant Rep Ltd")
   defendantSteps.enterDefendantRepsAddress()
-  I.see('Defendant')
-  I.see('Def corporation')
-  I.see('Mrs Orange')
-  I.see('Ghi corporation')
-  I.see('Remove')
-  I.see('Change')
+  defendantSteps.verifyAndChangeDefendantDetails()
 })
 
 Scenario('I can fill in Claimant individual and Defendant individual details', (I, userSteps, defendantSteps) => {
@@ -64,14 +59,7 @@ Scenario('I can fill in Claimant individual and Defendant individual details', (
 Scenario('Check Error Messages in Enter your defendant type Page', (I, userSteps, defendantType) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeOrganisation()
-  userSteps.enterClaimantAddress()
-  userSteps.noAdditionalClaimant()
+  defendantType.open()
   defendantType.checkMandatoryErrorMessageForChooseDefendant()
   defendantType.checkMandatoryErrorMessageForOrganisationName()
   defendantType.checkForBlankErrorMessageForOrganisationName()
@@ -79,18 +67,10 @@ Scenario('Check Error Messages in Enter your defendant type Page', (I, userSteps
   defendantType.checkForBlankErrorMessageForIndividualName()
 })
 
-Scenario('Check Error Messages in Enter your defendant address Page', (I, userSteps, defendantSteps, defendantAddress) => {
+Scenario('Check Error Messages in Enter your defendant address Page', (I, userSteps, defendantType, defendantSteps, defendantAddress) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeOrganisation()
-  I.see('Claimant: Abc corporation')
-  userSteps.enterClaimantAddress()
-  userSteps.noAdditionalClaimant()
+  defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
   defendantAddress.checkMandatoryErrorMessage()
@@ -100,18 +80,10 @@ Scenario('Check Error Messages in Enter your defendant address Page', (I, userSt
   defendantAddress.checkForPostCodeLengthMessage()
 })
 
-Scenario('Check Error Messages in Enter your defendant representative Page', (I, userSteps, defendantSteps, defendantRepresentative) => {
+Scenario('Check Error Messages in Enter your defendant representative Page', (I, userSteps, defendantType, defendantSteps, defendantRepresentative) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeOrganisation()
-  I.see('Claimant: Abc corporation')
-  userSteps.enterClaimantAddress()
-  userSteps.noAdditionalClaimant()
+  defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
   defendantSteps.enterDefendantAddress()
@@ -120,18 +92,10 @@ Scenario('Check Error Messages in Enter your defendant representative Page', (I,
   defendantRepresentative.checkForBlankErrorMessageForDefendantCompanyName()
 })
 
-Scenario('Check Error Messages in Enter your defendant representative address Page', (I, userSteps, defendantSteps, defendantRepresentativeAddress) => {
+Scenario('Check Error Messages in Enter your defendant representative address Page', (I, userSteps, defendantType, defendantSteps, defendantRepresentativeAddress) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeOrganisation()
-  I.see('Claimant: Abc corporation')
-  userSteps.enterClaimantAddress()
-  userSteps.noAdditionalClaimant()
+  defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
   defendantSteps.enterDefendantAddress()
@@ -143,18 +107,10 @@ Scenario('Check Error Messages in Enter your defendant representative address Pa
   defendantRepresentativeAddress.checkForPostCodeLengthMessage()
 })
 
-Scenario('Check Error Messages in Enter another defendant add Page', (I, userSteps, defendantSteps, defendantAddAnotherDefendant) => {
+Scenario('Check Error Messages in Enter another defendant add Page', (I, userSteps, defendantType, defendantSteps, defendantAddAnotherDefendant) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeOrganisation()
-  I.see('Claimant: Abc corporation')
-  userSteps.enterClaimantAddress()
-  userSteps.noAdditionalClaimant()
+  defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
   defendantSteps.enterDefendantAddress()
@@ -164,18 +120,10 @@ Scenario('Check Error Messages in Enter another defendant add Page', (I, userSte
   defendantAddAnotherDefendant.checkMandatoryErrorMessage()
 })
 
-Scenario('Check Error Messages on defendant service address Page', (I, userSteps, defendantSteps, defendantAddServiceAddress) => {
+Scenario('Check Error Messages on defendant service address Page', (I, userSteps, defendantType, defendantSteps, defendantAddServiceAddress) => {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
-  userSteps.enterClaimantTypeOrganisation()
-  I.see('Claimant: Abc corporation')
-  userSteps.enterClaimantAddress()
-  userSteps.noAdditionalClaimant()
+  defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
   defendantSteps.enterDefendantAddress()

@@ -17,27 +17,38 @@ module.exports = {
   buttons: {
     saveAndContinue: 'input.button'
   },
+  data: {
+    addressLine1Text: 'Moj',
+    addressLine2Text: 'Westminster',
+    cityNameText: 'London',
+    postcodeText: 'SW1H 9AJ',
+    verifyAddressLine1Text: 'MOJ',
+    verifyAddressLine2Text: 'WESTMINSTER',
+    verifyCityNameText: 'LONDON'
+  },
 
   open () {
-    I.amOnPage('/claim/representative-address')
+    I.amOnPage('/legal/claim/representative-address')
   },
 
   enterYourOrganisationAddress () {
-    I.see('Your organisation address')
-    I.see('Address line 1')
-    I.fillField(this.fields.addressLine1, 'MOJ')
-    I.see('Address line 2 (optional)')
-    I.fillField(this.fields.addressLine2, 'Westminster')
-    I.see('Town or city')
-    I.fillField(this.fields.cityName, 'London')
-    I.see('Postcode')
-    I.fillField(this.fields.postcode, 'SW1H 9AJ')
+    I.fillField(this.fields.addressLine1, this.data.addressLine1Text)
+    I.fillField(this.fields.addressLine2, this.data.addressLine2Text)
+    I.fillField(this.fields.cityName, this.data.cityNameText)
+    I.fillField(this.fields.postcode, this.data.postcodeText)
+    I.click(this.buttons.saveAndContinue)
+  },
+
+  verifyOrganizationAddress () {
+    I.seeInField(this.fields.addressLine1, this.data.verifyAddressLine1Text)
+    I.seeInField(this.fields.addressLine2, this.data.verifyAddressLine2Text)
+    I.seeInField(this.fields.cityName, this.data.verifyCityNameText)
+    I.seeInField(this.fields.postcode, this.data.postcodeText)
     I.click(this.buttons.saveAndContinue)
   },
 
   checkMandatoryErrorMessage () {
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter address line 1')
     I.see('Enter a postcode')
   },
@@ -46,7 +57,6 @@ module.exports = {
     I.fillField(this.fields.addressLine1, '')
     I.fillField(this.fields.postcode, '')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter address line 1')
     I.see('Enter a town or city')
     I.see('Enter a postcode')
@@ -56,7 +66,6 @@ module.exports = {
     I.fillField(this.fields.addressLine1, '')
     I.fillField(this.fields.postcode, 'SW1H 9AJ')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter address line 1')
     I.fillField(this.fields.addressLine1, 'MOJ')
     I.fillField(this.fields.postcode, '')

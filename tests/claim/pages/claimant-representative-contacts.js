@@ -17,26 +17,32 @@ module.exports = {
     saveAndContinue: 'input.button'
   },
 
+  data: {
+    phoneNumberText: '0700000000',
+    emailText: 'vivred@mailinator.com',
+    dxAddressText: 'DX123'
+  },
+
   open () {
-    I.amOnPage('/claim/representative-contacts')
+    I.amOnPage('/legal/claim/representative-contacts')
   },
 
   enterYourOrganisationContactDetails () {
-    I.see('Your organisation contact details')
-    I.see("The defendant can use these details to contact you - they'll also appear on the sealed claim form.")
-    I.see('Phone number (optional)')
-    I.fillField(this.fields.phoneNumber, '0700000000')
-    I.see('Email (optional)')
-    I.fillField(this.fields.email, 'vivred@mailinator.com')
-    I.see('DX address (optional)')
-    I.fillField(this.fields.dxAddress, 'DX123')
+    I.fillField(this.fields.phoneNumber, this.data.phoneNumberText)
+    I.fillField(this.fields.email, this.data.emailText)
+    I.fillField(this.fields.dxAddress, this.data.dxAddressText)
     I.click(this.buttons.saveAndContinue)
+  },
+
+  verifyContactDetails () {
+    I.seeInField(this.fields.phoneNumber, this.data.phoneNumberText)
+    I.seeInField(this.fields.email, this.data.emailText)
+    I.seeInField(this.fields.dxAddress, this.data.dxAddressText)
   },
 
   checkPhoneNumberLengthValidation () {
     I.fillField(this.fields.phoneNumber, '070000000000')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter a valid phone number')
     I.fillField(this.fields.phoneNumber, '070000000')
     I.click(this.buttons.saveAndContinue)
@@ -47,26 +53,21 @@ module.exports = {
   checkEmptyOrInvalidPhoneNumberValidation () {
     I.fillField(this.fields.phoneNumber, ' ')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter a valid phone number')
     I.fillField(this.fields.phoneNumber, '0000000000')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter a valid phone number')
   },
 
   checkForEmailFormatErrorMessage () {
     I.fillField(this.fields.email, ' ')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter a valid email address')
     I.fillField(this.fields.email, 'vivred@mailiantor')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter a valid email address')
     I.fillField(this.fields.email, 'vivred.com')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter a valid email address')
   }
 }

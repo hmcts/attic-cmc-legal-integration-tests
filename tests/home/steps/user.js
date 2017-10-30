@@ -2,7 +2,7 @@
 
 const user = require('../../../test-data').user
 
-let loginPage, startClaimPage, enterYourOrganisationNamePage, yourOrganisationAddressPage, yourContactDetailsPage,
+let loginPage, startClaimPage, yourOrganisationNamePage, yourOrganisationAddressPage, yourContactDetailsPage,
   yourReferencePage, yourCountyCourtPage, claimantTypePage, claimantAddressPage, claimantAddPage
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
   _init () {
     loginPage = require('../pages/login')
     startClaimPage = require('../../claim/pages/claimant-start-claim')
-    enterYourOrganisationNamePage = require('../../claim/pages/claimant-representative-name')
+    yourOrganisationNamePage = require('../../claim/pages/claimant-representative-name')
     yourOrganisationAddressPage = require('../../claim/pages/claimant-representative-address')
     yourContactDetailsPage = require('../../claim/pages/claimant-representative-contacts')
     yourReferencePage = require('../../claim/pages/claimant-reference')
@@ -28,7 +28,7 @@ module.exports = {
     startClaimPage.startClaim()
   },
   enterYourOrganisationNamePage () {
-    enterYourOrganisationNamePage.enterYourOrganisationNamePage()
+    yourOrganisationNamePage.enterYourOrganisationName()
   },
   enterYourOrganisationAddress () {
     yourOrganisationAddressPage.enterYourOrganisationAddress()
@@ -56,5 +56,14 @@ module.exports = {
   },
   noAdditionalClaimant () {
     claimantAddPage.chooseNoAdditionalClaimant()
+  },
+  verifyOrganizationDetails () {
+    yourOrganisationNamePage.verifyOrganizationName()
+    yourOrganisationAddressPage.verifyOrganizationAddress()
+    yourContactDetailsPage.verifyContactDetails()
+  },
+  verifyAndChangeClaimantDetails () {
+    claimantTypePage.verifyClaimantIndividualDetails()
+    claimantTypePage.changeRemoveIndividualClaimantDetails()
   }
 }

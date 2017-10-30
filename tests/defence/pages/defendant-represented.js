@@ -20,33 +20,28 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/defendant-represented')
+    I.amOnPage('/legal/claim/defendant-represented')
   },
 
   enterDefendantCompanyName () {
-    I.see('Has the defendant got a legal representative who\'s instructed to accept service?')
     I.checkOption(this.fields.defendantRepresentedYes)
-    I.see('Representative\'s organisation name')
     I.fillField(this.fields.companyName, 'Defendant Rep Ltd')
     I.click(this.buttons.saveAndContinue)
   },
 
   noDefendantCompanyName () {
-    I.see('Has the defendant got a legal representative who\'s instructed to accept service?')
     I.checkOption(this.fields.defendantRepresentedNo)
     I.click(this.buttons.saveAndContinue)
   },
 
   checkMandatoryErrorMessage () {
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Choose yes if defendant is represented')
   },
 
   checkMandatoryErrorMessageForDefendantCompanyName () {
     I.checkOption(this.fields.defendantRepresentedYes)
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter defendant representative organisation name')
   },
 
@@ -54,7 +49,6 @@ module.exports = {
     I.checkOption(this.fields.defendantRepresentedYes)
     I.fillField(this.fields.companyName, ' ')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter defendant representative organisation name')
   }
 }

@@ -1,5 +1,6 @@
 'use strict'
 /* global actor */
+const verifyPageData = require('../../../test-data').verifyPageData
 
 let I
 
@@ -16,7 +17,7 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/details-summary')
+    I.amOnPage('/legal/claim/details-summary')
   },
 
   verifyOrganizationDetails () {
@@ -35,7 +36,7 @@ module.exports = {
     I.see('DX address')
     I.see('DX123')
     I.see('Your reference number')
-    I.see('PBA1234567')
+    I.see(verifyPageData.organizationRefNumber)
     I.see('Preferred court')
     I.see('Dartford County Court')
   },
@@ -91,7 +92,7 @@ module.exports = {
     I.see('This is also a claim for housing disrepair which includes an order for the landlord to carry out work. The cost of repairs or other work is not more than £1,000. The cost of any claim for damages is not more than £1,000.')
     I.see('The claimant expects to recover up to £6,000. The claimant estimates the claim to be worth more than £3,000')
     I.see('Issue fee')
-    I.see('£455')
+    I.see(verifyPageData.feesPaid)
   },
   individualClaimDetails () {
     I.see('Claimant details')
@@ -124,7 +125,7 @@ module.exports = {
     I.see('Statement of value')
     I.see('The claimant can\'t state the value of the claim.')
     I.see('Issue fee')
-    I.see('£10,000')
+    I.see(verifyPageData.maxFeePaid)
   },
   selectSubmitButton () {
     I.click(this.buttons.saveAndContinue)

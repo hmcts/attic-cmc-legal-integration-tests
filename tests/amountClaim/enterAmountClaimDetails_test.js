@@ -2,7 +2,7 @@
 
 Feature('Enter claim amount and submit claim')
 
-Scenario('I can fill in Organisation details for Claimant, Defendant, Claim amount and Submit the claim', (I, userSteps, defendantSteps, amountClaimSteps) => {
+Scenario('I can fill in Organisation details for Claimant, Defendant, Claim amount and Submit the claim', function * (I, userSteps, defendantSteps, amountClaimSteps) {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -29,10 +29,11 @@ Scenario('I can fill in Organisation details for Claimant, Defendant, Claim amou
   amountClaimSteps.verifySummaryDetails()
   amountClaimSteps.addStatementOfTruthSignerNameAndRole()
   amountClaimSteps.addPayByAccountFeeNumber()
-  amountClaimSteps.verifySubmittedPage()
+  let dateCheck = yield I.grabTextFrom('div.confirmation-detail')
+  amountClaimSteps.verifySubmittedPage(dateCheck)
 })
 
-Scenario('I can fill in individual details for Claimant, Defendant, Claim amount and Submit the claim ', (I, userSteps, defendantSteps, amountClaimSteps) => {
+Scenario('I can fill in individual details for Claimant, Defendant, Claim amount and Submit the claim ', function * (I, userSteps, defendantSteps, amountClaimSteps) {
   userSteps.loginDefaultUser()
   userSteps.startClaim()
   userSteps.enterYourOrganisationNamePage()
@@ -58,7 +59,11 @@ Scenario('I can fill in individual details for Claimant, Defendant, Claim amount
   amountClaimSteps.verifyIndividualSummaryDetails()
   amountClaimSteps.addStatementOfTruthSignerNameAndRole()
   amountClaimSteps.addPayByAccountFeeNumber()
-  amountClaimSteps.verifySubmittedPage()
+  let dateCheck = yield I.grabTextFrom('div.confirmation-detail')
+  amountClaimSteps.verifySubmittedPage(dateCheck)
+  const pdfUrl = yield I.grabAttributeFrom('ol li a', 'href')
+  const sessionCookie = yield I.grabCookie('T2_SESSION_ID')
+  yield I.downloadPDF(pdfUrl, sessionCookie.value)
 })
 
 Scenario('I can fill in Organisation details for Claimant, Defendant and no Claim amount details', (I, userSteps, defendantSteps, amountClaimSteps) => {

@@ -22,28 +22,23 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/housing-disrepair')
+    I.amOnPage('/legal/claim/housing-disrepair')
   },
 
   enterHousingDisrepairGeneralDamagesLessThan1000 () {
-    I.see('Is it a claim for housing disrepair seeking an order for a landlord to carry out work?')
     I.checkOption(this.fields.housingDisrepairYes)
-    I.see('How much do you expect to recover as general damages for the cost of repairs or other work?')
     I.checkOption(this.fields.generalDamagesLess)
     I.click(this.buttons.saveAndContinue)
   },
 
   enterHousingDisrepairGeneralDamagesMoreThan1000 () {
-    I.see('Is it a claim for housing disrepair seeking an order for a landlord to carry out work?')
     I.checkOption(this.fields.housingDisrepairYes)
-    I.see('How much do you expect to recover as general damages for the cost of repairs or other work?')
     I.checkOption(this.fields.generalDamagesMore)
     I.click(this.buttons.saveAndContinue)
   },
 
   enterHousingDisrepairOtherDamagesLessThan1000 () {
     I.checkOption(this.fields.housingDisrepairYes)
-    I.see('How much do you expect to recover for other damages besides the cost of repairs')
     I.checkOption(this.fields.otherDamagesLess)
     I.click(this.buttons.saveAndContinue)
   },
@@ -67,14 +62,12 @@ module.exports = {
 
   checkMandatoryErrorMessage () {
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Choose yes if the claim is for housing disrepair')
   },
 
   checkMandatoryErrorMessageForAmounts () {
     I.checkOption(this.fields.housingDisrepairYes)
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Choose an amount for general damages')
     I.see('Choose an amount for other damages')
   }

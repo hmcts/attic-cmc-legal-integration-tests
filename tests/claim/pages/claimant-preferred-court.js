@@ -18,13 +18,11 @@ module.exports = {
   },
 
   open () {
-    I.amOnPage('/claim/preferred-court')
+    I.amOnPage('/legal/claim/preferred-court')
   },
 
   enterYourPreferredCountyCourt () {
-    I.see('Choose court location')
     I.fillField(this.fields.courtName, 'Dartford County Court')
-    I.see('Find a hearing centre')
     I.click(this.buttons.saveAndContinue)
   }
 

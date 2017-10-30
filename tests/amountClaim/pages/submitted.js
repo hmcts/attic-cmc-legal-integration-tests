@@ -2,7 +2,11 @@
 /* global actor */
 
 const user = require('../../../test-data').user
-
+const verifyPageData = require('../../../test-data').verifyPageData
+const chai = require('chai')
+const chaiAsPromised = require('chai-as-promised')
+const expect = chai.expect
+chai.use(chaiAsPromised)
 let I
 
 module.exports = {
@@ -14,20 +18,24 @@ module.exports = {
 
   },
   buttons: {
-    saveAndContinue: 'input.button.button-start'
+    finish: 'input.button.button-start'
   },
 
   open () {
-    I.amOnPage('/claim/submitted')
+    I.amOnPage('/legal/claim/submitted')
   },
 
-  verifyTextInSubmittedPage () {
-    I.see('Your claim has been issued')
-    I.see('Fee paid: £455')
-    I.see("We've emailed confirmation to: " + user.email)
-    I.see('Follow these steps to serve a claim:')
-    I.see('1. Download the sealed claim form (this will open in a new window).')
-    I.scrollPageToBottom()
-    I.click('Download the sealed claim form')
+  verifyTextInSubmittedPage (dateCheck) {
+    I.see(verifyPageData.feesPaid)
+    I.see(verifyPageData.emailConfirmation + user.email)
+    // verify submit date text present or not
+    expect(dateCheck[0].length).to.be.greaterThan(22)
+    // verify issue date text present or not
+    expect(dateCheck[1].length).to.be.greaterThan(19)
+  },
+
+  selectSubmitButton () {
+    I.click(this.buttons.finish)
+    I.see('start')
   }
 }

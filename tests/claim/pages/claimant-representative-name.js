@@ -16,26 +16,32 @@ module.exports = {
     saveAndContinue: 'input.button'
   },
 
-  open () {
-    I.amOnPage('/claim/representative-name')
+  data: {
+    organisationNameText: 'Abc Organisation'
   },
 
-  enterYourOrganisationNamePage () {
-    I.see('Your organisation name')
-    I.fillField(this.fields.organisationName, 'Abc Organisation')
+  open () {
+    I.amOnPage('/legal/claim/representative-name')
+  },
+
+  enterYourOrganisationName () {
+    I.fillField(this.fields.organisationName, this.data.organisationNameText)
+    I.click(this.buttons.saveAndContinue)
+  },
+
+  verifyOrganizationName () {
+    I.seeInField(this.fields.organisationName, this.data.organisationNameText)
     I.click(this.buttons.saveAndContinue)
   },
 
   checkMandatoryErrorMessage () {
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter your organisation name')
   },
 
   checkForBlankErrorMessage () {
     I.fillField(this.fields.organisationName, '')
     I.click(this.buttons.saveAndContinue)
-    I.see('There was a problem')
     I.see('Enter your organisation name')
   }
 
