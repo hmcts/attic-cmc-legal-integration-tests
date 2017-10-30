@@ -86,6 +86,37 @@ module.exports = {
     totalPage.checkFeeTotalForCanNotStateValue()
   },
 
+  addRangeDetailsAndVerifyIndividualDetails () {
+    this.personalInjuryLessThan1000()
+    this.housingDisrepairLessThan1000()
+    this.summariseTheClaim()
+    this.enterRangeOfTheClaim()
+    this.feeCheckForRangeTotal()
+    this.verifyIndividualSummaryDetails()
+    this.addStatementOfTruthSignerNameAndRole()
+    this.addPayByAccountFeeNumber()
+  },
+
+  addRangeDetailsAndVerifyOrganisationDetails () {
+    this.personalInjuryLessThan1000()
+    this.housingDisrepairLessThan1000()
+    this.summariseTheClaim()
+    this.enterRangeOfTheClaim()
+    this.feeCheckForRangeTotal()
+    this.verifySummaryDetails()
+    this.addStatementOfTruthSignerNameAndRole()
+    this.addPayByAccountFeeNumber()
+  },
+
+  addNoClaimDataAndVerifyData () {
+    this.noPersonalInjuryClaim()
+    this.noHousingDisrepairClaim()
+    this.summariseTheClaim()
+    this.canNotStateTheClaimValue()
+    this.feeCheckForCanNotStateTheClaimValue()
+    this.verifyNoClaimSummaryDetails()
+  },
+
   verifySummaryDetails () {
     detailsSummaryPage.verifyOrganizationDetails()
     detailsSummaryPage.claimantDetails()

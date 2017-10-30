@@ -27,6 +27,10 @@ module.exports = {
     startClaimPage.open()
     startClaimPage.startClaim()
   },
+  loginAndStartClaim () {
+    this.loginDefaultUser()
+    this.startClaim()
+  },
   enterYourOrganisationNamePage () {
     yourOrganisationNamePage.enterYourOrganisationName()
   },
@@ -40,6 +44,13 @@ module.exports = {
     yourReferencePage.enterYourReferenceForClaim()
   },
   enterYourPreferredCountyCourt () {
+    yourCountyCourtPage.enterYourPreferredCountyCourt()
+  },
+  enterClaimantServiceDetails () {
+    yourOrganisationNamePage.enterYourOrganisationName()
+    yourOrganisationAddressPage.enterYourOrganisationAddress()
+    yourContactDetailsPage.enterYourOrganisationContactDetails()
+    yourReferencePage.enterYourReferenceForClaim()
     yourCountyCourtPage.enterYourPreferredCountyCourt()
   },
   enterClaimantTypeIndividual () {
