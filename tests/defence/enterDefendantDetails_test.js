@@ -3,13 +3,8 @@
 Feature('Defendants Enter details of claim')
 
 Scenario('I can fill in Claimant organization, more Defendant details and update their details', (I, userSteps, defendantSteps) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
+  userSteps.loginAndStartClaim()
+  userSteps.enterClaimantServiceDetails()
   userSteps.enterClaimantTypeOrganisation()
   I.see('Claimant: Abc corporation')
   userSteps.enterClaimantAddress()
@@ -37,13 +32,8 @@ Scenario('I can fill in Claimant organization, more Defendant details and update
 })
 
 Scenario('I can fill in Claimant individual and Defendant individual details', (I, userSteps, defendantSteps) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
+  userSteps.loginAndStartClaim()
+  userSteps.enterClaimantServiceDetails()
   userSteps.enterClaimantTypeIndividual()
   I.see('Claimant: Mr Benugo')
   userSteps.enterClaimantAddress()
@@ -57,8 +47,7 @@ Scenario('I can fill in Claimant individual and Defendant individual details', (
 })
 
 Scenario('Check Error Messages in Enter your defendant type Page', (I, userSteps, defendantType) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   defendantType.open()
   defendantType.checkMandatoryErrorMessageForChooseDefendant()
   defendantType.checkMandatoryErrorMessageForOrganisationName()
@@ -68,8 +57,7 @@ Scenario('Check Error Messages in Enter your defendant type Page', (I, userSteps
 })
 
 Scenario('Check Error Messages in Enter your defendant address Page', (I, userSteps, defendantType, defendantSteps, defendantAddress) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
@@ -81,8 +69,7 @@ Scenario('Check Error Messages in Enter your defendant address Page', (I, userSt
 })
 
 Scenario('Check Error Messages in Enter your defendant representative Page', (I, userSteps, defendantType, defendantSteps, defendantRepresentative) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
@@ -93,8 +80,7 @@ Scenario('Check Error Messages in Enter your defendant representative Page', (I,
 })
 
 Scenario('Check Error Messages in Enter your defendant representative address Page', (I, userSteps, defendantType, defendantSteps, defendantRepresentativeAddress) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
@@ -108,8 +94,7 @@ Scenario('Check Error Messages in Enter your defendant representative address Pa
 })
 
 Scenario('Check Error Messages in Enter another defendant add Page', (I, userSteps, defendantType, defendantSteps, defendantAddAnotherDefendant) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')
@@ -121,8 +106,7 @@ Scenario('Check Error Messages in Enter another defendant add Page', (I, userSte
 })
 
 Scenario('Check Error Messages on defendant service address Page', (I, userSteps, defendantType, defendantSteps, defendantAddServiceAddress) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   defendantType.open()
   defendantSteps.enterDefendantTypeOrganisation()
   I.see('Defendant: Def corporation')

@@ -3,13 +3,8 @@
 Feature('Claimant Enter details of claim')
 
 Scenario('I can fill in two claimants and update their details', (I, userSteps) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
+  userSteps.loginAndStartClaim()
+  userSteps.enterClaimantServiceDetails()
   userSteps.enterClaimantTypeIndividual()
   I.see('Claimant: Mr Benugo')
   userSteps.enterClaimantAddress()
@@ -21,25 +16,15 @@ Scenario('I can fill in two claimants and update their details', (I, userSteps) 
 })
 
 Scenario('I can save organisation details and populate them in a subsequent claim via cookie info', (I, userSteps) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
+  userSteps.loginAndStartClaim()
+  userSteps.enterClaimantServiceDetails()
   userSteps.startClaim()
   userSteps.verifyOrganizationDetails()
 })
 
 Scenario('Check Error Messages in Add additional claimant Page', (I, userSteps, claimantAdd) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
-  userSteps.enterYourOrganisationNamePage()
-  userSteps.enterYourOrganisationAddress()
-  userSteps.enterYourOrganisationContactDetails()
-  userSteps.enterYourReferenceNumber()
-  userSteps.enterYourPreferredCountyCourt()
+  userSteps.loginAndStartClaim()
+  userSteps.enterClaimantServiceDetails()
   userSteps.enterClaimantTypeIndividual()
   I.see('Claimant: Mr Benugo')
   userSteps.enterClaimantAddress()
@@ -54,8 +39,7 @@ Scenario('Check Error Messages in Your organisation name Page', (I, userSteps, e
 })
 
 Scenario('Check Error Messages in Enter your organisation address Page', (I, userSteps, enterYourOrganisationAddressPage) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   userSteps.enterYourOrganisationNamePage()
   enterYourOrganisationAddressPage.checkMandatoryErrorMessage()
   enterYourOrganisationAddressPage.checkForBlankErrorMessage()
@@ -65,8 +49,7 @@ Scenario('Check Error Messages in Enter your organisation address Page', (I, use
 })
 
 Scenario('Check Error Messages in Enter your organisation contact details Page', (I, userSteps, enterYourOrganisationContactDetails) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   userSteps.enterYourOrganisationNamePage()
   userSteps.enterYourOrganisationAddress()
   enterYourOrganisationContactDetails.checkPhoneNumberLengthValidation()
@@ -75,8 +58,7 @@ Scenario('Check Error Messages in Enter your organisation contact details Page',
 })
 
 Scenario('Check Error Messages in claimant type Page', (I, userSteps, claimantType) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   claimantType.open()
   claimantType.checkMandatoryErrorMessageForChooseClaimant()
   claimantType.checkMandatoryErrorMessageForOrganisationName()
@@ -86,8 +68,7 @@ Scenario('Check Error Messages in claimant type Page', (I, userSteps, claimantTy
 })
 
 Scenario('Check Error Messages in Enter your claimant address Page', (I, userSteps, claimantType, claimantAddress) => {
-  userSteps.loginDefaultUser()
-  userSteps.startClaim()
+  userSteps.loginAndStartClaim()
   claimantType.open()
   userSteps.enterClaimantTypeOrganisation()
   claimantAddress.checkMandatoryErrorMessage()
