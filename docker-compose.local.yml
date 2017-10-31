@@ -61,6 +61,15 @@ services:
       ports:
         - 1025:1025
         - 8025:8025
+    document-management-api-gateway-web:
+      ports:
+        - 8085:8080
+    document-management-api:
+      ports:
+        - 8084:8080
+    document-management-database:
+      ports:
+        - 5436:5432
 
 volumes:
   draft-store-database-data:
